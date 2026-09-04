@@ -1,391 +1,982 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Chain — a habit log</title>
+<title>AG Case Signals</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
 <style>
-  :root {
-    --bg: #1B1F2A;
-    --surface: #242938;
-    --surface-hi: #2C3244;
-    --ink: #E8E4D9;
-    --ink-dim: #9CA0AE;
-    --accent: #E3A857;
-    --accent-dim: #6B5A3E;
-    --miss: #4A4550;
-    --danger: #C1666B;
-    --line: #333a4d;
-    --radius: 10px;
+  :root{
+    --paper:#eef1f5;
+    --surface:#ffffff;
+    --surface-2:#e3e8ee;
+    --ink:#161b22;
+    --ink-soft:#4c5768;
+    --ink-faint:#7c8697;
+    --border:#d7dce4;
+    --premium:#3868a0;
+    --premium-soft:#c9d9ea;
+    --hvp:#a85d3c;
+    --hvp-soft:#eeddd2;
+    --good:#3f8f5f;
+    --warning:#b9821e;
+    --critical:#bf4630;
+    --violet:#6c4d8c;
+    --shadow: 0 1px 2px rgba(22,27,34,.06), 0 6px 20px rgba(22,27,34,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#12161c;
+      --surface:#1a2027;
+      --surface-2:#222932;
+      --ink:#eef1f5;
+      --ink-soft:#a7b0bd;
+      --ink-faint:#7c8697;
+      --border:#2b323c;
+      --premium:#7ba6d9;
+      --premium-soft:#233649;
+      --hvp:#d9915f;
+      --hvp-soft:#3c2c22;
+      --good:#5cbf85;
+      --warning:#e0a83f;
+      --critical:#e2695a;
+      --violet:#a685cf;
+      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#12161c;
+    --surface:#1a2027;
+    --surface-2:#222932;
+    --ink:#eef1f5;
+    --ink-soft:#a7b0bd;
+    --ink-faint:#7c8697;
+    --border:#2b323c;
+    --premium:#7ba6d9;
+    --premium-soft:#233649;
+    --hvp:#d9915f;
+    --hvp-soft:#3c2c22;
+    --good:#5cbf85;
+    --warning:#e0a83f;
+    --critical:#e2695a;
+    --violet:#a685cf;
+    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.35);
   }
 
-  * { box-sizing: border-box; }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:36px 28px 56px;}
 
-  @font-face {
-    font-family: 'system-serif';
-    src: local('Georgia');
-  }
+  .mono{font-family:"IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace; font-variant-numeric:tabular-nums;}
 
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-      radial-gradient(1200px 600px at 15% -10%, rgba(227,168,87,0.06), transparent 60%),
-      var(--bg);
-    color: var(--ink);
-    font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
-    padding: 48px 20px 80px;
+  header.page{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:24px;
+    flex-wrap:wrap;
+    border-bottom:1px solid var(--border);
+    padding-bottom:20px; margin-bottom:20px;
   }
+  .titleblock h1{
+    margin:0 0 6px; font-size:28px; line-height:1.15; font-weight:700; letter-spacing:-.01em;
+    text-wrap:balance;
+  }
+  .titleblock p{margin:0; color:var(--ink-soft); font-size:14px; max-width:60ch;}
+  .titleblock .eyebrow{
+    text-transform:uppercase; letter-spacing:.09em; font-size:11px; font-weight:600;
+    color:var(--ink-faint); margin:0 0 8px;
+  }
+  .legend{display:flex; gap:18px; align-items:center; flex-shrink:0;}
+  .legend .item{display:flex; align-items:center; gap:8px; font-size:13px; color:var(--ink-soft);}
+  .swatch{width:11px; height:11px; border-radius:3px; display:inline-block;}
 
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
+  /* Tab nav */
+  .tabnav{
+    display:flex; gap:2px; margin-bottom:24px; border-bottom:1px solid var(--border);
+    overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none;
   }
+  .tabnav::-webkit-scrollbar{display:none;}
+  .tabnav button{
+    appearance:none; border:none; background:none; font-family:inherit; font-size:13.5px; font-weight:600;
+    color:var(--ink-faint); padding:11px 16px; cursor:pointer; border-bottom:2.5px solid transparent;
+    white-space:nowrap; margin-bottom:-1px; transition:color .12s ease, border-color .12s ease;
+  }
+  .tabnav button:hover{color:var(--ink);}
+  .tabnav button[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--premium);}
+  .tabnav button:focus-visible{outline:2px solid var(--premium); outline-offset:2px;}
 
-  header {
-    margin-bottom: 40px;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 28px;
+  /* Snapshot bar */
+  .snapshot-bar{
+    border:1px solid var(--border); border-radius:8px; padding:11px 16px; font-size:13px;
+    color:var(--ink-soft); margin-bottom:22px; background:var(--surface); box-shadow:var(--shadow);
+    line-height:1.5;
   }
+  .snapshot-bar b{color:var(--ink);}
 
-  .eyebrow {
-    font-family: 'IBM Plex Mono', 'Courier New', monospace;
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 10px;
+  section{margin-bottom:34px;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:14px;}
+  .section-head h2{
+    font-size:13px; text-transform:uppercase; letter-spacing:.08em; font-weight:600;
+    color:var(--ink-faint); margin:0;
   }
+  .section-head .sub{font-size:12.5px; color:var(--ink-faint);}
 
-  h1 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: clamp(32px, 6vw, 46px);
-    margin: 0 0 8px;
-    letter-spacing: 0.01em;
+  /* Big-number metric tiles */
+  .metric-grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));}
+  .metric-tile{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:18px 18px 16px; box-shadow:var(--shadow);
   }
+  .metric-tile .m-label{
+    font-size:12px; color:var(--ink-soft); font-weight:600; margin-bottom:10px;
+    display:flex; align-items:center; gap:6px; text-transform:uppercase; letter-spacing:.04em;
+  }
+  .metric-tile .m-label .seg-dot{width:8px; height:8px; border-radius:2px; display:inline-block; flex-shrink:0;}
+  .metric-tile .m-value{font-size:32px; font-weight:700; line-height:1; margin-bottom:9px;}
+  .metric-tile .m-delta{display:flex; align-items:center; gap:5px; font-size:13px; font-weight:600; margin-bottom:7px;}
+  .metric-tile .m-delta.good{color:var(--good);}
+  .metric-tile .m-delta.bad{color:var(--critical);}
+  .metric-tile .m-delta.neutral{color:var(--ink-faint);}
+  .metric-tile .m-caption{font-size:12px; color:var(--ink-faint); line-height:1.45;}
 
-  .sub {
-    color: var(--ink-dim);
-    font-size: 14.5px;
-    margin: 0;
-    max-width: 46ch;
-    line-height: 1.5;
-  }
+  /* KPI row (legacy paired bars, still used nowhere now but kept for safety) */
+  .kpi-grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));}
+  .kpi{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 18px 16px; box-shadow:var(--shadow);}
+  .kpi .label{font-size:12.5px; color:var(--ink-soft); font-weight:500; margin-bottom:12px;}
+  .kpi .rows{display:flex; flex-direction:column; gap:8px; margin-bottom:12px;}
+  .kpi .row{display:flex; align-items:baseline; justify-content:space-between; gap:10px;}
+  .kpi .seg-tag{font-size:11.5px; font-weight:600; letter-spacing:.02em;}
+  .kpi .seg-tag.premium{color:var(--premium);}
+  .kpi .seg-tag.hvp{color:var(--hvp);}
+  .kpi .val{font-size:22px; font-weight:600;}
+  .kpi .barpair{display:flex; flex-direction:column; gap:5px;}
+  .kpi .bartrack{background:var(--surface-2); border-radius:3px; height:7px; overflow:hidden;}
+  .kpi .barfill{height:100%; border-radius:3px;}
 
-  .add-row {
-    display: flex;
-    gap: 10px;
-    margin-top: 26px;
+  /* Chart cards */
+  .chart-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:16px;}
+  .trend-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:860px){ .chart-grid{grid-template-columns:1fr;} .trend-grid{grid-template-columns:1fr;} }
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:20px 22px 18px; box-shadow:var(--shadow);
   }
+  .card h3{margin:0 0 4px; font-size:15px; font-weight:600;}
+  .card .note{font-size:12.5px; color:var(--ink-soft); margin:0 0 14px;}
+  svg{display:block; width:100%; height:auto; overflow:visible;}
+  svg text{fill:var(--ink-soft); font-family:"IBM Plex Sans", sans-serif;}
+  svg text.mono{font-family:"IBM Plex Mono", monospace;}
+  .stack-legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:12px;}
+  .stack-legend .item{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--ink-soft);}
+  .stack-legend .line{width:16px; height:2px; display:inline-block; background:currentColor;}
+  .stack-legend .line.dashed{background-image:linear-gradient(to right, currentColor 50%, transparent 0%); background-size:7px 2px; background-color:transparent;}
 
-  .add-row input {
-    flex: 1;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    color: var(--ink);
-    border-radius: var(--radius);
-    padding: 12px 14px;
-    font-size: 14.5px;
-    font-family: inherit;
+  .callout{
+    margin-top:14px; padding:10px 12px; border-radius:8px; background:var(--surface-2);
+    font-size:12.5px; color:var(--ink-soft); line-height:1.5;
   }
-  .add-row input:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-  .add-row input::placeholder { color: var(--ink-dim); }
+  .callout b{color:var(--ink);}
+  .callout.notice{background:color-mix(in srgb, var(--violet) 12%, var(--surface-2));}
 
-  .add-row button {
-    background: var(--accent);
-    color: #1B1F2A;
-    border: none;
-    border-radius: var(--radius);
-    padding: 12px 20px;
-    font-size: 14.5px;
-    font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
+  /* Insights */
+  .insight-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:14px;}
+  .insight{
+    background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--tone, var(--ink-faint));
+    border-radius:8px; padding:14px 16px; box-shadow:var(--shadow);
   }
-  .add-row button:hover { filter: brightness(1.08); }
-  .add-row button:focus-visible, .add-row input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .insight .chip{
+    display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    padding:2px 7px; border-radius:99px; margin-bottom:9px;
+    background:color-mix(in srgb, var(--tone, var(--ink-faint)) 16%, transparent);
+    color:var(--tone, var(--ink-soft));
+  }
+  .insight p{margin:0; font-size:13.5px; line-height:1.55; color:var(--ink);}
+  .insight p b{color:var(--ink);}
 
-  .habit {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 20px 22px 22px;
-    margin-bottom: 16px;
+  /* Table */
+  .table-wrap{overflow-x:auto; border:1px solid var(--border); border-radius:10px; background:var(--surface); box-shadow:var(--shadow);}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px;}
+  thead th{
+    text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); font-weight:600; padding:12px 16px; border-bottom:1px solid var(--border);
   }
+  thead th.num, td.num{text-align:right;}
+  tbody td{padding:10px 16px; border-bottom:1px solid var(--border);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:var(--surface-2);}
+  .pill{
+    display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:600;
+    padding:2px 8px; border-radius:99px; white-space:nowrap;
+  }
+  .pill.aging{background:color-mix(in srgb, var(--critical) 16%, transparent); color:var(--critical);}
+  .pill.watch{background:color-mix(in srgb, var(--warning) 16%, transparent); color:var(--warning);}
+  .pill.gap{background:color-mix(in srgb, var(--violet) 16%, transparent); color:var(--violet);}
+  .pill.not-started{background:var(--surface-2); color:var(--ink-faint);}
+  .pill.in-progress{background:color-mix(in srgb, var(--warning) 16%, transparent); color:var(--warning);}
+  .pill.done{background:color-mix(in srgb, var(--good) 16%, transparent); color:var(--good);}
 
-  .habit-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 16px;
+  /* Story tab */
+  .story{max-width:68ch;}
+  .story p{font-size:15px; line-height:1.7; color:var(--ink); margin:0 0 16px;}
+  .story h3{font-size:17px; font-weight:700; margin:30px 0 10px; letter-spacing:-.005em;}
+  .story h3:first-child{margin-top:0;}
+  .story .pull{
+    font-size:18px; font-weight:600; line-height:1.5; margin:22px 0; padding-left:16px;
+    border-left:3px solid var(--critical); color:var(--ink); text-wrap:balance;
   }
+  .story .byline{font-size:12.5px; color:var(--ink-faint); margin:0 0 26px;}
 
-  .habit-name {
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--ink);
+  /* Progress bar */
+  .progress-summary{
+    display:flex; align-items:center; gap:14px; background:var(--surface); border:1px solid var(--border);
+    border-radius:10px; padding:16px 18px; box-shadow:var(--shadow); margin-bottom:20px;
   }
+  .progress-summary .ptrack{flex:1; height:8px; border-radius:4px; background:var(--surface-2); overflow:hidden;}
+  .progress-summary .pfill{height:100%; border-radius:4px; background:var(--good);}
+  .progress-summary .plabel{font-size:13px; font-weight:600; color:var(--ink-soft); white-space:nowrap;}
 
-  .habit-meta {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-shrink: 0;
+  /* Manager cards (By Manager tab) */
+  .mgr-list{display:flex; flex-direction:column; gap:10px;}
+  .mgr-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    box-shadow:var(--shadow); overflow:hidden;
   }
+  .mgr-card summary{
+    cursor:pointer; padding:14px 16px; display:flex; align-items:center; gap:12px;
+    list-style:none;
+  }
+  .mgr-card summary::-webkit-details-marker{display:none;}
+  .mgr-card summary::after{
+    content:"›"; margin-left:auto; font-size:18px; color:var(--ink-faint);
+    transform:rotate(90deg); transition:transform .15s ease; flex-shrink:0;
+  }
+  .mgr-card[open] summary::after{transform:rotate(-90deg);}
+  .mgr-card summary:focus-visible{outline:2px solid var(--premium); outline-offset:-2px;}
+  .mgr-name{font-weight:700; font-size:14.5px; min-width:88px;}
+  .seg-chip{
+    font-size:10.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    padding:2px 8px; border-radius:99px; flex-shrink:0;
+  }
+  .seg-chip.premium{background:color-mix(in srgb, var(--premium) 16%, transparent); color:var(--premium);}
+  .seg-chip.hvp{background:color-mix(in srgb, var(--hvp) 16%, transparent); color:var(--hvp);}
+  .mgr-stats{margin-left:auto; font-size:13px; color:var(--ink-soft); text-align:right;}
+  .mgr-stats b{font-family:"IBM Plex Mono", monospace; color:var(--ink); font-size:14px;}
+  .mgr-drill{border-top:1px solid var(--border); padding:4px 16px 14px;}
+  .mgr-drill table{font-size:12.5px; min-width:0;}
+  .mgr-drill .empty{font-size:12.5px; color:var(--ink-faint); padding:12px 0 4px; font-style:italic;}
+  .bar-mini{height:5px; border-radius:3px; background:var(--surface-2); overflow:hidden; margin-top:6px; width:120px;}
+  .bar-mini > div{height:100%; border-radius:3px;}
 
-  .streak-count {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    color: var(--accent);
-    white-space: nowrap;
-  }
-  .streak-count b { font-size: 15px; }
-
-  .del-btn {
-    background: none;
-    border: none;
-    color: var(--ink-dim);
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1;
-    padding: 2px 4px;
-    border-radius: 6px;
-  }
-  .del-btn:hover { color: var(--danger); }
-
-  .chain {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
-
-  .day {
-    position: relative;
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-  }
-
-  .day .link {
-    position: absolute;
-    top: 50%;
-    left: -3px;
-    width: 3px;
-    height: 2px;
-    background: var(--accent-dim);
-    transform: translateY(-50%);
-  }
-  .day.chained .link { background: var(--accent); }
-  .day:first-child .link { display: none; }
-
-  .dot {
-    width: 100%;
-    height: 100%;
-    border-radius: 6px;
-    border: 1px solid var(--line);
-    background: var(--surface-hi);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    color: transparent;
-    transition: transform 0.08s ease;
-  }
-  .dot:hover { transform: scale(1.12); }
-  .dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-  .dot.done {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #1B1F2A;
-  }
-  .dot.today {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(227,168,87,0.25);
-  }
-
-  .empty {
-    text-align: center;
-    color: var(--ink-dim);
-    padding: 60px 20px;
-    border: 1px dashed var(--line);
-    border-radius: 14px;
-    font-size: 14.5px;
-    line-height: 1.6;
-  }
-  .empty .eyebrow { display: block; margin-bottom: 6px; }
-
-  footer {
-    text-align: center;
-    color: var(--ink-dim);
-    font-size: 12.5px;
-    margin-top: 44px;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .dot { transition: none; }
+  footer{
+    margin-top:36px; padding-top:16px; border-top:1px solid var(--border);
+    font-size:12px; color:var(--ink-faint); line-height:1.6;
   }
 </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <p class="eyebrow">Don't break the chain</p>
-      <h1>The Chain</h1>
-      <p class="sub">Add a habit. Mark today's link when you do it. Watch the chain grow — and don't be the one who breaks it.</p>
-      <div class="add-row">
-        <input id="habitInput" type="text" placeholder="New habit, e.g. Read 20 minutes" maxlength="40">
-        <button id="addBtn">Add</button>
-      </div>
-    </header>
 
-    <div id="habitList"></div>
-    <div id="emptyState" class="empty" style="display:none;">
-      <span class="eyebrow">No habits yet</span>
-      Add your first one above to start your chain.
+<div class="wrap">
+
+  <header class="page">
+    <div class="titleblock">
+      <p class="eyebrow">AG Case Management &middot; Leadership Overview</p>
+      <h1>Quick Insights — Case Signals</h1>
+      <p>Refreshed Sep&nbsp;3, 2026 by pulling the underlying Salesforce reports behind each widget — not the cached dashboard charts — for complete, reconciled counts. Figures are a point-in-time pull and will drift from the live system.</p>
     </div>
+    <div class="legend">
+      <span class="item"><span class="swatch" style="background:var(--premium)"></span>Premium</span>
+      <span class="item"><span class="swatch" style="background:var(--hvp)"></span>HVP&nbsp;/&nbsp;NLH</span>
+    </div>
+  </header>
 
-    <footer>21-day view · saved on this device</footer>
+  <nav class="tabnav" role="tablist" aria-label="Dashboard sections">
+    <button type="button" role="tab" aria-selected="true" data-target="overview">Overview</button>
+    <button type="button" role="tab" aria-selected="false" data-target="manager">By Manager</button>
+    <button type="button" role="tab" aria-selected="false" data-target="trends">Trends</button>
+    <button type="button" role="tab" aria-selected="false" data-target="august">Open Cases — August Snapshot</button>
+    <button type="button" role="tab" aria-selected="false" data-target="story">Storytelling</button>
+    <button type="button" role="tab" aria-selected="false" data-target="action">Action &amp; Progress</button>
+  </nav>
+
+  <!-- ===================== OVERVIEW ===================== -->
+  <div class="tabpanel" data-tab="overview">
+
+  <div class="snapshot-bar">
+    <b>AG Case Management weekly snapshot</b> &middot; escalation gap narrowing (HVP 26.2%&nbsp;→&nbsp;25.7%, Premium 8.8%&nbsp;→&nbsp;10.2%) &middot; David still carries 52.7% of HVP's open backlog &middot; vs. Sep&nbsp;1 baseline
   </div>
 
+  <section>
+    <div class="section-head"><h2>Current state metrics</h2><span class="sub">vs. Sep 1 baseline</span></div>
+    <div class="metric-grid">
+
+      <div class="metric-tile">
+        <div class="m-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP &middot; Escalation rate</div>
+        <div class="m-value mono">25.7%</div>
+        <div class="m-delta good">▼ 0.5pt <span class="mono">(26.2%&nbsp;→&nbsp;25.7%)</span></div>
+        <div class="m-caption">Still 2.5× Premium's rate, but easing rather than climbing.</div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium &middot; Escalation rate</div>
+        <div class="m-value mono">10.2%</div>
+        <div class="m-delta bad">▲ 1.4pt <span class="mono">(8.8%&nbsp;→&nbsp;10.2%)</span></div>
+        <div class="m-caption">Ticked up, though still far below HVP's level.</div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP &middot; Top manager share</div>
+        <div class="m-value mono">52.7%</div>
+        <div class="m-delta bad">▲ 0.6pt <span class="mono">(52.1%&nbsp;→&nbsp;52.7%)</span></div>
+        <div class="m-caption">David's share of HVP's backlog — still climbing.</div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium &middot; Top manager share</div>
+        <div class="m-value mono">25.4%</div>
+        <div class="m-delta good">▼ 0.3pt <span class="mono">(25.7%&nbsp;→&nbsp;25.4%)</span></div>
+        <div class="m-caption">Tameko's share — essentially flat.</div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP &middot; Open cases</div>
+        <div class="m-value mono">740</div>
+        <div class="m-delta neutral">▲ 72 <span class="mono">(668&nbsp;→&nbsp;740)</span></div>
+        <div class="m-caption">Pull method changed too this refresh — see August Snapshot tab.</div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium &middot; Open cases</div>
+        <div class="m-value mono">216</div>
+        <div class="m-delta good">▼ 10 <span class="mono">(226&nbsp;→&nbsp;216)</span></div>
+        <div class="m-caption">Pull method changed too this refresh — directional only.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Where the volume actually sits</h2><span class="sub">FY27 open backlog, by status</span></div>
+    <div class="chart-grid">
+
+      <div class="card">
+        <h3>Open-case mix, normalized to 100%</h3>
+        <p class="note">Premium: 216 open cases total &middot; HVP: 740 open cases total — about 3.4× the volume. Escalated share is still well above Premium's, though the research queue now tracks close to size.</p>
+        <svg viewBox="0 0 640 150" role="img" aria-label="Stacked bar chart comparing Premium and HVP open case status mix">
+          <!-- Premium row -->
+          <text x="0" y="26" font-size="13" font-weight="600" fill="var(--premium)">Premium</text>
+          <text x="0" y="41" font-size="11" class="mono" fill="var(--ink-faint)">n = 216</text>
+          <rect x="150" y="14" width="385.1" height="28" fill="var(--ink-faint)" opacity="0.55"/>
+          <rect x="535.1" y="14" width="21.8" height="28" fill="var(--premium-soft)"/>
+          <rect x="556.9" y="14" width="15.2" height="28" fill="var(--warning)"/>
+          <rect x="572.1" y="14" width="47.9" height="28" fill="var(--critical)"/>
+          <text x="343" y="33" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">81.9%</text>
+          <text x="596" y="33" text-anchor="middle" font-size="11" class="mono" fill="#fff">10.2%</text>
+
+          <!-- HVP row -->
+          <text x="0" y="96" font-size="13" font-weight="600" fill="var(--hvp)">HVP</text>
+          <text x="0" y="111" font-size="11" class="mono" fill="var(--ink-faint)">n = 740</text>
+          <rect x="150" y="84" width="267.4" height="28" fill="var(--ink-faint)" opacity="0.55"/>
+          <rect x="417.4" y="84" width="26.0" height="28" fill="var(--premium-soft)"/>
+          <rect x="443.4" y="84" width="55.9" height="28" fill="var(--warning)"/>
+          <rect x="499.3" y="84" width="120.7" height="28" fill="var(--critical)"/>
+          <text x="284" y="103" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">56.9%</text>
+          <text x="471" y="103" text-anchor="middle" font-size="10.5" class="mono" fill="#fff">11.9%</text>
+          <text x="560" y="103" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">25.7%</text>
+
+          <line x1="150" y1="8" x2="150" y2="120" stroke="var(--border)"/>
+          <line x1="620" y1="8" x2="620" y2="120" stroke="var(--border)"/>
+        </svg>
+        <div class="stack-legend">
+          <span class="item"><span class="swatch" style="background:var(--ink-faint); opacity:.55"></span>Open</span>
+          <span class="item"><span class="swatch" style="background:var(--premium-soft)"></span>Pending</span>
+          <span class="item"><span class="swatch" style="background:var(--warning)"></span>Research / Priority</span>
+          <span class="item"><span class="swatch" style="background:var(--critical)"></span>Escalated</span>
+        </div>
+        <div class="callout">HVP's research share (11.9%) now runs close to the <b>~1.1× rate</b> volume alone would predict (HVP is ~3.4× Premium's size) — a real change from the prior pull, where it ran nearly 4× what volume would predict.</div>
+      </div>
+
+      <div class="card">
+        <h3>HVP open cases, by manager</h3>
+        <p class="note">Sorted by open-case volume. Named per the current manager roster.</p>
+        <svg viewBox="0 0 380 210" role="img" aria-label="Horizontal bar chart of HVP open cases by manager">
+          <text x="0" y="18" font-size="11" class="mono" fill="var(--ink-faint)">David</text>
+          <rect x="140" y="6" width="210" height="16" fill="var(--critical)"/>
+          <text x="356" y="18" font-size="11.5" class="mono" fill="var(--ink)">390</text>
+
+          <text x="0" y="48" font-size="11" class="mono" fill="var(--ink-faint)">Kelly</text>
+          <rect x="140" y="36" width="64.6" height="16" fill="var(--ink-faint)" opacity="0.6"/>
+          <text x="211" y="48" font-size="11.5" class="mono" fill="var(--ink)">120</text>
+
+          <text x="0" y="78" font-size="11" class="mono" fill="var(--ink-faint)">Morgan</text>
+          <rect x="140" y="66" width="58.2" height="16" fill="var(--ink-faint)" opacity="0.6"/>
+          <text x="204" y="78" font-size="11.5" class="mono" fill="var(--ink)">108</text>
+
+          <text x="0" y="108" font-size="11" class="mono" fill="var(--ink-faint)">Rachel</text>
+          <rect x="140" y="96" width="32.8" height="16" fill="var(--ink-faint)" opacity="0.6"/>
+          <text x="179" y="108" font-size="11.5" class="mono" fill="var(--ink)">61</text>
+
+          <text x="0" y="138" font-size="11" class="mono" fill="var(--ink-faint)">Chemetra</text>
+          <rect x="140" y="126" width="16.2" height="16" fill="var(--ink-faint)" opacity="0.6"/>
+          <text x="162" y="138" font-size="11.5" class="mono" fill="var(--ink)">30</text>
+
+          <text x="0" y="168" font-size="11" class="mono" fill="var(--ink-faint)">Dixie</text>
+          <rect x="140" y="156" width="8.6" height="16" fill="var(--ink-faint)" opacity="0.6"/>
+          <text x="155" y="168" font-size="11.5" class="mono" fill="var(--ink)">16</text>
+
+          <text x="0" y="198" font-size="11" class="mono" fill="var(--ink-faint)">Alicia</text>
+          <rect x="140" y="186" width="8.1" height="16" fill="var(--ink-faint)" opacity="0.6"/>
+          <text x="154" y="198" font-size="11.5" class="mono" fill="var(--ink)">15</text>
+        </svg>
+        <div class="callout"><b>David carries 52.7%</b> of all open HVP cases — nearly double any Premium manager (Tameko, Premium's most-loaded, holds 25.4%).</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>What it means</h2><span class="sub">Read before the next leadership sync</span></div>
+    <div class="insight-grid">
+
+      <div class="insight" style="--tone:var(--warning)">
+        <span class="chip">Escalation</span>
+        <p>HVP's open backlog escalates at <b>25.7%</b> versus Premium's <b>10.2%</b> — still a wide gap, but its research queue (11.9%) now tracks close to HVP's ~3.4× share of volume, a real improvement from the prior pull's near-4× overshoot.</p>
+      </div>
+
+      <div class="insight" style="--tone:var(--critical)">
+        <span class="chip">Concentration</span>
+        <p>One manager — <b>David</b> — still carries the largest share of HVP's open backlog — <b>52.7%</b>, up slightly from 52.1% last pull — more than double Premium's most-loaded manager, Tameko, at 25.4%. Same pattern, same manager: worth confirming whether this is a real workload imbalance or an unassigned-case bucket.</p>
+      </div>
+
+      <div class="insight" style="--tone:var(--warning)">
+        <span class="chip">Aging</span>
+        <p>Jay Holland has joined Brandi Evans-King at the top of the aging-case list — both now show 2 cases stale past 48 hours. Unlike the prior pull, every 48-hour-stale case this time also appears correctly in the 24-hour view — that data gap didn't recur.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Aging cases by owner</h2><span class="sub">Not updated in 24h / 48h</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Case owner</th><th class="num">Not updated, 24h</th><th class="num">Not updated, 48h</th><th>Flag</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Brandi Evans-King</td><td class="num mono">2</td><td class="num mono">2</td><td><span class="pill aging">Aging — both cases past 48h</span></td></tr>
+          <tr><td>Jay Holland</td><td class="num mono">2</td><td class="num mono">2</td><td><span class="pill aging">Aging — both cases past 48h</span></td></tr>
+          <tr><td>Charles Cannon</td><td class="num mono">1</td><td class="num mono">—</td><td></td></tr>
+          <tr><td>Connie Cruz</td><td class="num mono">1</td><td class="num mono">1</td><td></td></tr>
+          <tr><td>Corissa Alvarado</td><td class="num mono">1</td><td class="num mono">1</td><td></td></tr>
+          <tr><td>Daniel Burch</td><td class="num mono">1</td><td class="num mono">—</td><td></td></tr>
+          <tr><td>Danielle Schons</td><td class="num mono">1</td><td class="num mono">—</td><td></td></tr>
+          <tr><td>Elizabeth Howard</td><td class="num mono">1</td><td class="num mono">1</td><td></td></tr>
+          <tr><td>Gillian Hill</td><td class="num mono">1</td><td class="num mono">—</td><td></td></tr>
+          <tr><td>Jeremy Ardourel</td><td class="num mono">1</td><td class="num mono">—</td><td></td></tr>
+          <tr><td>Lindzey Green</td><td class="num mono">1</td><td class="num mono">—</td><td></td></tr>
+          <tr><td>Marisol Villalvazo</td><td class="num mono">1</td><td class="num mono">1</td><td></td></tr>
+          <tr><td>Sandra Polichino</td><td class="num mono">1</td><td class="num mono">1</td><td></td></tr>
+          <tr><td>Shelly Phillips</td><td class="num mono">1</td><td class="num mono">1</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <!-- ===================== BY MANAGER ===================== -->
+  <div class="tabpanel" data-tab="manager" hidden>
+
+  <section>
+    <div class="section-head"><h2>Open cases by manager</h2><span class="sub">Click a row for a sample of the cases behind the number</span></div>
+    <p style="font-size:12.5px; color:var(--ink-soft); line-height:1.6; max-width:72ch; margin:0 0 18px;">
+      Totals below are live counts from the underlying reports (Sep&nbsp;3, 2026) and reconcile exactly against each segment's grand total. Sample cases under each manager are real records pulled at the same time — a snapshot, not the full list; case subjects and account names will have moved on by the time you read this.
+    </p>
+
+    <div class="mgr-list">
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">David</span>
+          <span class="seg-chip hvp">HVP</span>
+          <span class="mgr-stats"><b>390</b> open &middot; 52.7% of segment
+            <div class="bar-mini"><div style="width:100%; background:var(--hvp)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15163739045</td><td>Elizabeth Zarada</td><td>Local Fractional</td><td>Reconnecting QuickBooks checking account</td></tr>
+                <tr><td class="mono">15163744329</td><td>Kristie Billiot</td><td>Joseph Porche</td><td>April assisted with transferring ProAdvisor certification</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Kelly</span>
+          <span class="seg-chip hvp">HVP</span>
+          <span class="mgr-stats"><b>120</b> open &middot; 16.2% of segment
+            <div class="bar-mini"><div style="width:31%; background:var(--hvp)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15163745048</td><td>Denise Koehler</td><td>Building Markets</td><td>I need to talk to Denise Case:15163527094</td></tr>
+                <tr><td class="mono">15163755366</td><td>Kate Salgado</td><td>Vikki</td><td>All the items are not showing in the drop down</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Morgan</span>
+          <span class="seg-chip hvp">HVP</span>
+          <span class="mgr-stats"><b>108</b> open &middot; 14.6% of segment
+            <div class="bar-mini"><div style="width:28%; background:var(--hvp)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill"><div class="empty">No sample cases were captured for Morgan in this refresh's pull.</div></div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Rachel</span>
+          <span class="seg-chip hvp">HVP</span>
+          <span class="mgr-stats"><b>61</b> open &middot; 8.2% of segment
+            <div class="bar-mini"><div style="width:16%; background:var(--hvp)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15163734867</td><td>Kizzy Laborde</td><td>Remote Cardiology, LLC – Payroll</td><td>Kansas filing</td></tr>
+                <tr><td class="mono">15163738855</td><td>Charnita Rivens</td><td>Black &amp; White Financials</td><td>Pay type not showing</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Chemetra</span>
+          <span class="seg-chip hvp">HVP</span>
+          <span class="mgr-stats"><b>30</b> open &middot; 4.1% of segment
+            <div class="bar-mini"><div style="width:8%; background:var(--hvp)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill"><div class="empty">No sample cases were captured for Chemetra in this refresh's pull.</div></div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Dixie</span>
+          <span class="seg-chip hvp">HVP</span>
+          <span class="mgr-stats"><b>16</b> open &middot; 2.2% of segment
+            <div class="bar-mini"><div style="width:5%; background:var(--hvp)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15163756391</td><td>Inez Pulido</td><td>Ridge View Accounting, PLLC</td><td>Record payment processes as ACH</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Alicia</span>
+          <span class="seg-chip hvp">HVP</span>
+          <span class="mgr-stats"><b>15</b> open &middot; 2.0% of segment
+            <div class="bar-mini"><div style="width:4%; background:var(--hvp)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill"><div class="empty">No sample cases were captured for Alicia in this refresh's pull.</div></div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Marissa</span>
+          <span class="seg-chip hvp">HVP</span>
+          <span class="mgr-stats"><b>0</b> open &middot; 0.0% of segment
+            <div class="bar-mini"><div style="width:0%; background:var(--hvp)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill"><div class="empty">Marissa's open-case count reconciles to zero against the HVP total this pull — no cases to sample.</div></div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Tameko</span>
+          <span class="seg-chip premium">Premium</span>
+          <span class="mgr-stats"><b>54</b> open &middot; 25.4% of segment
+            <div class="bar-mini"><div style="width:100%; background:var(--premium)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15163888313</td><td>Lindzey Green</td><td>NBW Properties, LLC</td><td>Journal entries not showing on P&amp;L statement</td></tr>
+                <tr><td class="mono">15164017960</td><td>Lindzey Green</td><td>Earl R. Whaley &amp; Company</td><td>QUICKBOOKS_GENERAL - payroll</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Kadian</span>
+          <span class="seg-chip premium">Premium</span>
+          <span class="mgr-stats"><b>45</b> open &middot; 21.1% of segment
+            <div class="bar-mini"><div style="width:83%; background:var(--premium)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill"><div class="empty">Kadian's total is confirmed by arithmetic (segment total minus the other seven managers), but her row didn't load in this refresh's report preview — no sample cases to show.</div></div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Lacretia</span>
+          <span class="seg-chip premium">Premium</span>
+          <span class="mgr-stats"><b>24</b> open &middot; 11.3% of segment
+            <div class="bar-mini"><div style="width:44%; background:var(--premium)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15163919500</td><td>Sandra Polichino</td><td>Fidelity Diagnostics Laboratory</td><td>LFS (M) payroll sync</td></tr>
+                <tr><td class="mono">15164607455</td><td>Sandra Polichino</td><td>LSL, LLP</td><td>LFS (M) modern vs. classic report layout</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Charles</span>
+          <span class="seg-chip premium">Premium</span>
+          <span class="mgr-stats"><b>23</b> open &middot; 10.8% of segment
+            <div class="bar-mini"><div style="width:43%; background:var(--premium)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15164444807</td><td>Tolu Bamidele</td><td>Jackson Escape Games</td><td>QuickBooks Time and Kiosk</td></tr>
+                <tr><td class="mono">15164665996</td><td>Jay Holland</td><td>ClinicNote, Inc.</td><td>Enhanced Customer Care</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Steph</span>
+          <span class="seg-chip premium">Premium</span>
+          <span class="mgr-stats"><b>21</b> open &middot; 9.9% of segment
+            <div class="bar-mini"><div style="width:39%; background:var(--premium)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15164545612</td><td>Dawn Burns</td><td>Dialed In Bookkeeping</td><td>Bank reconciliation — match process</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Gin</span>
+          <span class="seg-chip premium">Premium</span>
+          <span class="mgr-stats"><b>18</b> open &middot; 8.5% of segment
+            <div class="bar-mini"><div style="width:33%; background:var(--premium)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15164378578</td><td>Melissa Plotts</td><td>nancy.e.dent@gmail.com's Company</td><td>Duplicate bank transactions</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Chris</span>
+          <span class="seg-chip premium">Premium</span>
+          <span class="mgr-stats"><b>16</b> open &middot; 7.5% of segment
+            <div class="bar-mini"><div style="width:30%; background:var(--premium)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15163774268</td><td>Jeremy Ardourel</td><td>NorCal Perlite Inc.</td><td>Removing reconciled transactions in QBO</td></tr>
+                <tr><td class="mono">15164673772</td><td>Corissa Alvarado</td><td>BMSS, LLC</td><td>General accounting — bookkeeping assistance</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Shella</span>
+          <span class="seg-chip premium">Premium</span>
+          <span class="mgr-stats"><b>12</b> open &middot; 5.6% of segment
+            <div class="bar-mini"><div style="width:22%; background:var(--premium)"></div></div>
+          </span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Agent</th><th>Account</th><th>Subject</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">15164023068</td><td>Marisol Villalvazo</td><td>Tempesta Market LLC</td><td>Backup/restore — copying company with backup set</td></tr>
+                <tr><td class="mono">15164253862</td><td>Marisol Villalvazo</td><td>Beaird Harris – Client Access</td><td>Invites not delivered</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  </div>
+
+  <!-- ===================== TRENDS ===================== -->
+  <div class="tabpanel" data-tab="trends" hidden>
+
+  <section>
+    <div class="section-head"><h2>Trend over time</h2><span class="sub">Illustrative lead-in, then two real pulls</span></div>
+    <div class="trend-grid">
+
+      <div class="card">
+        <h3>Open-backlog escalation rate</h3>
+        <p class="note">Premium ticked up, HVP eased slightly — the gap narrowed a touch between the two real pulls.</p>
+        <svg viewBox="0 0 400 165" role="img" aria-label="Line chart of escalation rate trend, Premium vs HVP">
+          <line x1="40" y1="20" x2="40" y2="140" stroke="var(--border)"/>
+          <line x1="40" y1="140" x2="380" y2="140" stroke="var(--border)"/>
+          <text x="34" y="24" font-size="9.5" text-anchor="end" class="mono">30%</text>
+          <text x="34" y="112" font-size="9.5" text-anchor="end" class="mono">0%</text>
+          <polyline points="40,104 125,108 210,104 295,104.8" fill="none" stroke="var(--premium)" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
+          <polyline points="295,104.8 380,99.2" fill="none" stroke="var(--premium)" stroke-width="2.25"/>
+          <circle cx="40" cy="104" r="3" fill="var(--surface)" stroke="var(--premium)" stroke-width="1.6"/>
+          <circle cx="125" cy="108" r="3" fill="var(--surface)" stroke="var(--premium)" stroke-width="1.6"/>
+          <circle cx="210" cy="104" r="3" fill="var(--surface)" stroke="var(--premium)" stroke-width="1.6"/>
+          <circle cx="295" cy="104.8" r="3.5" fill="var(--premium)"/>
+          <circle cx="380" cy="99.2" r="4.5" fill="var(--premium)"/>
+          <polyline points="40,52 125,44 210,40 295,35.2" fill="none" stroke="var(--hvp)" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
+          <polyline points="295,35.2 380,37.2" fill="none" stroke="var(--hvp)" stroke-width="2.25"/>
+          <circle cx="40" cy="52" r="3" fill="var(--surface)" stroke="var(--hvp)" stroke-width="1.6"/>
+          <circle cx="125" cy="44" r="3" fill="var(--surface)" stroke="var(--hvp)" stroke-width="1.6"/>
+          <circle cx="210" cy="40" r="3" fill="var(--surface)" stroke="var(--hvp)" stroke-width="1.6"/>
+          <circle cx="295" cy="35.2" r="3.5" fill="var(--hvp)"/>
+          <circle cx="380" cy="37.2" r="4.5" fill="var(--hvp)"/>
+          <text x="380" y="30" font-size="10.5" text-anchor="end" class="mono" fill="var(--hvp)">25.7%</text>
+          <text x="380" y="92" font-size="10.5" text-anchor="end" class="mono" fill="var(--premium)">10.2%</text>
+          <text x="295" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 1</text>
+          <text x="380" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 3</text>
+        </svg>
+      </div>
+
+      <div class="card">
+        <h3>Top manager's share of open backlog</h3>
+        <p class="note">HVP concentration kept climbing; Premium stayed range-bound around a quarter of volume.</p>
+        <svg viewBox="0 0 400 165" role="img" aria-label="Line chart of manager concentration trend, Premium vs HVP">
+          <line x1="40" y1="20" x2="40" y2="140" stroke="var(--border)"/>
+          <line x1="40" y1="140" x2="380" y2="140" stroke="var(--border)"/>
+          <text x="34" y="24" font-size="9.5" text-anchor="end" class="mono">60%</text>
+          <text x="34" y="112" font-size="9.5" text-anchor="end" class="mono">0%</text>
+          <polyline points="40,92 125,88 210,90 295,88.6" fill="none" stroke="var(--premium)" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
+          <polyline points="295,88.6 380,89.2" fill="none" stroke="var(--premium)" stroke-width="2.25"/>
+          <circle cx="40" cy="92" r="3" fill="var(--surface)" stroke="var(--premium)" stroke-width="1.6"/>
+          <circle cx="125" cy="88" r="3" fill="var(--surface)" stroke="var(--premium)" stroke-width="1.6"/>
+          <circle cx="210" cy="90" r="3" fill="var(--surface)" stroke="var(--premium)" stroke-width="1.6"/>
+          <circle cx="295" cy="88.6" r="3.5" fill="var(--premium)"/>
+          <circle cx="380" cy="89.2" r="4.5" fill="var(--premium)"/>
+          <polyline points="40,52 125,46 210,40 295,35.8" fill="none" stroke="var(--hvp)" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
+          <polyline points="295,35.8 380,34.6" fill="none" stroke="var(--hvp)" stroke-width="2.25"/>
+          <circle cx="40" cy="52" r="3" fill="var(--surface)" stroke="var(--hvp)" stroke-width="1.6"/>
+          <circle cx="125" cy="46" r="3" fill="var(--surface)" stroke="var(--hvp)" stroke-width="1.6"/>
+          <circle cx="210" cy="40" r="3" fill="var(--surface)" stroke="var(--hvp)" stroke-width="1.6"/>
+          <circle cx="295" cy="35.8" r="3.5" fill="var(--hvp)"/>
+          <circle cx="380" cy="34.6" r="4.5" fill="var(--hvp)"/>
+          <text x="380" y="28" font-size="10.5" text-anchor="end" class="mono" fill="var(--hvp)">52.7%</text>
+          <text x="380" y="101" font-size="10.5" text-anchor="end" class="mono" fill="var(--premium)">25.4%</text>
+          <text x="295" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 1</text>
+          <text x="380" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 3</text>
+        </svg>
+      </div>
+
+    </div>
+    <div class="stack-legend">
+      <span class="item"><span class="line dashed" style="color:var(--ink-faint)"></span>Illustrative sample weeks (no data yet)</span>
+      <span class="item"><span class="line" style="color:var(--ink-faint)"></span>Real pulls — Sep 1 → Sep 3, 2026</span>
+    </div>
+    <div class="callout notice">Only two real data points exist so far, three days apart — read these as early direction, not an established trend. Every future refresh adds one more real point and pushes the illustrative lead-in further off the chart.</div>
+  </section>
+
+  </div>
+
+  <!-- ===================== AUGUST SNAPSHOT ===================== -->
+  <div class="tabpanel" data-tab="august" hidden>
+
+  <section>
+    <div class="section-head"><h2>Open cases — August snapshot</h2><span class="sub">Monthly baseline, locked at month-end</span></div>
+    <p style="font-size:13.5px; color:var(--ink-soft); line-height:1.6; max-width:70ch; margin:0 0 18px;">
+      This dashboard didn't exist before Sep&nbsp;1, 2026, so there's no true end-of-August lock to show — the earliest pull available is Sep&nbsp;1, three days into September. We're using that as the working baseline below. Starting with September, the plan is to lock one official snapshot on the last day of each month, so this tab becomes a real month-over-month comparison rather than a single reference point.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Metric</th><th class="num">Baseline (Sep 1)</th><th class="num">Latest (Sep 3)</th><th class="num">Δ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Premium open cases (total)</td><td class="num mono">226</td><td class="num mono">216</td><td class="num mono">−10</td></tr>
+          <tr><td>HVP open cases (total)</td><td class="num mono">668</td><td class="num mono">740</td><td class="num mono">+72</td></tr>
+          <tr><td>Premium escalation rate</td><td class="num mono">8.8%</td><td class="num mono">10.2%</td><td class="num mono">+1.4pt</td></tr>
+          <tr><td>HVP escalation rate</td><td class="num mono">26.2%</td><td class="num mono">25.7%</td><td class="num mono">−0.5pt</td></tr>
+          <tr><td>Premium top manager share</td><td class="num mono">25.7%</td><td class="num mono">25.4%</td><td class="num mono">−0.3pt</td></tr>
+          <tr><td>HVP top manager share</td><td class="num mono">52.1%</td><td class="num mono">52.7%</td><td class="num mono">+0.6pt</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout notice">Methodology note: the Sep&nbsp;1 totals were read off the cached dashboard charts; the Sep&nbsp;3 totals were pulled live from the underlying reports. Some of the total-case movement above (especially HVP's +72) likely reflects that methodology switch as much as three days of real change — the escalation-rate and concentration rows are on a consistent definition throughout and are safer to compare directly.</div>
+  </section>
+
+  </div>
+
+  <!-- ===================== STORYTELLING ===================== -->
+  <div class="tabpanel" data-tab="story" hidden>
+
+  <section>
+    <div class="section-head"><h2>Storytelling</h2><span class="sub">For the leadership update, not the working session</span></div>
+    <p class="byline">Drawn from the Sep 3, 2026 refresh &middot; AG Case Management</p>
+    <div class="story">
+
+      <p>Premium and HVP are supposed to be the same case-management operation running at two different scales. The data says otherwise. Premium closes its win-back cases at a 90% rate; on the same measure, HVP closes barely a quarter of its cases. That's not a rounding difference — it's a different operation wearing the same name.</p>
+
+      <p class="pull">HVP's open backlog escalates at 25.7%, versus 10.2% for Premium — even though HVP's research queue, once running at nearly four times what its size alone would predict, has now settled in line with volume.</p>
+
+      <p>That last part matters, because it means the gap isn't simply "HVP has more cases." Case mix and investigation load have started to normalize between the two pulls we've taken. What hasn't moved is escalation — HVP cases are still going sideways at more than double Premium's rate, and that's the number worth watching before the next business review.</p>
+
+      <h3>The manager behind the number</h3>
+      <p>Dig one level into HVP's backlog and the escalation story gets a face: David owns 52.7% of every open HVP case in the system. Not a large share. More than half. No manager on the Premium side — not even Tameko, Premium's most-loaded at 25.4% — comes within twenty points of that concentration. Either this is a genuine, unsustainable workload imbalance sitting on one person's desk, or it's an unassigned-case queue that happens to be tagged with David's manager ID. Both explanations are plausible. Neither has been confirmed yet.</p>
+
+      <h3>The people behind the aging list</h3>
+      <p>Zoom out from the segment-level numbers and two names sit at the top of the aging-case list: Brandi Evans-King and Jay Holland, each carrying two cases that have now gone more than 48 hours without an update. Small numbers, but the kind that compound — a case untouched for two days rarely gets faster to resolve on day three.</p>
+
+      <h3>What we're watching next</h3>
+      <p>Three threads carry into the next refresh: whether HVP's escalation rate keeps closing the gap with Premium now that its research queue has normalized, whether David's concentration is confirmed as real workload or reassigned away, and whether Brandi's and Jay's aging cases get resolved before a third name joins them. All three are tracked on the Action &amp; Progress tab.</p>
+
+    </div>
+  </section>
+
+  </div>
+
+  <!-- ===================== ACTION & PROGRESS ===================== -->
+  <div class="tabpanel" data-tab="action" hidden>
+
+  <section>
+    <div class="section-head"><h2>Action &amp; progress</h2><span class="sub">Seeded from this refresh's findings</span></div>
+
+    <div class="progress-summary">
+      <span class="plabel">0 of 4 resolved</span>
+      <div class="ptrack"><div class="pfill" style="width:0%"></div></div>
+      <span class="plabel mono" style="color:var(--ink-faint);">0%</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Action</th><th>Status</th><th>Owner</th><th class="num">Opened</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Confirm whether HVP's escalation/quality gap traces to process, staffing, or case mix</td>
+            <td><span class="pill not-started">Not started</span></td>
+            <td>Unassigned</td>
+            <td class="num mono">Sep 3</td>
+          </tr>
+          <tr>
+            <td>Determine whether David's 52.7% share of HVP's backlog is real workload or an unassigned-case bucket</td>
+            <td><span class="pill not-started">Not started</span></td>
+            <td>Unassigned</td>
+            <td class="num mono">Sep 1</td>
+          </tr>
+          <tr>
+            <td>Follow up on Brandi Evans-King's and Jay Holland's aging cases (2 each, past 48h)</td>
+            <td><span class="pill not-started">Not started</span></td>
+            <td>Unassigned</td>
+            <td class="num mono">Sep 3</td>
+          </tr>
+          <tr>
+            <td>Establish a monthly snapshot-lock process (see August Snapshot tab)</td>
+            <td><span class="pill in-progress">In progress</span></td>
+            <td>Sarah Beckers</td>
+            <td class="num mono">Sep 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">Nothing here is assigned yet beyond the snapshot process itself — this list exists so the next refresh can report progress against it instead of re-surfacing the same findings from scratch.</div>
+  </section>
+
+  </div>
+
+  <footer>
+    Source: Salesforce &middot; AG Case Management leadership dashboard, viewed as Sarah Beckers. Refreshed Sep&nbsp;3, 2026 (~8:30 AM) by opening the report behind each widget directly, rather than reading the cached dashboard charts — every count in the Overview and By Manager tabs is a complete, reconciled total pulled live from its report, cross-checked against the report's own grand total. Manager names follow the current roster mapping; sample cases under each manager are real records captured at refresh time, not the full case list. This page is a static read of that pull and does not refresh automatically; ask for another refresh to update it.
+  </footer>
+
+</div>
+
 <script>
-(function() {
-  const DAYS = 21;
-  const STORE_KEY = 'the-chain-habits-v1';
-
-  // Storage wrapper: uses localStorage where available, falls back to
-  // in-memory so this still works inside sandboxed previews.
-  let memoryStore = null;
-  function loadHabits() {
-    try {
-      const raw = localStorage.getItem(STORE_KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch (e) {
-      return memoryStore;
-    }
-  }
-  function saveHabits(habits) {
-    memoryStore = habits;
-    try {
-      localStorage.setItem(STORE_KEY, JSON.stringify(habits));
-    } catch (e) {
-      // sandboxed environment — memory fallback already set above
-    }
-  }
-
-  function todayKey(offset) {
-    const d = new Date();
-    d.setDate(d.getDate() - offset);
-    return d.toISOString().slice(0, 10);
-  }
-
-  let habits = loadHabits() || [
-    { id: cryptoId(), name: 'Example: Stretch for 5 minutes', done: {} }
-  ];
-
-  function cryptoId() {
-    return Math.random().toString(36).slice(2, 10);
-  }
-
-  function currentStreak(habit) {
-    let streak = 0;
-    for (let i = 0; i < DAYS; i++) {
-      if (habit.done[todayKey(i)]) streak++;
-      else break;
-    }
-    return streak;
-  }
-
-  function render() {
-    const list = document.getElementById('habitList');
-    const empty = document.getElementById('emptyState');
-    list.innerHTML = '';
-
-    if (habits.length === 0) {
-      empty.style.display = 'block';
-      return;
-    }
-    empty.style.display = 'none';
-
-    habits.forEach(habit => {
-      const streak = currentStreak(habit);
-      const card = document.createElement('div');
-      card.className = 'habit';
-
-      const top = document.createElement('div');
-      top.className = 'habit-top';
-      top.innerHTML = `
-        <span class="habit-name"></span>
-        <span class="habit-meta">
-          <span class="streak-count"><b>${streak}</b> day chain</span>
-          <button class="del-btn" title="Remove habit" aria-label="Remove ${habit.name}">✕</button>
-        </span>
-      `;
-      top.querySelector('.habit-name').textContent = habit.name;
-      top.querySelector('.del-btn').addEventListener('click', () => {
-        habits = habits.filter(h => h.id !== habit.id);
-        saveHabits(habits);
-        render();
-      });
-
-      const chain = document.createElement('div');
-      chain.className = 'chain';
-
-      for (let i = DAYS - 1; i >= 0; i--) {
-        const key = todayKey(i);
-        const isDone = !!habit.done[key];
-        const dayEl = document.createElement('div');
-        dayEl.className = 'day' + (isDone && habit.done[todayKey(i + 1)] ? ' chained' : '');
-
-        const link = document.createElement('div');
-        link.className = 'link';
-        dayEl.appendChild(link);
-
-        const dot = document.createElement('button');
-        dot.className = 'dot' + (isDone ? ' done' : '') + (i === 0 ? ' today' : '');
-        dot.setAttribute('aria-label', key + (isDone ? ' completed' : ' not completed'));
-        dot.addEventListener('click', () => {
-          habit.done[key] = !habit.done[key];
-          saveHabits(habits);
-          render();
-        });
-        dayEl.appendChild(dot);
-        chain.appendChild(dayEl);
-      }
-
-      card.appendChild(top);
-      card.appendChild(chain);
-      list.appendChild(card);
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabnav button'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.tabpanel'));
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('data-target');
+      tabs.forEach(function(b){ b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+      panels.forEach(function(p){ p.hidden = (p.getAttribute('data-tab') !== target); });
     });
-  }
-
-  document.getElementById('addBtn').addEventListener('click', addHabit);
-  document.getElementById('habitInput').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') addHabit();
   });
-
-  function addHabit() {
-    const input = document.getElementById('habitInput');
-    const name = input.value.trim();
-    if (!name) return;
-    habits.push({ id: cryptoId(), name, done: {} });
-    saveHabits(habits);
-    input.value = '';
-    render();
-  }
-
-  render();
 })();
 </script>
-</body>
-</html>
