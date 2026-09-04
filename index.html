@@ -322,6 +322,7 @@
     <div class="titleblock">
       <p class="eyebrow">AG Case Management &middot; Leadership Overview</p>
       <h1>Quick Insights — Case Signals</h1>
+      <p class="last-updated" style="display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:var(--ink-soft); background:var(--surface-2); border:1px solid var(--border); border-radius:20px; padding:4px 12px; margin:2px 0 10px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--good); flex-shrink:0;"></span>Last updated: Sep&nbsp;3, 2026 &middot; 6:33&nbsp;PM</p>
       <p>Refreshed Sep&nbsp;3, 2026 by pulling the underlying Salesforce reports behind each widget — not the cached dashboard charts — for complete, reconciled counts. Figures are a point-in-time pull and will drift from the live system.</p>
     </div>
     <div class="legend">
@@ -352,16 +353,18 @@
 
       <div class="metric-tile">
         <div class="m-label">Total open cases</div>
-        <div class="m-value mono">948</div>
-        <div class="m-caption">Every open case across both segments, this pull.</div>
+        <div class="m-value mono">946</div>
+        <div class="m-caption">Every open case across both segments. Premium from the reconciled export; HVP refreshed from a live dashboard check, 6:33&nbsp;PM Sep&nbsp;3.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
             <div class="seg-val mono">208</div>
+            <div style="font-size:10.5px; color:var(--ink-faint); margin-top:2px;">incl. 74 opened today (0d)</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
-            <div class="seg-val mono">740</div>
+            <div class="seg-val mono">738</div>
+            <div style="font-size:10.5px; color:var(--ink-faint); margin-top:2px;">0d count pending export</div>
           </div>
         </div>
       </div>
@@ -419,13 +422,13 @@
 
       <div class="metric-tile">
         <div class="m-label">Total open cases</div>
-        <div class="m-value mono">948</div>
+        <div class="m-value mono">946</div>
         <div class="m-caption">Every open case, split by M2.</div>
         <div class="m-split m-split-4">
-          <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--premium)"></span>Jake</div><div class="seg-val mono">137</div></div>
-          <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--violet)"></span>Sarah</div><div class="seg-val mono">71</div></div>
-          <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--hvp)"></span>ML</div><div class="seg-val mono">510</div></div>
-          <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--warning)"></span>Kirstie</div><div class="seg-val mono">230</div></div>
+          <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--premium)"></span>Jake</div><div class="seg-val mono">137</div><div style="font-size:9.5px; color:var(--ink-faint); margin-top:1px;">44 opened today</div></div>
+          <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--violet)"></span>Sarah</div><div class="seg-val mono">71</div><div style="font-size:9.5px; color:var(--ink-faint); margin-top:1px;">30 opened today</div></div>
+          <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--hvp)"></span>ML</div><div class="seg-val mono">508</div><div style="font-size:9.5px; color:var(--ink-faint); margin-top:1px;">0d pending export</div></div>
+          <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--warning)"></span>Kirstie</div><div class="seg-val mono">230</div><div style="font-size:9.5px; color:var(--ink-faint); margin-top:1px;">0d pending export</div></div>
         </div>
       </div>
 
@@ -515,7 +518,7 @@
     <div class="section-head"><h2>Where the volume actually sits</h2><span class="sub">FY27 open backlog, by status</span></div>
     <div class="card">
         <h3>Open-case mix, normalized to 100%</h3>
-        <p class="note">Premium: 208 open cases total &middot; HVP: 740 open cases total — about 3.6× the volume. Escalated share is still well above Premium's, though the research queue now tracks close to size.</p>
+        <p class="note">Premium: 208 open cases total &middot; HVP: 738 open cases total — about 3.5× the volume. Escalated share is still well above Premium's, though the research queue now tracks close to size.</p>
         <svg viewBox="0 0 640 150" role="img" aria-label="Stacked bar chart comparing Premium and HVP open case status mix">
           <!-- Premium row -->
           <text x="0" y="26" font-size="13" font-weight="600" fill="var(--premium)">Premium</text>
@@ -529,7 +532,7 @@
 
           <!-- HVP row -->
           <text x="0" y="96" font-size="13" font-weight="600" fill="var(--hvp)">HVP</text>
-          <text x="0" y="111" font-size="11" class="mono" fill="var(--ink-faint)">n = 740</text>
+          <text x="0" y="111" font-size="11" class="mono" fill="var(--ink-faint)">n = 738</text>
           <rect x="150" y="84" width="267.4" height="28" fill="var(--ink-faint)" opacity="0.55"/>
           <rect x="417.4" y="84" width="26.0" height="28" fill="var(--premium-soft)"/>
           <rect x="443.4" y="84" width="55.9" height="28" fill="var(--warning)"/>
@@ -1845,7 +1848,7 @@
         </thead>
         <tbody>
           <tr><td>Premium open cases (total)</td><td class="num mono">226</td><td class="num mono">208</td><td class="num mono">−18</td></tr>
-          <tr><td>HVP open cases (total)</td><td class="num mono">668</td><td class="num mono">740</td><td class="num mono">+72</td></tr>
+          <tr><td>HVP open cases (total)</td><td class="num mono">668</td><td class="num mono">738</td><td class="num mono">+70</td></tr>
           <tr><td>Premium escalation rate</td><td class="num mono">8.8%</td><td class="num mono">11.1%</td><td class="num mono">+2.3pt</td></tr>
           <tr><td>HVP escalation rate</td><td class="num mono">26.2%</td><td class="num mono">25.7%</td><td class="num mono">−0.5pt</td></tr>
           <tr><td>Premium top manager share</td><td class="num mono">25.7%</td><td class="num mono">25.0%</td><td class="num mono">−0.7pt</td></tr>
@@ -1853,7 +1856,7 @@
         </tbody>
       </table>
     </div>
-    <div class="callout notice">Methodology note: the Sep&nbsp;1 totals were read off the cached dashboard charts; the Sep&nbsp;3 Premium row is now the fully reconciled case-level export (208 cases, including same-day opens) rather than a dashboard read — safer to trust than the earlier live-pull number. HVP's Sep&nbsp;3 total (740) is still from the live dashboard pull, not yet re-verified against a full export. The escalation-rate and concentration rows use consistent definitions throughout and are safe to compare directly.</div>
+    <div class="callout notice">Methodology note: the Sep&nbsp;1 totals were read off the cached dashboard charts; the Sep&nbsp;3 Premium row is now the fully reconciled case-level export (208 cases, including same-day opens) rather than a dashboard read — safer to trust than the earlier live-pull number. HVP's Sep&nbsp;3 total (738) is a same-day live dashboard re-check (6:33&nbsp;PM), not yet a full export. The escalation-rate row is safe to compare directly; David's concentration share (52.7%) has not been re-pulled in this refresh and may have drifted slightly with HVP's total.</div>
   </section>
 
   </div>
@@ -1866,7 +1869,7 @@
     <p class="byline">Drawn from the Sep 3, 2026 refresh &middot; AG Case Management</p>
     <div class="story">
 
-      <p>Premium and HVP are supposed to be the same case-management operation running at two different scales. The data says otherwise. Premium closes its win-back cases at a 90% rate; on the same measure, HVP closes barely a quarter of its cases. That's not a rounding difference — it's a different operation wearing the same name.</p>
+      <p>Premium and HVP are supposed to be the same case-management operation running at two different scales. The data says otherwise. Premium closes its win-back cases at a 94% rate (30 of 32); on the same measure, HVP closes barely a quarter of its cases (1 of 4). That's not a rounding difference — it's a different operation wearing the same name.</p>
 
       <p class="pull">HVP's open backlog escalates at 25.7%, versus 11.1% for Premium — even though HVP's research queue, once running at nearly four times what its size alone would predict, has now settled in line with volume.</p>
 
