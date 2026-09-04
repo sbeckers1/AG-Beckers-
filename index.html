@@ -336,6 +336,7 @@
     <button type="button" role="tab" aria-selected="false" data-target="trends">Trends</button>
     <button type="button" role="tab" aria-selected="false" data-target="august">Open Cases — August Snapshot</button>
     <button type="button" role="tab" aria-selected="false" data-target="story">Storytelling</button>
+    <button type="button" role="tab" aria-selected="false" data-target="rescue">Case Rescue</button>
   </nav>
 
   <!-- ===================== OVERVIEW ===================== -->
@@ -1879,6 +1880,455 @@
 
       <h3>What we're watching next</h3>
       <p>Three threads carry into the next refresh: whether HVP's escalation rate keeps closing the gap with Premium now that its research queue has normalized, whether David's concentration is confirmed as real workload or reassigned away, and whether Brandi's and Jay's aging cases get resolved before a third name joins them. All three are worth carrying into the next check-in.</p>
+
+    </div>
+  </section>
+
+  </div>
+
+  <!-- ===================== CASE RESCUE ===================== -->
+  <div class="tabpanel" data-tab="rescue" hidden>
+
+  <section>
+    <div class="section-head"><h2>Case rescue &mdash; Pilot 2</h2><span class="sub">Proactive outreach on aging Premium cases &middot; Sep&nbsp;2&ndash;3, 2026</span></div>
+    <p style="font-size:13px; color:var(--ink-soft); line-height:1.6; max-width:78ch; margin:0 0 18px;">
+      Separate from the SLA tracking above, this pilot has a specialist (Dawn Burns) pull a daily list of aging Premium cases and review each one for a reason it has stalled. <b>Only 7 of the 23 cases reviewed actually required intervention</b> &mdash; a direct re-engagement of the customer, independent of the original case owner; the other 16 were reviewed and judged not to need one. Source: <a href="https://docs.google.com/spreadsheets/d/1pKWnP1DIxgg-3AsedB1FJaajUM5C1c2fKbu0CBf38Eo" target="_blank" rel="noopener" style="color:var(--premium);">Pilot 2 &ndash; Rescued cases log</a> (Google Sheets).
+    </p>
+    <div class="metric-grid">
+
+      <div class="metric-tile">
+        <div class="m-label">Cases reviewed for rescue</div>
+        <div class="m-value mono">23</div>
+        <div class="m-caption">Aging Premium cases pulled for proactive outreach across two review days.</div>
+        <div class="m-split">
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Sep&nbsp;2</div>
+            <div class="seg-val mono">17</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--violet)"></span>Sep&nbsp;3</div>
+            <div class="seg-val mono">6</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">Required intervention</div>
+        <div class="m-value mono" style="color:var(--violet)">7</div>
+        <div class="m-caption">Only 7 of the 23 reviewed cases (30%) actually needed direct customer re-engagement. The other 16 were reviewed and did not.</div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">Resolved</div>
+        <div class="m-value mono" style="color:var(--good)">4</div>
+        <div class="m-caption">Of the 7 cases that required intervention.</div>
+        <div class="m-split">
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--warning)"></span>Pending confirm</div>
+            <div class="seg-val mono">2</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--ink-faint)"></span>Not yet</div>
+            <div class="seg-val mono">1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">Average age at review</div>
+        <div class="m-value mono">10.2 <span style="font-size:16px; font-weight:600;">days</span></div>
+        <div class="m-caption">Across all 23 reviewed cases.</div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">Oldest case reviewed</div>
+        <div class="m-value mono">30 <span style="font-size:16px; font-weight:600;">days</span></div>
+        <div class="m-caption">Case 15163774268 &mdash; Jeremy Ardourel (Chris's team), NorCal Perlite Inc..</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Why cases stalled</h2><span class="sub">Reason bucket across all 23 reviewed cases</span></div>
+    <div class="lb-list" style="display:flex; flex-direction:column; gap:8px; margin-bottom:24px;">
+
+      <div class="lb-row">
+        <div style="display:flex; align-items:center; gap:10px; width:100%;">
+          <div style="min-width:230px; font-size:13px; font-weight:600;">Genuine Complexity/Research Delay</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:56.5%; background:var(--violet)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">13 &middot; 57%</div>
+        </div>
+      </div>
+      <div class="lb-row">
+        <div style="display:flex; align-items:center; gap:10px; width:100%;">
+          <div style="min-width:230px; font-size:13px; font-weight:600;">Missed Promise</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:26.1%; background:var(--warning)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">6 &middot; 26%</div>
+        </div>
+      </div>
+      <div class="lb-row">
+        <div style="display:flex; align-items:center; gap:10px; width:100%;">
+          <div style="min-width:230px; font-size:13px; font-weight:600;">Documenting Commitment Missed</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:17.4%; background:var(--critical)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">4 &middot; 17%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:6px;"><h2>Reviewed by manager</h2><span class="sub">Whose cases were pulled into the rescue review — most needed no intervention</span></div>
+    <div class="table-wrap" style="max-width:460px;">
+      <table>
+        <thead><tr><th>Manager</th><th class="num">Reviewed</th><th class="num">Required intervention</th></tr></thead>
+        <tbody>
+<tr><td>Kadian</td><td class="num mono">7</td><td class="num mono">4</td></tr><tr><td>Tameko</td><td class="num mono">4</td><td class="num mono">1</td></tr><tr><td>Charles</td><td class="num mono">4</td><td class="num mono">1</td></tr><tr><td>Lacretia</td><td class="num mono">3</td><td class="num mono">0</td></tr><tr><td>Chris</td><td class="num mono">3</td><td class="num mono">1</td></tr><tr><td>Shella</td><td class="num mono">2</td><td class="num mono">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Cases requiring intervention</h2><span class="sub">The 7 of 23 that needed direct customer re-engagement</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Case #</th><th>Account</th><th>Owner</th><th>Manager</th><th>Reason bucket</th><th class="num">Age at review</th><th>Resolution status</th><th>Notes</th></tr></thead>
+        <tbody>
+<tr>
+        <td class="mono">15165068340</td>
+        <td>Kindred Financial Services</td>
+        <td>April Warren</td>
+        <td>Kadian</td>
+        <td>Missed Promise</td>
+        <td class="num mono">5d</td>
+        <td><span class="pill done">Resolved</span></td>
+        <td style="max-width:320px;">Customer put in contact with Risk on a follow-up call</td>
+      </tr><tr>
+        <td class="mono">15165088582</td>
+        <td>Breitebookkeeping (Pat Willis)</td>
+        <td>Brandi Evans-King</td>
+        <td>Kadian</td>
+        <td>Missed Promise</td>
+        <td class="num mono">5d</td>
+        <td><span class="pill in-progress">Pending confirm</span></td>
+        <td style="max-width:320px;">Spoke with customer; follow-up call scheduled to confirm</td>
+      </tr><tr>
+        <td class="mono">15164936341</td>
+        <td>Battle Born Professional Services</td>
+        <td>Charles Cannon</td>
+        <td>Kadian</td>
+        <td>Missed Promise</td>
+        <td class="num mono">7d</td>
+        <td><span class="pill done">Resolved</span></td>
+        <td style="max-width:320px;">Customer resolved on a follow-up phone call</td>
+      </tr><tr>
+        <td class="mono">15164673772</td>
+        <td>BMSS, LLC</td>
+        <td>Corissa Alvarado</td>
+        <td>Chris</td>
+        <td>Missed Promise</td>
+        <td class="num mono">13d</td>
+        <td><span class="pill not-started">Not yet</span></td>
+        <td style="max-width:320px;">Recommend Corissa (original owner) handle follow-up directly</td>
+      </tr><tr>
+        <td class="mono">15165148141</td>
+        <td>Smokey Mountain Motors, Inc.</td>
+        <td>Cynthia J. Thompson</td>
+        <td>Charles</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">2d</td>
+        <td><span class="pill done">Resolved</span></td>
+        <td style="max-width:320px;">Customer confirmed product working as expected</td>
+      </tr><tr>
+        <td class="mono">15164703643</td>
+        <td>No company name (Square integration)</td>
+        <td>Shauna Harris</td>
+        <td>Tameko</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">12d</td>
+        <td><span class="pill done">Resolved</span></td>
+        <td style="max-width:320px;">Integration confirmed working; case closed</td>
+      </tr><tr>
+        <td class="mono">15165199361</td>
+        <td>Public Employees for Environmental Responsibility</td>
+        <td>Barbara Mollow</td>
+        <td>Kadian</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">2d</td>
+        <td><span class="pill in-progress">Pending confirm</span></td>
+        <td style="max-width:320px;">Correction template submitted; tax-ops case created</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Daily review worklists</h2><span class="sub">Every case pulled for review, by day — only the flagged rows required intervention</span></div>
+    <div class="mgr-list">
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Sep&nbsp;2</span>
+          <span class="mgr-stats"><b>17</b> reviewed</span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none; max-height:420px; overflow-y:auto;">
+            <table>
+              <thead><tr><th>Case #</th><th>Account</th><th>Owner</th><th>Manager</th><th>Reason bucket</th><th>Status</th><th>Sub-Status</th><th class="num">Age</th><th>Intervention?</th></tr></thead>
+              <tbody>
+<tr>
+          <td class="mono">15163774268</td>
+          <td>NorCal Perlite Inc.</td>
+          <td>Jeremy Ardourel</td>
+          <td>Chris</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Pending</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">30d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164240436</td>
+          <td>Rocky Mountain Stagecoach, Inc.</td>
+          <td>Cherith Goodemoot</td>
+          <td>Lacretia</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Researching</td>
+          <td class="num mono">21d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164253862</td>
+          <td>Beaird Harris - Client Access</td>
+          <td>Marisol Villalvazo</td>
+          <td>Shella</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">21d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164381355</td>
+          <td>Queen Small Business Accounting</td>
+          <td>Christy Moore</td>
+          <td>Tameko</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Re-Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">19d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164515308</td>
+          <td>Carle H Martin CLU</td>
+          <td>Cherith Goodemoot</td>
+          <td>Lacretia</td>
+          <td>Missed Promise</td>
+          <td>Escalated</td>
+          <td>Researching</td>
+          <td class="num mono">15d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164575439</td>
+          <td>Workman's Tax Service LLC</td>
+          <td>Pamela Gardner</td>
+          <td>Kadian</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">14d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164607455</td>
+          <td>LSL, LLP</td>
+          <td>Sandra Polichino</td>
+          <td>Lacretia</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Escalated</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">14d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164673772</td>
+          <td>BMSS, LLC</td>
+          <td>Corissa Alvarado</td>
+          <td>Chris</td>
+          <td>Missed Promise</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">13d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15164703643</td>
+          <td>No company name (Square integration)</td>
+          <td>Shauna Harris</td>
+          <td>Tameko</td>
+          <td>Documenting Commitment Missed</td>
+          <td>Researching</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">12d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15164806550</td>
+          <td>Albren Yacht Services</td>
+          <td>Connie Cruz</td>
+          <td>Chris</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">9d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164936341</td>
+          <td>Battle Born Professional Services</td>
+          <td>Charles Cannon</td>
+          <td>Kadian</td>
+          <td>Missed Promise</td>
+          <td>Closed</td>
+          <td>Resolved</td>
+          <td class="num mono">7d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15165008045</td>
+          <td>Maruchas, LLC.</td>
+          <td>Katya Rojas</td>
+          <td>Charles</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Pending</td>
+          <td>Researching</td>
+          <td class="num mono">6d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165068340</td>
+          <td>Kindred Financial Services</td>
+          <td>April Warren</td>
+          <td>Kadian</td>
+          <td>Missed Promise</td>
+          <td>Closed</td>
+          <td>Resolved</td>
+          <td class="num mono">5d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15165086936</td>
+          <td>TOP TIER ACCOUNTING LLC</td>
+          <td>Brandi Evans-King</td>
+          <td>Kadian</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Solution Pending</td>
+          <td class="num mono">5d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165088582</td>
+          <td>Breitebookkeeping (Pat Willis)</td>
+          <td>Brandi Evans-King</td>
+          <td>Kadian</td>
+          <td>Missed Promise</td>
+          <td>Open</td>
+          <td>Researching</td>
+          <td class="num mono">5d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15165170573</td>
+          <td>GLENWOLFE ENTERPRISES LLC</td>
+          <td>Ashley Sales</td>
+          <td>Shella</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">2d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165148141</td>
+          <td>Smokey Mountain Motors, Inc.</td>
+          <td>Cynthia J. Thompson</td>
+          <td>Charles</td>
+          <td>Documenting Commitment Missed</td>
+          <td>Closed</td>
+          <td>Resolved</td>
+          <td class="num mono">2d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Sep&nbsp;3</span>
+          <span class="mgr-stats"><b>6</b> reviewed</span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Account</th><th>Owner</th><th>Manager</th><th>Reason bucket</th><th>Status</th><th>Sub-Status</th><th class="num">Age</th><th>Intervention?</th></tr></thead>
+              <tbody>
+<tr>
+          <td class="mono">15164665996</td>
+          <td>ClinicNote, Inc.</td>
+          <td>Jay Holland</td>
+          <td>Charles</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">14d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165032462</td>
+          <td>Jenni Bookkeeping Services</td>
+          <td>Brandi Evans-King</td>
+          <td>Kadian</td>
+          <td>Missed Promise</td>
+          <td>Open</td>
+          <td>Solution Pending</td>
+          <td class="num mono">7d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165082496</td>
+          <td>Odyssey Home Inspections</td>
+          <td>Jay Holland</td>
+          <td>Charles</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">6d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165175625</td>
+          <td>Lisa Richmond CPA LLC</td>
+          <td>Shelly Phillips</td>
+          <td>Tameko</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">3d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165199361</td>
+          <td>Public Employees for Environmental Responsibility</td>
+          <td>Barbara Mollow</td>
+          <td>Kadian</td>
+          <td>Documenting Commitment Missed</td>
+          <td>Open</td>
+          <td>Tax OPs Correction Queue</td>
+          <td class="num mono">2d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15165202924</td>
+          <td>Cheryl Ciecko, Inc.</td>
+          <td>Elizabeth Howard</td>
+          <td>Tameko</td>
+          <td>Documenting Commitment Missed</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">2d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
 
     </div>
   </section>
