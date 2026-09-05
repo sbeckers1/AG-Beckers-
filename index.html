@@ -333,12 +333,12 @@
 
   <nav class="tabnav" role="tablist" aria-label="Dashboard sections">
     <button type="button" role="tab" aria-selected="true" data-target="overview">Overview</button>
-    <button type="button" role="tab" aria-selected="false" data-target="action">Action Queue</button>
+    <button type="button" role="tab" aria-selected="false" data-target="action">OOSLA Action Queue</button>
     <button type="button" role="tab" aria-selected="false" data-target="manager">By Manager</button>
     <button type="button" role="tab" aria-selected="false" data-target="trends">Trends</button>
     <button type="button" role="tab" aria-selected="false" data-target="august">Open Cases — August Snapshot</button>
     <button type="button" role="tab" aria-selected="false" data-target="story">Storytelling</button>
-    <button type="button" role="tab" aria-selected="false" data-target="rescue">Case Rescue</button>
+    <button type="button" role="tab" aria-selected="false" data-target="rescue">Pilot 2</button>
   </nav>
 
   <!-- ===================== OVERVIEW ===================== -->
@@ -371,6 +371,22 @@
       </div>
 
       <div class="metric-tile">
+        <div class="m-label">Total case count</div>
+        <div class="m-value mono">16,401</div>
+        <div class="m-caption">All-time case volume (FY27, Aug&nbsp;1&ndash;Jul&nbsp;31) &mdash; not just what's currently open. Sourced from Salesforce report totals.</div>
+        <div class="m-split">
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
+            <div class="seg-val mono">12,522</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
+            <div class="seg-val mono">3,879</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
         <div class="m-label">Approaching SLA</div>
         <div class="m-value mono" style="color:var(--warning)">136</div>
         <div class="m-caption">Open 2&ndash;3 days — one day from breaching the 3-day SLA.</div>
@@ -398,6 +414,22 @@
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
             <div class="seg-val mono">524</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">% OOSLA</div>
+        <div class="m-value mono" style="color:var(--critical)">65.2%</div>
+        <div class="m-caption">Share of open cases already past the 3-day SLA window (Out of SLA &divide; Total open cases).</div>
+        <div class="m-split">
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
+            <div class="seg-val mono">28.8%</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
+            <div class="seg-val mono">73.9%</div>
           </div>
         </div>
       </div>
@@ -854,6 +886,10 @@
         <div class="m-caption">A duplicate or a system/process issue (cloned case, soft-close lock) rather than a stalled customer conversation.</div>
       </div>
     </div>
+
+    <div class="callout" style="margin-top:14px;">
+      <b>The situation:</b> all 49 Premium cases past the 3-day SLA need a next step — none of this is "wait and see." <b>Follow-up missed (3)</b> — a promised date already lapsed with nothing logged since — should be <b>reassigned</b> immediately; the customer was already told something would happen and it didn't. <b>Follow-up missing (29)</b> — no commitment documented at all — needs fixed per the manager, since the case owner hasn't set an expectation with the customer and the manager is best placed to unblock or redirect it. The <b>15 "on track"</b> cases aren't a pass either: each still needs evaluated for a path forward, since a handful are only "on track" because they're blocked on an internal team (RiskOps, T3, engineering) rather than genuinely progressing with the customer. Net: <b>32 of 49 cases (65%)</b> need a manager or reassignment decision this week, not just a status check.
+    </div>
   </section>
 
   <section>
@@ -884,13 +920,6 @@
 <tr><td>Tameko</td><td class="num mono">11</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">1</span></td><td class="num mono">8</td><td class="num mono">3</td></tr><tr><td>Kadian</td><td class="num mono">8</td><td class="num mono">0</td><td class="num mono">7</td><td class="num mono">1</td></tr><tr><td>Lacretia</td><td class="num mono">8</td><td class="num mono">0</td><td class="num mono">8</td><td class="num mono">0</td></tr><tr><td>Chris</td><td class="num mono">7</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">1</span></td><td class="num mono">6</td><td class="num mono">1</td></tr><tr><td>Shella</td><td class="num mono">7</td><td class="num mono">0</td><td class="num mono">5</td><td class="num mono">2</td></tr><tr><td>Steph</td><td class="num mono">4</td><td class="num mono">0</td><td class="num mono">3</td><td class="num mono">1</td></tr><tr><td>Charles</td><td class="num mono">3</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">1</span></td><td class="num mono">3</td><td class="num mono">0</td></tr><tr><td>Gin</td><td class="num mono">1</td><td class="num mono">0</td><td class="num mono">1</td><td class="num mono">0</td></tr>
         </tbody>
       </table>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>Reconciled against the SOP's official 48-Hour report</h2><span class="sub">"AG Cases not updated in 48 hours" (Internal Premium) &middot; the SOP's actual named daily pull</span></div>
-    <div class="callout notice">
-      The SOP's 48-Hour report pulled <b>8 cases</b>; <b>7 of the 8 also appear in this 49-case Out-of-SLA list</b> (same population, different cut). The one exception &mdash; <b>GOULD KOBRICK &amp; SCHLAPP PC (Lacerte)</b>, age 2 days &mdash; falls under this dashboard's 3-day/72-hour threshold, but the 48-hour-no-update criterion already flags it as going stale. Worth adding to the daily watch even though it won't surface in the Out-of-SLA metric until day 4. All 8 cases from the 48-Hour report also appear somewhere in the full 170-row Premium export &mdash; nothing from that report is orphaned or missing from Salesforce.
     </div>
   </section>
 
