@@ -338,6 +338,7 @@
     <button type="button" role="tab" aria-selected="false" data-target="trends">Trends</button>
     <button type="button" role="tab" aria-selected="false" data-target="august">Open Cases — August Snapshot</button>
     <button type="button" role="tab" aria-selected="false" data-target="story">Storytelling</button>
+    <button type="button" role="tab" aria-selected="false" data-target="intervene">Pilot 1</button>
     <button type="button" role="tab" aria-selected="false" data-target="rescue">Pilot 2</button>
   </nav>
 
@@ -2183,21 +2184,189 @@
     <p class="byline">Drawn from the Sep 3, 2026 refresh &middot; AG Case Management</p>
     <div class="story">
 
-      <p>Premium and HVP are supposed to be the same case-management operation running at two different scales. The data says otherwise. Premium closes its win-back cases at a 94% rate (30 of 32); on the same measure, HVP closes barely a quarter of its cases (1 of 4). That's not a rounding difference — it's a different operation wearing the same name.</p>
+      <h3>Overall case management</h3>
+      <div class="callout" style="border:1.5px dashed var(--border); font-style:italic; color:var(--ink-faint);">
+        <b style="font-style:normal;">What we learned:</b> —<br>
+        <b style="font-style:normal;">What we're watching next:</b> —
+      </div>
 
-      <p class="pull">HVP's open backlog escalates at 25.7%, versus 11.1% for Premium — even though HVP's research queue, once running at nearly four times what its size alone would predict, has now settled in line with volume.</p>
+      <h3>Pilot 1 learning <span style="font-size:11px; font-weight:600; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.02em;">(placeholder)</span></h3>
+      <div class="callout" style="border:1.5px dashed var(--border); font-style:italic; color:var(--ink-faint);">
+        <b style="font-style:normal;">What we learned:</b> —<br>
+        <b style="font-style:normal;">What we're watching next:</b> —
+      </div>
 
-      <p>That last part matters, because it means the gap isn't simply "HVP has more cases." Case mix and investigation load have started to normalize between the two pulls we've taken. What hasn't moved is escalation — HVP cases are still going sideways at more than double Premium's rate, and that's the number worth watching before the next business review.</p>
+      <h3>Pilot 2 learning</h3>
+      <div class="callout" style="border:1.5px dashed var(--border); font-style:italic; color:var(--ink-faint);">
+        <b style="font-style:normal;">What we learned:</b> —<br>
+        <b style="font-style:normal;">What we're watching next:</b> —
+      </div>
 
-      <h3>The manager behind the number</h3>
-      <p>Dig one level into HVP's backlog and the escalation story gets a face: David owns 52.7% of every open HVP case in the system. Not a large share. More than half. No manager on the Premium side — not even Tameko, Premium's most-loaded at 25.0% — comes within twenty points of that concentration. Either this is a genuine, unsustainable workload imbalance sitting on one person's desk, or it's an unassigned-case queue that happens to be tagged with David's manager ID. Both explanations are plausible. Neither has been confirmed yet.</p>
+    </div>
+  </section>
 
-      <h3>The people behind the aging list</h3>
-      <p>Zoom out from the segment-level numbers and two names sit at the top of the aging-case list: Brandi Evans-King and Jay Holland, each carrying two cases that have now gone more than 48 hours without an update. Small numbers, but the kind that compound — a case untouched for two days rarely gets faster to resolve on day three.</p>
+  </div>
 
-      <h3>What we're watching next</h3>
-      <p>Three threads carry into the next refresh: whether HVP's escalation rate keeps closing the gap with Premium now that its research queue has normalized, whether David's concentration is confirmed as real workload or reassigned away, and whether Brandi's and Jay's aging cases get resolved before a third name joins them. All three are worth carrying into the next check-in.</p>
+  <!-- ===================== ESCALATED CUSTOMER INTERVENTION (PILOT 1) ===================== -->
+  <div class="tabpanel" data-tab="intervene" hidden>
 
+  <section>
+    <div class="section-head"><h2>Escalated customer intervention &mdash; Pilot 1</h2><span class="sub">AG Pod support-request channel &middot; Sep&nbsp;2&ndash;8, 2026</span></div>
+    <p style="font-size:13px; color:var(--ink-soft); line-height:1.6; max-width:80ch; margin:0 0 18px;">
+      Every T1-to-SME support request in the AG pod channel now opens with <b>&ldquo;Is this an Escalated Customer?&rdquo;</b> A no answer means the T1 just needed a quick assist; a yes carries an <b>Intent</b> or <b>Effort</b> flag and gets tracked below. Source: <a href="https://intuit.enterprise.slack.com/archives/C09TFFUL78C" target="_blank" rel="noopener" style="color:var(--premium);">#gbsg&#8209;en&#8209;ag&#8209;internal&#8209;pod1</a> and the <a href="https://docs.google.com/spreadsheets/d/1vGdL7h7nzir7Qw8ufiKKKCQ4KJ9b7FarQLdkd7dVIfE" target="_blank" rel="noopener" style="color:var(--premium);">AG Service Recovery Call Log</a> (Google Sheets).
+    </p>
+    <div class="metric-grid">
+
+      <div class="metric-tile">
+        <div class="m-label">Total intercepted cases</div>
+        <div class="m-value mono">5</div>
+        <div class="m-caption">Cases logged in the AG Service Recovery Call Log with a confirmed follow-up record.</div>
+        <div class="m-split">
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--good)"></span>Fully resolved</div>
+            <div class="seg-val mono">4</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--critical)"></span>Not yet resolved</div>
+            <div class="seg-val mono">1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">Threads checked</div>
+        <div class="m-value mono">443</div>
+        <div class="m-caption">Every &ldquo;New issue reported by&rdquo; form posted since the escalation check went live (Sep&nbsp;2, 12:47&nbsp;PM ET) through Sep&nbsp;8.</div>
+        <div class="m-split">
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--ink-faint)"></span>No</div>
+            <div class="seg-val mono">371</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--critical)"></span>Yes</div>
+            <div class="seg-val mono">72</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">Flagged as escalated customer</div>
+        <div class="m-value mono" style="color:var(--critical)">16.3%</div>
+        <div class="m-caption">72 of 443 threads (all answers, including 3 early &ldquo;Yes&rdquo; clicks logged before Intent/Effort sub-tagging began).</div>
+        <div class="m-split">
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--warning)"></span>High Effort</div>
+            <div class="seg-val mono">37</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--violet)"></span>Escalation Intent</div>
+            <div class="seg-val mono">32</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">Resolved in the pod thread</div>
+        <div class="m-value mono" style="color:var(--good)">58</div>
+        <div class="m-caption">80.6% of the 72 escalated threads ended &ldquo;Yes, I&rsquo;m Good&rdquo; &mdash; the SME answered the T1&rsquo;s question and the case didn&rsquo;t need to leave the pod.</div>
+      </div>
+
+      <div class="metric-tile">
+        <div class="m-label">Escalated to T2</div>
+        <div class="m-value mono" style="color:var(--critical)">11</div>
+        <div class="m-caption">15.3% clicked &ldquo;No &mdash; Escalate to T2,&rdquo; triggering the formal T2 process. The remaining 3 threads were a duplicate post, an unresolved thread (agent had to reschedule the customer call), and one &ldquo;No &mdash; Need more help.&rdquo;</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>What is working / What we are watching</h2><span class="sub">Fill in manually</span></div>
+    <div class="story">
+
+      <h3>What is working</h3>
+      <div class="callout" style="border:1.5px dashed var(--border); font-style:italic; color:var(--ink-faint);">&mdash;</div>
+
+      <h3>What we are watching</h3>
+      <div class="callout" style="border:1.5px dashed var(--border); font-style:italic; color:var(--ink-faint);">&mdash;</div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>How the 72 escalated threads resolved</h2><span class="sub">Click on the bot&rsquo;s &ldquo;Has your issue been resolved?&rdquo; prompt</span></div>
+    <div class="lb-list" style="display:flex; flex-direction:column; gap:8px; margin-bottom:24px;">
+
+      <div class="lb-row">
+        <div style="display:flex; align-items:center; gap:10px; width:100%;">
+          <div style="min-width:230px; font-size:13px; font-weight:600;">Yes, I&rsquo;m Good</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:80.6%; background:var(--good)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">58 &middot; 81%</div>
+        </div>
+      </div>
+      <div class="lb-row">
+        <div style="display:flex; align-items:center; gap:10px; width:100%;">
+          <div style="min-width:230px; font-size:13px; font-weight:600;">No &mdash; Escalate to T2</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:15.3%; background:var(--critical)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">11 &middot; 15%</div>
+        </div>
+      </div>
+      <div class="lb-row">
+        <div style="display:flex; align-items:center; gap:10px; width:100%;">
+          <div style="min-width:230px; font-size:13px; font-weight:600;">No &mdash; Need more help</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:1.4%; background:var(--warning)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">1 &middot; 1%</div>
+        </div>
+      </div>
+      <div class="lb-row">
+        <div style="display:flex; align-items:center; gap:10px; width:100%;">
+          <div style="min-width:230px; font-size:13px; font-weight:600;">No outcome logged</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:2.8%; background:var(--ink-faint)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">2 &middot; 3%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>What actually got logged for ownership</h2><span class="sub">Cross-referencing against the AG Service Recovery Call Log</span></div>
+    <div class="table-wrap" style="margin-top:14px;">
+      <table>
+        <thead><tr><th>Date</th><th>Case #</th><th>Reported by / trigger</th><th>Customer resolved?</th><th>Notes</th></tr></thead>
+        <tbody>
+<tr>
+          <td class="mono">8/31</td>
+          <td class="mono">15165003096</td>
+          <td>chanson &middot; Detractor Survey</td>
+          <td><span class="pill done">Yes</span></td>
+          <td style="max-width:340px;">DM&rsquo;d to the Teleperformance Risk team (David Garcia); bank status corrected, e&#8209;services activated. Sheet marks it resolved 9/2, but the call notes show the customer never actually responded to two calls and two emails &mdash; case was closed anyway.</td>
+        </tr><tr>
+          <td class="mono">9/3</td>
+          <td class="mono">15165359765</td>
+          <td>Jack Eyer &middot; High Effort</td>
+          <td><span class="pill done">Yes</span></td>
+          <td style="max-width:340px;">Resolved in the pod (Initial Contact: &ldquo;In pod&rdquo;), no additional resolution notes logged.</td>
+        </tr><tr>
+          <td class="mono">9/3</td>
+          <td class="mono">15165377047</td>
+          <td>Charles Cannon &middot; High Effort (Hamilton Asset Advisors)</td>
+          <td><span class="pill done">Yes</span></td>
+          <td style="max-width:340px;">Same case as the Slack thread above; customer will have to work with the agency directly for the tax refund.</td>
+        </tr><tr>
+          <td class="mono">9/4</td>
+          <td class="mono">15165464153</td>
+          <td>Christine Hanson &middot; High Effort (proadvisor profile)</td>
+          <td><span class="pill done">Yes</span></td>
+          <td style="max-width:340px;">Resolution method: NLH transfer. Same case as the Slack thread above; handed to NLH to finish the profile unlock.</td>
+        </tr><tr>
+          <td class="mono">9/8</td>
+          <td class="mono">15165021240</td>
+          <td>Jordan Briske &middot; High Effort (Sunset Bookkeeping LLC)</td>
+          <td><span class="pill aging">No</span></td>
+          <td style="max-width:340px;">Same case clicked &ldquo;No &mdash; Escalate to T2&rdquo; in Slack on 9/3; re-logged 5 days later still unconfirmed. Current Salesforce status: Closed (as of 9/8, same day it was re-logged).</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
