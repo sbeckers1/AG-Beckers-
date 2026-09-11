@@ -2223,7 +2223,7 @@
   <div class="tabpanel" data-tab="intervene" hidden>
 
   <section>
-    <div class="section-head"><h2>Escalated customer intervention &mdash; Pilot 1</h2><span class="sub">AG Pod support-request channel &middot; Sep&nbsp;2&ndash;8, 2026</span></div>
+    <div class="section-head"><h2>Escalated customer intervention &mdash; Pilot 1</h2><span class="sub">AG Pod support-request channel &middot; Sep&nbsp;2&ndash;10, 2026</span></div>
     <p style="font-size:13px; color:var(--ink-soft); line-height:1.6; max-width:80ch; margin:0 0 18px;">
       Every T1-to-SME support request in the AG pod channel now opens with <b>&ldquo;Is this an Escalated Customer?&rdquo;</b> A no answer means the T1 just needed a quick assist; a yes carries an <b>Intent</b> or <b>Effort</b> flag and gets tracked below. Source: <a href="https://intuit.enterprise.slack.com/archives/C09TFFUL78C" target="_blank" rel="noopener" style="color:var(--premium);">#gbsg&#8209;en&#8209;ag&#8209;internal&#8209;pod1</a> and the <a href="https://docs.google.com/spreadsheets/d/1vGdL7h7nzir7Qw8ufiKKKCQ4KJ9b7FarQLdkd7dVIfE" target="_blank" rel="noopener" style="color:var(--premium);">AG Service Recovery Call Log</a> (Google Sheets).
     </p>
@@ -2231,104 +2231,70 @@
 
       <div class="metric-tile">
         <div class="m-label">Total intercepted cases</div>
-        <div class="m-value mono">5</div>
+        <div class="m-value mono">15</div>
         <div class="m-caption">Cases logged in the AG Service Recovery Call Log with a confirmed follow-up record.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--good)"></span>Fully resolved</div>
-            <div class="seg-val mono">4</div>
+            <div class="seg-val mono">11</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--critical)"></span>Not yet resolved</div>
-            <div class="seg-val mono">1</div>
+            <div class="seg-val mono">4</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Threads checked</div>
-        <div class="m-value mono">443</div>
-        <div class="m-caption">Every &ldquo;New issue reported by&rdquo; form posted since the escalation check went live (Sep&nbsp;2, 12:47&nbsp;PM ET) through Sep&nbsp;8.</div>
+        <div class="m-value mono">753</div>
+        <div class="m-caption">Every &ldquo;New issue reported by&rdquo; form posted since the escalation check went live (Sep&nbsp;2, 12:47&nbsp;PM ET) through Sep&nbsp;10.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--ink-faint)"></span>No</div>
-            <div class="seg-val mono">371</div>
+            <div class="seg-val mono">639</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--critical)"></span>Yes</div>
-            <div class="seg-val mono">72</div>
+            <div class="seg-val mono">114</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Flagged as escalated customer</div>
-        <div class="m-value mono" style="color:var(--critical)">16.3%</div>
-        <div class="m-caption">72 of 443 threads (all answers, including 3 early &ldquo;Yes&rdquo; clicks logged before Intent/Effort sub-tagging began).</div>
+        <div class="m-value mono" style="color:var(--critical)">15.1%</div>
+        <div class="m-caption">114 of 753 threads (all answers, including 3 early &ldquo;Yes&rdquo; clicks logged before Intent/Effort sub-tagging began).</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--warning)"></span>High Effort</div>
-            <div class="seg-val mono">37</div>
+            <div class="seg-val mono">56</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--violet)"></span>Escalation Intent</div>
-            <div class="seg-val mono">32</div>
+            <div class="seg-val mono">55</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Resolved in the pod thread</div>
-        <div class="m-value mono" style="color:var(--good)">58</div>
-        <div class="m-caption">80.6% of the 72 escalated threads ended &ldquo;Yes, I&rsquo;m Good&rdquo; &mdash; the SME answered the T1&rsquo;s question and the case didn&rsquo;t need to leave the pod.</div>
+        <div class="m-value mono" style="color:var(--good)">90</div>
+        <div class="m-caption">78.9% of the 114 escalated threads ended &ldquo;Yes, I&rsquo;m Good&rdquo; &mdash; the SME answered the T1&rsquo;s question and the case didn&rsquo;t need to leave the pod.</div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Escalated to T2</div>
-        <div class="m-value mono" style="color:var(--critical)">11</div>
-        <div class="m-caption">15.3% clicked &ldquo;No &mdash; Escalate to T2,&rdquo; triggering the formal T2 process. The remaining 3 threads were a duplicate post, an unresolved thread (agent had to reschedule the customer call), and one &ldquo;No &mdash; Need more help.&rdquo;</div>
+        <div class="m-value mono" style="color:var(--critical)">20</div>
+        <div class="m-caption">17.5% clicked &ldquo;No &mdash; Escalate to T2,&rdquo; triggering the formal T2 process. The remaining 4 threads were 1 &ldquo;No &mdash; Need more help&rdquo; and 3 threads where no outcome was ever logged.</div>
       </div>
 
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head"><h2>How the 72 escalated threads resolved</h2><span class="sub">Click on the bot&rsquo;s &ldquo;Has your issue been resolved?&rdquo; prompt</span></div>
-    <div class="lb-list" style="display:flex; flex-direction:column; gap:8px; margin-bottom:24px;">
-
-      <div class="lb-row">
-        <div style="display:flex; align-items:center; gap:10px; width:100%;">
-          <div style="min-width:230px; font-size:13px; font-weight:600;">Yes, I&rsquo;m Good</div>
-          <div class="bar-mini" style="flex:1;"><div style="width:80.6%; background:var(--good)"></div></div>
-          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">58 &middot; 81%</div>
-        </div>
-      </div>
-      <div class="lb-row">
-        <div style="display:flex; align-items:center; gap:10px; width:100%;">
-          <div style="min-width:230px; font-size:13px; font-weight:600;">No &mdash; Escalate to T2</div>
-          <div class="bar-mini" style="flex:1;"><div style="width:15.3%; background:var(--critical)"></div></div>
-          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">11 &middot; 15%</div>
-        </div>
-      </div>
-      <div class="lb-row">
-        <div style="display:flex; align-items:center; gap:10px; width:100%;">
-          <div style="min-width:230px; font-size:13px; font-weight:600;">No &mdash; Need more help</div>
-          <div class="bar-mini" style="flex:1;"><div style="width:1.4%; background:var(--warning)"></div></div>
-          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">1 &middot; 1%</div>
-        </div>
-      </div>
-      <div class="lb-row">
-        <div style="display:flex; align-items:center; gap:10px; width:100%;">
-          <div style="min-width:230px; font-size:13px; font-weight:600;">No outcome logged</div>
-          <div class="bar-mini" style="flex:1;"><div style="width:2.8%; background:var(--ink-faint)"></div></div>
-          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">2 &middot; 3%</div>
-        </div>
-      </div>
     </div>
   </section>
 
   <section>
     <div class="section-head"><h2>What actually got logged for ownership</h2><span class="sub">Cross-referencing against the AG Service Recovery Call Log</span></div>
+    <p style="font-size:12.5px; color:var(--ink-soft); line-height:1.6; max-width:78ch; margin:0 0 14px;">Three things worth a look here: Christy Moore&rsquo;s and Jack Eyer&rsquo;s Sep&nbsp;10 cases don&rsquo;t trace back to a &ldquo;Yes&rdquo; flagged thread in the pod channel at all &mdash; both underlying Slack threads were answered <b>No</b> to the escalation question, so the call log is picking these up through a separate path (direct customer follow&#8209;up logged after the fact). Krystal Meggett&rsquo;s case (15165621352) is logged as an <b>Escalation Intent</b> trigger in the call log, but the matching Slack thread was actually tagged <b>High Effort</b>. And Christy Moore&rsquo;s case is marked &ldquo;Customer Resolved: Yes&rdquo; even though its own resolution note reads &ldquo;We made an error that cant be fixed&rdquo; &mdash; worth confirming that one&rsquo;s actually resolved before it counts toward the total above.</p>
     <div class="table-wrap" style="margin-top:14px;">
       <table>
         <thead><tr><th>Date</th><th>Case #</th><th>Reported by / trigger</th><th>Customer resolved?</th></tr></thead>
@@ -2358,6 +2324,56 @@
           <td class="mono">15165021240</td>
           <td>Jordan Briske &middot; High Effort (Sunset Bookkeeping LLC)</td>
           <td><span class="pill aging">No</span></td>
+        </tr><tr>
+          <td class="mono">9/9</td>
+          <td class="mono">15165635114</td>
+          <td>Casey Barnett &middot; Escalation Intent (OSUNA Electrical &mdash; payroll fraud hold, transferred to Risk)</td>
+          <td><span class="pill aging">No</span></td>
+        </tr><tr>
+          <td class="mono">9/9</td>
+          <td class="mono">15165621352</td>
+          <td>Krystal Meggett &middot; logged as Escalation Intent, but the matching Slack thread was flagged High Effort</td>
+          <td><span class="pill done">Yes</span></td>
+        </tr><tr>
+          <td class="mono">9/9</td>
+          <td class="mono">15165609259</td>
+          <td>Daniel Burch &middot; High Effort</td>
+          <td><span class="pill done">Yes</span></td>
+        </tr><tr>
+          <td class="mono">9/9</td>
+          <td class="mono">15165683756</td>
+          <td>John Murray &middot; Escalation Intent</td>
+          <td><span class="pill done">Yes</span></td>
+        </tr><tr>
+          <td class="mono">9/9</td>
+          <td class="mono">15165642795</td>
+          <td>Silvernus Ate &middot; High Effort</td>
+          <td><span class="pill done">Yes</span></td>
+        </tr><tr>
+          <td class="mono">9/10</td>
+          <td class="mono">15165696477</td>
+          <td>Christy Moore &middot; not flagged escalated in Slack (Pisgah Harvest &mdash; payroll lead-time/void question)</td>
+          <td><span class="pill done">Yes</span></td>
+        </tr><tr>
+          <td class="mono">9/10</td>
+          <td class="mono">15165677846</td>
+          <td>Jack Eyer &middot; not flagged escalated in Slack (Middleton Shrull and Bock)</td>
+          <td><span class="pill done">Yes</span></td>
+        </tr><tr>
+          <td class="mono">9/10</td>
+          <td class="mono">15165671422</td>
+          <td>Silvernus Ate &middot; High Effort</td>
+          <td><span class="pill aging">No</span></td>
+        </tr><tr>
+          <td class="mono">9/10</td>
+          <td class="mono">15165656146</td>
+          <td>Caleb Montel &middot; High Effort</td>
+          <td><span class="pill aging">No</span></td>
+        </tr><tr>
+          <td class="mono">9/10</td>
+          <td class="mono">15165650493</td>
+          <td>Barbara Clack &middot; Escalation Intent (CVC Ag Services &mdash; escalated to T2 in the pod thread)</td>
+          <td><span class="pill done">Yes</span></td>
         </tr>
         </tbody>
       </table>
@@ -2370,16 +2386,16 @@
   <div class="tabpanel" data-tab="rescue" hidden>
 
   <section>
-    <div class="section-head"><h2>Case rescue &mdash; Pilot 2</h2><span class="sub">Proactive outreach on aging Premium cases &middot; Sep&nbsp;2&ndash;8, 2026</span></div>
+    <div class="section-head"><h2>Case rescue &mdash; Pilot 2</h2><span class="sub">Proactive outreach on aging Premium cases &middot; Sep&nbsp;2&ndash;10, 2026</span></div>
     <p style="font-size:13px; color:var(--ink-soft); line-height:1.6; max-width:78ch; margin:0 0 18px;">
-      Separate from the SLA tracking above, this pilot has a specialist (Dawn Burns) pull a daily list of aging Premium cases and review each one for a reason it has stalled. 58 cases have now been reviewed across the Sep&nbsp;2, 3, 4, and 8 pulls. The rescue log itself is a running list of the cases that needed intervention &mdash; a direct re-engagement of the customer, independent of the original case owner &mdash; and as of the Sep&nbsp;8 pull, <b>15 cases are currently tracked as requiring intervention</b>. Source: <a href="https://docs.google.com/spreadsheets/d/1pKWnP1DIxgg-3AsedB1FJaajUM5C1c2fKbu0CBf38Eo" target="_blank" rel="noopener" style="color:var(--premium);">Pilot 2 &ndash; Rescued cases log</a> (Google Sheets), &ldquo;Workable Aging Cases&rdquo; tab.
+      Separate from the SLA tracking above, this pilot has a specialist (Dawn Burns) pull a daily list of aging Premium cases and review each one for a reason it has stalled. 76 cases have now been reviewed across the Sep&nbsp;2, 3, 4, 8, 9, and 10 pulls. The rescue log itself is a running list of the cases that needed intervention &mdash; a direct re-engagement of the customer, independent of the original case owner &mdash; and as of the Sep&nbsp;10 pull, <b>25 cases are currently tracked as requiring intervention</b>, up sharply from 15 on Sep&nbsp;8. Source: <a href="https://docs.google.com/spreadsheets/d/1pKWnP1DIxgg-3AsedB1FJaajUM5C1c2fKbu0CBf38Eo" target="_blank" rel="noopener" style="color:var(--premium);">Pilot 2 &ndash; Rescued cases log</a> (Google Sheets), &ldquo;Workable Aging Cases&rdquo; tab.
     </p>
     <div class="metric-grid">
 
       <div class="metric-tile">
         <div class="m-label">Cases reviewed for interception</div>
-        <div class="m-value mono">58</div>
-        <div class="m-caption">Aging Premium cases pulled for proactive outreach across four review days.</div>
+        <div class="m-value mono">76</div>
+        <div class="m-caption">Aging Premium cases pulled for proactive outreach across six review days.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Sep&nbsp;2</div>
@@ -2397,78 +2413,92 @@
             <div class="seg-label"><span class="seg-dot" style="background:var(--critical)"></span>Sep&nbsp;8</div>
             <div class="seg-val mono">23</div>
           </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--warning)"></span>Sep&nbsp;9</div>
+            <div class="seg-val mono">8</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--good)"></span>Sep&nbsp;10</div>
+            <div class="seg-val mono">10</div>
+          </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Required intervention</div>
-        <div class="m-value mono" style="color:var(--violet)">15</div>
-        <div class="m-caption">Currently tracked in the rescue log as of the Sep&nbsp;8 pull &mdash; up from 10 as of Sep&nbsp;2&ndash;4. One previously-tracked case (Cattail Commons Coop) was removed after being handed off to another team.</div>
+        <div class="m-value mono" style="color:var(--violet)">25</div>
+        <div class="m-caption">Currently tracked in the rescue log as of the Sep&nbsp;10 pull &mdash; up from 15 as of Sep&nbsp;8. All 15 previously-tracked cases are still tracked; the jump is 10 net-new additions (Sep&nbsp;9&ndash;10 pulls), not churn.</div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Resolved</div>
-        <div class="m-value mono" style="color:var(--good)">9</div>
-        <div class="m-caption">Of the 15 cases currently tracked, as of Sep&nbsp;8 &mdash; including 2 pending final confirmation.</div>
+        <div class="m-value mono" style="color:var(--good)">13</div>
+        <div class="m-caption">Of the 25 cases currently tracked, as of Sep&nbsp;10 &mdash; including 3 pending final confirmation.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--warning)"></span>Pending confirm</div>
-            <div class="seg-val mono">2</div>
-          </div>
-          <div class="seg">
-            <div class="seg-label"><span class="seg-dot" style="background:var(--ink-faint)"></span>Not yet</div>
             <div class="seg-val mono">3</div>
           </div>
           <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--ink-faint)"></span>Not yet</div>
+            <div class="seg-val mono">4</div>
+          </div>
+          <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--ink-faint)"></span>No update logged</div>
-            <div class="seg-val mono">1</div>
+            <div class="seg-val mono">3</div>
+          </div>
+          <div class="seg">
+            <div class="seg-label"><span class="seg-dot" style="background:var(--critical)"></span>Unknown</div>
+            <div class="seg-val mono">2</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Average age at review</div>
-        <div class="m-value mono">6.7 <span style="font-size:16px; font-weight:600;">days</span></div>
-        <div class="m-caption">Across all 15 cases currently in the rescue log (range: 2&ndash;21 days), per the Sep&nbsp;8 pull.</div>
+        <div class="m-value mono">7.3 <span style="font-size:16px; font-weight:600;">days</span></div>
+        <div class="m-caption">Across all 25 cases currently in the rescue log (range: 2&ndash;21 days), per the Sep&nbsp;10 pull.</div>
       </div>
 
     </div>
   </section>
 
   <section>
-    <div class="section-head"><h2>Why cases stalled</h2><span class="sub">Reason bucket across the 15 cases currently in the rescue log &middot; as of Sep&nbsp;8</span></div>
+    <div class="section-head"><h2>Why cases stalled</h2><span class="sub">Reason bucket across the 25 cases currently in the rescue log &middot; as of Sep&nbsp;10</span></div>
     <div class="lb-list" style="display:flex; flex-direction:column; gap:8px; margin-bottom:24px;">
 
       <div class="lb-row">
         <div style="display:flex; align-items:center; gap:10px; width:100%;">
-          <div style="min-width:230px; font-size:13px; font-weight:600;">Missed Promise</div>
-          <div class="bar-mini" style="flex:1;"><div style="width:60%; background:var(--warning)"></div></div>
-          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">9 &middot; 60%</div>
+          <div style="min-width:230px; font-size:13px; font-weight:600;">Documenting Commitment Missed</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:52%; background:var(--critical)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">13 &middot; 52%</div>
         </div>
       </div>
       <div class="lb-row">
         <div style="display:flex; align-items:center; gap:10px; width:100%;">
-          <div style="min-width:230px; font-size:13px; font-weight:600;">Documenting Commitment Missed</div>
-          <div class="bar-mini" style="flex:1;"><div style="width:40%; background:var(--critical)"></div></div>
-          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">6 &middot; 40%</div>
+          <div style="min-width:230px; font-size:13px; font-weight:600;">Missed Promise</div>
+          <div class="bar-mini" style="flex:1;"><div style="width:48%; background:var(--warning)"></div></div>
+          <div class="mono" style="min-width:60px; text-align:right; font-size:13px;">12 &middot; 48%</div>
         </div>
       </div>
     </div>
-    <div class="callout" style="margin:0 0 20px;">The mix has flipped since the Sep&nbsp;2&ndash;4 snapshot (then mostly Genuine Complexity/Research Delay). That's a byproduct of the rescue log now tracking mostly the intervention-required cases rather than the full daily review pull &mdash; not necessarily a change in why cases actually stall. The one Genuine Complexity/Research Delay case tracked here (Cattail Commons Coop) was removed after being handed off to another team, so that bucket now shows zero.</div>
+    <div class="callout" style="margin:0 0 20px;">The mix has evened out since Sep&nbsp;8 (then 60% Missed Promise / 40% Documenting Commitment Missed) to a near-even split as the 10 new additions skewed slightly more toward Documenting Commitment Missed. Genuine Complexity/Research Delay still shows zero here &mdash; every case in this bucket that surfaces in the daily pull continues to get screened out rather than added to the tracker, which is by design: this log is only the cases needing direct customer re-engagement, not the full daily review.</div>
+    <div class="callout" style="margin:0 0 20px; border-color:var(--warning);">Two accounts &mdash; Beaird Harris (case 15164253862) and LSL, LLP (case 15164607455) &mdash; have now been marked <b>Leave Alone</b> and still resurfaced in both the Sep&nbsp;9 and Sep&nbsp;10 pulls. This is the false-positive pattern the pilot is meant to surface: the underlying aging-case pull doesn't know a case has already been reviewed and dispositioned, so it keeps re-flagging it for review. Same story for NorCal Perlite Inc. (case 15163774268, now 38 days old) &mdash; it's an active T2 investigation being followed by the case owner, not a fresh rescue candidate, but it keeps reappearing in the daily list regardless.</div>
 
-    <div class="section-head" style="margin-top:6px;"><h2>Reviewed by manager</h2><span class="sub">Sep&nbsp;2&ndash;4 pulls only &mdash; whose cases were pulled into the rescue review, most needing no intervention</span></div>
+    <div class="section-head" style="margin-top:6px;"><h2>Reviewed by manager</h2><span class="sub">Full history, all six pulls (Sep&nbsp;2, 3, 4, 8, 9, 10) &mdash; whose cases were pulled into the rescue review, most needing no intervention</span></div>
+    <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; max-width:70ch; margin:0 0 10px;">&ldquo;Reviewed&rdquo; counts every time a manager&rsquo;s case was pulled into a daily review (a case reviewed on more than one day, like Corkery Consulting under Kadian, counts once per pull). &ldquo;Required intervention&rdquo; counts cases flagged as needing direct customer re-engagement at the time of that pull, whether or not they were already logged in the tracker above.</p>
     <div class="table-wrap" style="max-width:640px;">
       <table>
         <thead><tr><th>Manager</th><th class="num">Reviewed</th><th class="num">Required intervention</th></tr></thead>
         <tbody>
-<tr><td>Kadian</td><td class="num mono">10</td><td class="num mono">6</td></tr><tr><td>Tameko</td><td class="num mono">7</td><td class="num mono">2</td></tr><tr><td>Charles</td><td class="num mono">6</td><td class="num mono">1</td></tr><tr><td>Chris</td><td class="num mono">5</td><td class="num mono">1</td></tr><tr><td>Lacretia</td><td class="num mono">4</td><td class="num mono">0</td></tr><tr><td>Shella</td><td class="num mono">3</td><td class="num mono">0</td></tr>
+<tr><td>Kadian</td><td class="num mono">19</td><td class="num mono">9</td></tr><tr><td>Tameko</td><td class="num mono">14</td><td class="num mono">5</td></tr><tr><td>Charles</td><td class="num mono">13</td><td class="num mono">5</td></tr><tr><td>Lacretia</td><td class="num mono">8</td><td class="num mono">0</td></tr><tr><td>Chris</td><td class="num mono">7</td><td class="num mono">1</td></tr><tr><td>Shella</td><td class="num mono">6</td><td class="num mono">0</td></tr><tr><td>Unattributed (blank manager in that day&rsquo;s pull)</td><td class="num mono">9</td><td class="num mono">3</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section>
-    <div class="section-head"><h2>Cases requiring intervention</h2><span class="sub">All 15 currently in the rescue log needing direct customer re-engagement &middot; as of the Sep&nbsp;8 pull</span></div>
+    <div class="section-head"><h2>Cases requiring intervention</h2><span class="sub">All 25 currently in the rescue log needing direct customer re-engagement &middot; as of the Sep&nbsp;10 pull</span></div>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Case #</th><th>Account</th><th>Owner</th><th>Manager</th><th>Reason bucket</th><th class="num">Age</th><th>Resolution status</th><th>Notes</th></tr></thead>
@@ -2481,16 +2511,16 @@
         <td>Missed Promise</td>
         <td class="num mono">5d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Customer put in contact with Risk on a follow-up call</td>
+        <td style="max-width:320px;">Customer was put in contact with Risk on a f/u call they made</td>
       </tr><tr>
         <td class="mono">15165088582</td>
-        <td>Breitebookkeeping (Pat Willis)</td>
-        <td>Brandi Evans-King</td>
+        <td>Breitebookkeeping@gmail.com</td>
+        <td>—</td>
         <td>Kadian</td>
         <td>Missed Promise</td>
         <td class="num mono">5d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Customer had deleted transactions to start over; confirmed working on a 9/4 follow-up call</td>
+        <td style="max-width:320px;">Spoke with customer, she had deleted transactions to start over, she was not sure everything was fine we scheduled a call for tomorrow to ensure resolution</td>
       </tr><tr>
         <td class="mono">15164936341</td>
         <td>Battle Born Professional Services</td>
@@ -2499,16 +2529,16 @@
         <td>Missed Promise</td>
         <td class="num mono">7d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Customer resolved on a follow-up phone call</td>
+        <td style="max-width:320px;">Customer resolved on one of her follow up phone calls.</td>
       </tr><tr>
         <td class="mono">15164673772</td>
         <td>BMSS, LLC</td>
-        <td>Corissa Alvarado</td>
+        <td>—</td>
         <td>Chris</td>
         <td>Missed Promise</td>
         <td class="num mono">13d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Now marked resolved in the log, though the note still flags Corissa (original owner) for direct follow-up &mdash; worth a quick manager check</td>
+        <td style="max-width:320px;">Expert agreed to call Monday, no cb on Monday</td>
       </tr><tr>
         <td class="mono">15165148141</td>
         <td>Smokey Mountain Motors, Inc.</td>
@@ -2517,25 +2547,25 @@
         <td>Documenting Commitment Missed</td>
         <td class="num mono">2d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Customer confirmed product working as expected</td>
+        <td style="max-width:320px;">Customer product working as it should with provided steps from prior expert</td>
       </tr><tr>
         <td class="mono">15164703643</td>
-        <td>No company name (Square integration)</td>
-        <td>Shauna Harris</td>
+        <td>No company name</td>
+        <td>—</td>
         <td>Tameko</td>
         <td>Documenting Commitment Missed</td>
         <td class="num mono">12d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Integration confirmed working; case closed</td>
+        <td style="max-width:320px;">Customer responded to emails, no add'l customer reach since 8/21</td>
       </tr><tr>
         <td class="mono">15165199361</td>
         <td>Public Employees for Environmental Responsibility</td>
-        <td>Barbara Mollow</td>
+        <td>—</td>
         <td>Kadian</td>
         <td>Documenting Commitment Missed</td>
         <td class="num mono">2d</td>
-        <td><span class="pill in-progress">Pending confirm</span></td>
-        <td style="max-width:320px;">Correction template submitted; tax-ops case created</td>
+        <td><span class="pill done">Resolved</span></td>
+        <td style="max-width:320px;">Customer uploaded correction template tax ops correction case created</td>
       </tr><tr>
         <td class="mono">15165032462</td>
         <td>Jenni Bookkeeping Services</td>
@@ -2544,7 +2574,7 @@
         <td>Missed Promise</td>
         <td class="num mono">8d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Customer emailed back on 9/8 confirming the resolution</td>
+        <td style="max-width:320px;">Custome emailed back and stated resolution</td>
       </tr><tr>
         <td class="mono">15165086936</td>
         <td>TOP TIER ACCOUNTING LLC</td>
@@ -2553,7 +2583,7 @@
         <td>Missed Promise</td>
         <td class="num mono">7d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Expert followed up by email; customer emailed back and stated resolution</td>
+        <td style="max-width:320px;">Custome emailed back and stated resolution</td>
       </tr><tr>
         <td class="mono">15164360200</td>
         <td>Bluestocking Financial LLC</td>
@@ -2561,8 +2591,8 @@
         <td>Tameko</td>
         <td>Documenting Commitment Missed</td>
         <td class="num mono">21d</td>
-        <td><span class="pill not-started">Not yet</span></td>
-        <td style="max-width:320px;">Several follow-up calls/emails through 9/8; customer responded but resolution is still unconfirmed</td>
+        <td><span class="pill done">Resolved</span></td>
+        <td style="max-width:320px;">Attached to inv</td>
       </tr><tr>
         <td class="mono">15165233422</td>
         <td>Count On Me Bookkeeping LLC</td>
@@ -2571,34 +2601,34 @@
         <td>Missed Promise</td>
         <td class="num mono">3d</td>
         <td><span class="pill in-progress">Pending confirm</span></td>
-        <td style="max-width:320px;">Accountant needs to consolidate duplicate firm listings; customer agreed to close the case but hasn't had time to follow the sent instructions</td>
+        <td style="max-width:320px;">Customer agreed to close case has no time to f/u on instructions sent</td>
       </tr><tr>
         <td class="mono">15165298586</td>
         <td>Patterson Tax Service Inc</td>
         <td>Christine Hanson</td>
-        <td>&mdash;</td>
+        <td>Shella</td>
         <td>Documenting Commitment Missed</td>
         <td class="num mono">2d</td>
         <td><span class="pill not-started">Not yet</span></td>
-        <td style="max-width:320px;">Call disconnected multiple times; reached out again 9/8, still unable to connect &mdash; follow-up email sent</td>
+        <td style="max-width:320px;">Notes in case state that the call was disconnected several times, and agent put on hold for four minutes and no one came back email was sent with case number need follow up</td>
       </tr><tr>
         <td class="mono">15165339916</td>
-        <td>No company name (bill pay)</td>
+        <td>No company name</td>
         <td>Danielle Schons</td>
-        <td>&mdash;</td>
+        <td>Gin</td>
         <td>Documenting Commitment Missed</td>
         <td class="num mono">2d</td>
         <td><span class="pill not-started">Not yet</span></td>
-        <td style="max-width:320px;">No phone number on file; follow-up email sent 9/8</td>
+        <td style="max-width:320px;">Technical difficulties prevented call completion callback needed</td>
       </tr><tr>
         <td class="mono">15165306264</td>
-        <td>No company name (reactivation requests)</td>
+        <td>No company name</td>
         <td>Dylan Prentice</td>
-        <td>&mdash;</td>
+        <td>Lacretia</td>
         <td>Missed Promise</td>
         <td class="num mono">6d</td>
         <td><span class="pill done">Resolved</span></td>
-        <td style="max-width:320px;">Customer called back in herself and got resolution from another expert</td>
+        <td style="max-width:320px;">Called and customer has resolution</td>
       </tr><tr>
         <td class="mono">15165377520</td>
         <td>Green Loop Management, LLC</td>
@@ -2606,8 +2636,98 @@
         <td>Charles</td>
         <td>Missed Promise</td>
         <td class="num mono">5d</td>
+        <td><span class="pill in-progress">Pending confirm</span></td>
+        <td style="max-width:320px;">Customer added to INV-165564</td>
+      </tr><tr>
+        <td class="mono">15165175625</td>
+        <td>Lisa Richmond CPA LLC</td>
+        <td>Shelly Phillips</td>
+        <td>Tameko</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">4d</td>
+        <td><span class="pill in-progress">Pending confirm</span></td>
+        <td style="max-width:320px;">NLH took case</td>
+      </tr><tr>
+        <td class="mono">15165465111</td>
+        <td>TOWNHOUSE APARTMENTS</td>
+        <td>Brandi Evans-King</td>
+        <td>Kadian</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">6d</td>
         <td><span class="pill not-started">Not yet</span></td>
-        <td style="max-width:320px;">Customer was logged out and asked to re-verify her account; follow-up promised but not yet scheduled</td>
+        <td style="max-width:320px;">Initially did not include this case but there was a follow up email sent 9/4 and no reach out since then</td>
+      </tr><tr>
+        <td class="mono">15165377047</td>
+        <td>Corkery Consulting LLC</td>
+        <td>Charles Cannon</td>
+        <td>Kadian</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">7d</td>
+        <td><span class="pill not-started">No update logged</span></td>
+        <td style="max-width:320px;">Initially did not include this case because it appeared there was follow-up but no touch since 9/4</td>
+      </tr><tr>
+        <td class="mono">15165297909</td>
+        <td>Hill &amp; Hill Maintenance &amp; Excavation Inc.</td>
+        <td>Karina Cantu</td>
+        <td>Shella</td>
+        <td>Missed Promise</td>
+        <td class="num mono">8d</td>
+        <td><span class="pill done">Resolved</span></td>
+        <td style="max-width:320px;">Customer called back in</td>
+      </tr><tr>
+        <td class="mono">15165370950</td>
+        <td>Explore Brown County</td>
+        <td>Janelle Hyppolite</td>
+        <td>Charles</td>
+        <td>Missed Promise</td>
+        <td class="num mono">7d</td>
+        <td><span class="pill done">Resolved</span></td>
+        <td style="max-width:320px;">Janelle f/u w/cx</td>
+      </tr><tr>
+        <td class="mono">15165390395</td>
+        <td>CARQUEST OF HEWITT</td>
+        <td>Cynthia J. Thompson</td>
+        <td>Charles</td>
+        <td>Missed Promise</td>
+        <td class="num mono">7d</td>
+        <td><span class="pill not-started">Not yet</span></td>
+        <td style="max-width:320px;">Customer was called back to be transferred to NLH customer never reached</td>
+      </tr><tr>
+        <td class="mono">15165402156</td>
+        <td>LPC Future Ventures II LLC dba Primrose School of Dripping</td>
+        <td>Janelle Hyppolite</td>
+        <td>Charles</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">7d</td>
+        <td><span class="pill not-started">No update logged</span></td>
+        <td style="max-width:320px;">Case has notes and is escalated but no f/u really listed</td>
+      </tr><tr>
+        <td class="mono">15165077989</td>
+        <td>New Mexico CFO</td>
+        <td>Korey Zimmerman</td>
+        <td>Tameko</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">13d</td>
+        <td><span class="pill not-started">No update logged</span></td>
+        <td style="max-width:320px;">Notes that we are awaiting customer however no f/u notes in system</td>
+      </tr><tr>
+        <td class="mono">15165258685</td>
+        <td>Roma Pines Bookkeeping LLC</td>
+        <td>Lindzey Green</td>
+        <td>Tameko</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">9d</td>
+        <td><span class="pill in-progress">Unknown</span></td>
+        <td style="max-width:320px;">Follow up email sent but no add'l f/u done</td>
+      </tr><tr>
+        <td class="mono">15164922255</td>
+        <td>Hadiamondstar</td>
+        <td>Charles Cannon</td>
+        <td>Kadian</td>
+        <td>Documenting Commitment Missed</td>
+        <td class="num mono">15d</td>
+        <td><span class="pill in-progress">Unknown</span></td>
+        <td style="max-width:320px;">Initially did not take this case because it was being followed but no touch since 9/4</td>
       </tr>
         </tbody>
       </table>
@@ -2615,9 +2735,8 @@
   </section>
 
   <section>
-    <div class="section-head"><h2>Daily review worklists</h2><span class="sub">Every case pulled for review, by day — only the flagged rows required intervention (Manager column blank where not available for later pulls)</span></div>
+    <div class="section-head"><h2>Daily review worklists</h2><span class="sub">Every case pulled for review, by day &mdash; only the flagged rows required intervention (Manager column blank where not available for later pulls)</span></div>
     <div class="mgr-list">
-
       <details class="mgr-card">
         <summary>
           <span class="mgr-name">Sep&nbsp;2</span>
@@ -2918,13 +3037,228 @@
         </div>
       </details>
 
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Sep&nbsp;9</span>
+          <span class="mgr-stats"><b>8</b> reviewed</span>
+        </summary>
+        <div class="mgr-drill">
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Account</th><th>Owner</th><th>Manager</th><th>Reason bucket</th><th>Status</th><th>Sub-Status</th><th class="num">Age</th><th>Intervention?</th></tr></thead>
+              <tbody>
+<tr>
+          <td class="mono">15165338805</td>
+          <td>GOULD KOBRICK &amp; SCHLAPP PC(Lacerte)</td>
+          <td>Charles Cannon</td>
+          <td>Kadian</td>
+          <td>Duplicate</td>
+          <td>Open</td>
+          <td>Solution Pending</td>
+          <td class="num mono">7d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">duplicate &mdash; no separate action</span></td>
+        </tr><tr>
+          <td class="mono">15165377047</td>
+          <td>Corkery Consulting LLC</td>
+          <td>Charles Cannon</td>
+          <td>Kadian</td>
+          <td>Duplicate</td>
+          <td>Open</td>
+          <td>Solution Pending</td>
+          <td class="num mono">6d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15163774268</td>
+          <td>NorCal Perlite Inc.</td>
+          <td>Jeremy Ardourel</td>
+          <td>Chris</td>
+          <td>Genuine Complexity/Research Delay (T2)</td>
+          <td>Pending</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">37d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165377520</td>
+          <td>Green Loop Management, LLC</td>
+          <td>Katya Rojas</td>
+          <td>Charles</td>
+          <td>Duplicate</td>
+          <td>Escalated</td>
+          <td>Researching</td>
+          <td class="num mono">6d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15164253862</td>
+          <td>Beaird Harris - Client Access</td>
+          <td>Marisol Villalvazo</td>
+          <td>Shella</td>
+          <td>Leave Alone</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">28d</td>
+          <td><span class="pill not-started" style="font-size:10.5px; padding:1px 6px;">Leave Alone</span></td>
+        </tr><tr>
+          <td class="mono">15164607455</td>
+          <td>LSL, LLP</td>
+          <td>Sandra Polichino</td>
+          <td>Lacretia</td>
+          <td>Leave Alone</td>
+          <td>Escalated</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">21d</td>
+          <td><span class="pill not-started" style="font-size:10.5px; padding:1px 6px;">Leave Alone</span></td>
+        </tr><tr>
+          <td class="mono">15165435041</td>
+          <td>SBA Services LLC</td>
+          <td>Shauna Harris</td>
+          <td>Tameko</td>
+          <td>Duplicate</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">5d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">duplicate &mdash; no separate action</span></td>
+        </tr><tr>
+          <td class="mono">15165175625</td>
+          <td>Lisa Richmond CPA LLC</td>
+          <td>Shelly Phillips</td>
+          <td>Tameko</td>
+          <td>Duplicate</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">9d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="mgr-card">
+        <summary>
+          <span class="mgr-name">Sep&nbsp;10</span>
+          <span class="mgr-stats"><b>10</b> reviewed</span>
+        </summary>
+        <div class="mgr-drill">
+          <p style="font-size:11px; color:var(--ink-faint); margin:0 0 8px;">Sporto Entertainment and Ascension Accounting are new to the pull this day; the rest are repeat appearances from prior pulls (see the callout above on Beaird Harris, LSL, and NorCal Perlite resurfacing).</p>
+          <div class="table-wrap" style="box-shadow:none; border:none;">
+            <table>
+              <thead><tr><th>Case #</th><th>Account</th><th>Owner</th><th>Manager</th><th>Reason bucket</th><th>Status</th><th>Sub-Status</th><th class="num">Age</th><th>Intervention?</th></tr></thead>
+              <tbody>
+<tr>
+          <td class="mono">15165465111</td>
+          <td>TOWNHOUSE APARTMENTS</td>
+          <td>Brandi Evans-King</td>
+          <td>Kadian</td>
+          <td>Documenting Commitment Missed</td>
+          <td>Open</td>
+          <td>Solution Pending</td>
+          <td class="num mono">6d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15165377047</td>
+          <td>Corkery Consulting LLC</td>
+          <td>Charles Cannon</td>
+          <td>Kadian</td>
+          <td>Documenting Commitment Missed</td>
+          <td>Open</td>
+          <td>Solution Pending</td>
+          <td class="num mono">7d</td>
+          <td><span class="pill done" style="font-size:10.5px; padding:1px 6px;">Required intervention</span></td>
+        </tr><tr>
+          <td class="mono">15164665996</td>
+          <td>ClinicNote, Inc.</td>
+          <td>Jay Holland</td>
+          <td>Charles</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">21d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165082496</td>
+          <td>Odyssey Home Inspections</td>
+          <td>Jay Holland</td>
+          <td>Charles</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">13d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165317194</td>
+          <td>The Boiling Crab Alhambra Main, LLC</td>
+          <td>Jenny Pena</td>
+          <td>Charles</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">8d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15163774268</td>
+          <td>NorCal Perlite Inc.</td>
+          <td>Jeremy Ardourel</td>
+          <td>Chris</td>
+          <td>Genuine Complexity/Research Delay (T2)</td>
+          <td>Pending</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">38d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15165302702</td>
+          <td>Sporto Entertainment, Inc</td>
+          <td>Lindzey Green</td>
+          <td>Tameko</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Escalated</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">8d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr><tr>
+          <td class="mono">15164253862</td>
+          <td>Beaird Harris - Client Access</td>
+          <td>Marisol Villalvazo</td>
+          <td>Shella</td>
+          <td>Leave Alone</td>
+          <td>Open</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">29d</td>
+          <td><span class="pill not-started" style="font-size:10.5px; padding:1px 6px;">Leave Alone</span></td>
+        </tr><tr>
+          <td class="mono">15164607455</td>
+          <td>LSL, LLP</td>
+          <td>Sandra Polichino</td>
+          <td>Lacretia</td>
+          <td>Leave Alone</td>
+          <td>Escalated</td>
+          <td>Customer Update Received</td>
+          <td class="num mono">22d</td>
+          <td><span class="pill not-started" style="font-size:10.5px; padding:1px 6px;">Leave Alone</span></td>
+        </tr><tr>
+          <td class="mono">15165572009</td>
+          <td>Ascension Accounting, Inc.</td>
+          <td>Shawna Murphy</td>
+          <td>Lacretia</td>
+          <td>Genuine Complexity/Research Delay</td>
+          <td>Open</td>
+          <td>Solution Pending</td>
+          <td class="num mono">2d</td>
+          <td><span style="color:var(--ink-faint); font-size:11.5px;">no intervention needed</span></td>
+        </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
     </div>
   </section>
 
   </div>
 
   <footer>
-    Source: Salesforce &amp; Google Sheets &middot; AG Case Management leadership dashboard, viewed as Sarah Beckers. Salesforce data refreshed Sep&nbsp;8, 2026 by opening the report behind each widget directly, rather than reading the cached dashboard charts. This pull refreshed: Total open cases, Approaching/Out-of-SLA counts &amp; %OOSLA, Escalation &amp; concentration, Where the volume actually sits (by status), and Open cases by manager (both segments, now with full SLA bars) — each a complete, reconciled total pulled live from its report, cross-checked against the report's own grand total. Total case count (FY), Average age, Oldest open case, the by-M2 split, the Age distribution histogram, and Aging cases by owner were <b>not</b> rerun this pull and still reflect the Sep&nbsp;4 refresh (flagged with * where shown). Case Rescue tab refreshed Sep&nbsp;8, 2026 from the "Pilot 2 &ndash; Rescued cases log" Google Sheet's Workable Aging Cases and 09/08 tabs (the "Reviewed by manager" table still reflects the Sep&nbsp;2&ndash;4 pulls only, since later pulls don't carry a Manager column). Manager names follow the current roster mapping; sample cases under each manager are real records captured at refresh time, not the full case list. This page is a static read of that pull and does not refresh automatically; ask for another refresh to update it.
+    Source: Salesforce &amp; Google Sheets &middot; AG Case Management leadership dashboard, viewed as Sarah Beckers. Salesforce data refreshed Sep&nbsp;8, 2026 by opening the report behind each widget directly, rather than reading the cached dashboard charts. This pull refreshed: Total open cases, Approaching/Out-of-SLA counts &amp; %OOSLA, Escalation &amp; concentration, Where the volume actually sits (by status), and Open cases by manager (both segments, now with full SLA bars) — each a complete, reconciled total pulled live from its report, cross-checked against the report's own grand total. Total case count (FY), Average age, Oldest open case, the by-M2 split, the Age distribution histogram, and Aging cases by owner were <b>not</b> rerun this pull and still reflect the Sep&nbsp;4 refresh (flagged with * where shown). Pilot 1 (Escalated Customer Intervention) refreshed Sep&nbsp;11, 2026 from a full re-read of the #gbsg&#8209;en&#8209;ag&#8209;internal&#8209;pod1 Slack channel (Sep&nbsp;2 through Sep&nbsp;10, all 753 threads) and the AG Service Recovery Call Log (now 15 logged intercepted cases). Pilot 2 (Case Rescue) refreshed Sep&nbsp;10, 2026 from the "Pilot 2 &ndash; Rescued cases log" Google Sheet's Workable Aging Cases, 09/09, and 09/10 tabs; the "Reviewed by manager" table was rebuilt from all six pulls (Sep&nbsp;2, 3, 4, 8, 9, 10), each case counted once per day it was reviewed. No new daily pull tab existed beyond 09/10 as of this refresh, so Pilot 2's currently-tracked figures are unchanged. Manager names follow the current roster mapping; sample cases under each manager are real records captured at refresh time, not the full case list. This page is a static read of that pull and does not refresh automatically; ask for another refresh to update it.
   </footer>
 
 </div>
