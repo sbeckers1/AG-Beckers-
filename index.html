@@ -345,121 +345,121 @@
   <div class="tabpanel" data-tab="overview">
 
   <div class="snapshot-bar">
-    <b>AG Case Management weekly snapshot</b> &middot; Premium's open backlog grew from 81&nbsp;→&nbsp;103 as new intake outpaced closures, while HVP held roughly flat (721&nbsp;→&nbsp;697) &middot; Premium's %OOSLA eased from 95.1%&nbsp;→&nbsp;64.1% as the fresh intake diluted an otherwise-aged queue, while HVP's climbed further (92.2%&nbsp;→&nbsp;93.3%) &middot; escalation rates diverged — HVP ticked up (26.5%&nbsp;→&nbsp;26.7%) while Premium eased (19.8%&nbsp;→&nbsp;16.5%) &middot; David's HVP share ticked back up (52.7%&nbsp;→&nbsp;53.4%) while Premium's top manager changed hands: Charles overtook Tameko at 21.4% &middot; vs. Sep&nbsp;8 pull &middot; <span class="mono" style="font-size:11px;">today's pull also corrects a manager-ID typo that had excluded Gin's Premium queue from every prior refresh — see By Manager tab</span>
+    <b>AG Case Management weekly snapshot</b> &middot; Premium's open backlog grew from 103&nbsp;→&nbsp;114 as fresh intake (43 new cases) kept outpacing closures, while HVP's also grew (697&nbsp;→&nbsp;735) &middot; both segments' %OOSLA eased — Premium sharply (64.1%&nbsp;→&nbsp;33.3%) and HVP for the first time in this dashboard's history (93.3%&nbsp;→&nbsp;82.7%) — as heavy intake diluted an aging queue that itself lost ground in absolute past-SLA terms (Premium 66&nbsp;→&nbsp;38; HVP's David alone 357&nbsp;→&nbsp;349) &middot; escalation rates eased on both sides — Premium sharply (16.5%&nbsp;→&nbsp;12.3%) and HVP slightly (26.7%&nbsp;→&nbsp;26.4%) — again a dilution effect, not resolution &middot; Charles remains Premium's top manager but his share climbed (21.4%&nbsp;→&nbsp;23.7%) as his queue grew fastest; David's HVP share climbed further too (53.4%&nbsp;→&nbsp;54.4%) &middot; vs. Sep&nbsp;9 pull
   </div>
 
   <section>
-    <div class="section-head"><h2>Current State Metrics</h2><span class="sub">Both segments refreshed Sep&nbsp;9 via direct SOQL pulls &middot; Age/SLA/escalation tiles below are fully reconciled, including Gin (Premium) and David (HVP) for the first time</span></div>
+    <div class="section-head"><h2>Current State Metrics</h2><span class="sub">Both segments refreshed Sep&nbsp;11 via direct per-manager SOQL pulls &middot; HVP manager-ID mapping confirmed directly against Salesforce this pull, including David and previously-unmapped managers</span></div>
     <div class="metric-grid">
 
       <div class="metric-tile">
         <div class="m-label">Total open cases</div>
-        <div class="m-value mono">800</div>
-        <div class="m-caption">Open backlog across both segments (cases created before today, per the same Age&nbsp;&gt;&nbsp;0 definition the live Report Builder uses), rerun live Sep&nbsp;9 via SOQL. Premium's backlog grew as new intake outpaced closures; HVP held roughly flat.</div>
+        <div class="m-value mono">849</div>
+        <div class="m-caption">Open backlog across both segments (cases created before today, per the same Age&nbsp;&gt;&nbsp;0 definition the live Report Builder uses), rerun live Sep&nbsp;11 via SOQL. Both segments' backlogs grew again on heavy fresh intake (43 new Premium cases, 12 new HVP cases opened today, excluded from this count).</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
-            <div class="seg-val mono">103</div>
+            <div class="seg-val mono">114</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
-            <div class="seg-val mono">697</div>
+            <div class="seg-val mono">735</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Total case count</div>
-        <div class="m-value mono">17,493</div>
-        <div class="m-caption">All-time case volume (FY27, Aug&nbsp;1&ndash;Jul&nbsp;31) &mdash; not just what's currently open. Rerun live Sep&nbsp;9 via SOQL, corrected manager IDs.</div>
+        <div class="m-value mono">18,785</div>
+        <div class="m-caption">All-time case volume (current FY, Aug&nbsp;1&ndash;Jul&nbsp;31) &mdash; not just what's currently open. Rerun live Sep&nbsp;11 via SOQL.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
-            <div class="seg-val mono">13,372</div>
+            <div class="seg-val mono">14,379</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
-            <div class="seg-val mono">4,121</div>
+            <div class="seg-val mono">4,406</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Approaching SLA</div>
-        <div class="m-value mono" style="color:var(--warning)">2</div>
-        <div class="m-caption">Open 2&ndash;3 days — one day from breaching the 3-day SLA. Both segments have almost nothing left in this window; nearly everything has already tipped into Out of SLA.</div>
+        <div class="m-value mono" style="color:var(--warning)">108</div>
+        <div class="m-caption">Open 2&ndash;3 days — one to two days from breaching the 3-day SLA. This window jumped from a combined 2 last pull to 108 — a direct result of the Sep&nbsp;8&ndash;10 intake wave aging into this bucket rather than a new problem.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
-            <div class="seg-val mono">1</div>
+            <div class="seg-val mono">33</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
-            <div class="seg-val mono">1</div>
+            <div class="seg-val mono">75</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Out of SLA</div>
-        <div class="m-value mono" style="color:var(--critical)">716</div>
-        <div class="m-caption">Open more than 3 days — already past the SLA window. Premium's count is flat in absolute terms but a smaller share of a larger, fresher backlog; HVP's keeps climbing.</div>
+        <div class="m-value mono" style="color:var(--critical)">646</div>
+        <div class="m-caption">Open more than 3 days — already past the SLA window. Both segments' counts fell in absolute terms (Premium 66&nbsp;→&nbsp;38; HVP 650&nbsp;→&nbsp;608) even as their backlogs grew — genuine closures/updates on the oldest cases, not just dilution.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
-            <div class="seg-val mono">66</div>
+            <div class="seg-val mono">38</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
-            <div class="seg-val mono">650</div>
+            <div class="seg-val mono">608</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">% OOSLA</div>
-        <div class="m-value mono" style="color:var(--critical)">89.5%</div>
-        <div class="m-caption">Share of open cases already past the 3-day SLA window (Out of SLA &divide; Total open cases). Premium eased from 95.1% to 64.1% — not because old cases resolved, but because a wave of fresh intake diluted the ratio.</div>
+        <div class="m-value mono" style="color:var(--critical)">76.1%</div>
+        <div class="m-caption">Share of open cases already past the 3-day SLA window (Out of SLA &divide; Total open cases). Both segments eased — Premium 64.1%&nbsp;→&nbsp;33.3%, HVP 93.3%&nbsp;→&nbsp;82.7% — driven by both a shrinking numerator and a growing denominator.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
-            <div class="seg-val mono">64.1%</div>
+            <div class="seg-val mono">33.3%</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
-            <div class="seg-val mono">93.3%</div>
+            <div class="seg-val mono">82.7%</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Average age</div>
-        <div class="m-value mono">16.2 <span style="font-size:16px; font-weight:600;">days</span></div>
-        <div class="m-caption">Blended across both segments, rerun live Sep&nbsp;9.</div>
+        <div class="m-value mono">16.0 <span style="font-size:16px; font-weight:600;">days</span></div>
+        <div class="m-caption">Blended across both segments, rerun live Sep&nbsp;11.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
-            <div class="seg-val mono">7.3d</div>
+            <div class="seg-val mono">5.9d</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
-            <div class="seg-val mono">17.5d</div>
+            <div class="seg-val mono">17.6d</div>
           </div>
         </div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label">Oldest open case</div>
-        <div class="m-value mono">37 <span style="font-size:16px; font-weight:600;">days</span></div>
-        <div class="m-caption">Case 15163774268 — Jeremy Ardourel (Chris's team), NorCal Perlite Inc., Premium; Case 15163734867 — Kizzy Laborde, Remote Cardiology, LLC – Payroll, HVP. Same two cases as every prior pull, now 5 days older.</div>
+        <div class="m-value mono">39 <span style="font-size:16px; font-weight:600;">days</span></div>
+        <div class="m-caption">Case 15163774268 — Jeremy Ardourel (Chris's team), NorCal Perlite Inc., Premium; Case 15163734867 — Kizzy Laborde, Remote Cardiology, LLC – Payroll, HVP. Same two cases as every prior pull, now 2 days older.</div>
         <div class="m-split">
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium</div>
-            <div class="seg-val mono">37d</div>
+            <div class="seg-val mono">39d</div>
           </div>
           <div class="seg">
             <div class="seg-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP</div>
-            <div class="seg-val mono">37d</div>
+            <div class="seg-val mono">39d</div>
           </div>
         </div>
       </div>
@@ -468,13 +468,13 @@
   </section>
 
   <section>
-    <div class="section-head"><h2>Current State Metrics — by M2</h2><span class="sub">Jake &amp; Sarah (Premium) and, for the first time, Michelle Leon &amp; Kirstie Espinoza (HVP) all fully reconciled from live SOQL pulls</span></div>
+    <div class="section-head"><h2>Current State Metrics — by M2</h2><span class="sub">Not rerun this pull — carried from the Sep&nbsp;9 refresh. This round's live pull was per-manager (see confirmed manager IDs on the By Manager tab); no manager&rarr;M2 mapping was available to re-split it, so these tiles are stale and shown for continuity only</span></div>
     <div class="metric-grid">
 
       <div class="metric-tile">
         <div class="m-label">Total open cases</div>
         <div class="m-value mono">800</div>
-        <div class="m-caption">Every open case, split by M2. HVP's manager-ID backfill is complete as of this pull — Michelle Leon and Kirstie Espinoza's splits are now real, not estimated.</div>
+        <div class="m-caption">Stale — carried from Sep&nbsp;9, not rerun this pull. Every open case, split by M2. HVP's manager-ID backfill is complete as of the Sep&nbsp;9 pull — Michelle Leon and Kirstie Espinoza's splits were real then, not estimated, but this pull's fresh Premium/HVP totals (114/735) are no longer reflected here.</div>
         <div class="m-split m-split-4">
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--premium)"></span>Jake</div><div class="seg-val mono">49</div><div style="font-size:9.5px; color:var(--ink-faint); margin-top:1px;">46 opened today</div></div>
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--violet)"></span>Sarah</div><div class="seg-val mono">54</div><div style="font-size:9.5px; color:var(--ink-faint); margin-top:1px;">20 opened today</div></div>
@@ -486,7 +486,7 @@
       <div class="metric-tile">
         <div class="m-label">Approaching SLA</div>
         <div class="m-value mono" style="color:var(--warning)">2</div>
-        <div class="m-caption">All four M2s now fully reconciled from live SOQL.</div>
+        <div class="m-caption">Stale — carried from Sep&nbsp;9, not rerun this pull.</div>
         <div class="m-split m-split-4">
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--premium)"></span>Jake</div><div class="seg-val mono">0</div></div>
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--violet)"></span>Sarah</div><div class="seg-val mono">1</div></div>
@@ -498,7 +498,7 @@
       <div class="metric-tile">
         <div class="m-label">Out of SLA</div>
         <div class="m-value mono" style="color:var(--critical)">716</div>
-        <div class="m-caption">All four M2s now fully reconciled from live SOQL.</div>
+        <div class="m-caption">Stale — carried from Sep&nbsp;9, not rerun this pull.</div>
         <div class="m-split m-split-4">
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--premium)"></span>Jake</div><div class="seg-val mono">29</div></div>
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--violet)"></span>Sarah</div><div class="seg-val mono">37</div></div>
@@ -510,7 +510,7 @@
       <div class="metric-tile">
         <div class="m-label">Average age</div>
         <div class="m-value mono">16.2 <span style="font-size:16px; font-weight:600;">days</span></div>
-        <div class="m-caption">Blended across all four M2s, fully reconciled from live SOQL. Michelle's queue (mostly David's) runs oldest.</div>
+        <div class="m-caption">Stale — carried from Sep&nbsp;9, not rerun this pull. Michelle's queue (mostly David's) ran oldest as of that pull.</div>
         <div class="m-split m-split-4">
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--premium)"></span>Jake</div><div class="seg-val mono">7.2d</div></div>
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--violet)"></span>Sarah</div><div class="seg-val mono">7.4d</div></div>
@@ -522,7 +522,7 @@
       <div class="metric-tile">
         <div class="m-label">Oldest open case</div>
         <div class="m-value mono">37 <span style="font-size:16px; font-weight:600;">days</span></div>
-        <div class="m-caption">Sarah's team — case 15163774268, Jeremy Ardourel (Chris), NorCal Perlite Inc. HVP's two oldest cases are also tied at 37d, one on each M2's team: Michelle's is case 15163739045 (Elizabeth Zarada, David's queue); Kirstie's is case 15163734867 (Kizzy Laborde, Remote Cardiology).</div>
+        <div class="m-caption">Stale — carried from Sep&nbsp;9, not rerun this pull. As of that pull: Sarah's team — case 15163774268, Jeremy Ardourel (Chris), NorCal Perlite Inc. HVP's two oldest cases were also tied at 37d, one on each M2's team: Michelle's is case 15163739045 (Elizabeth Zarada, David's queue); Kirstie's is case 15163734867 (Kizzy Laborde, Remote Cardiology) — this case is now 39d old per the segment-wide Current State Metrics above.</div>
         <div class="m-split m-split-4">
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--premium)"></span>Jake</div><div class="seg-val mono">35d</div></div>
           <div class="seg"><div class="seg-label"><span class="m2-dot" style="background:var(--violet)"></span>Sarah</div><div class="seg-val mono">37d</div></div>
@@ -535,63 +535,63 @@
   </section>
 
   <section>
-    <div class="section-head"><h2>Escalation &amp; concentration</h2><span class="sub">vs. Sep 8 pull &middot; refreshed Sep 9</span></div>
+    <div class="section-head"><h2>Escalation &amp; concentration</h2><span class="sub">vs. Sep 9 pull &middot; refreshed Sep 11</span></div>
     <div class="metric-grid">
 
       <div class="metric-tile">
         <div class="m-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP &middot; Escalation rate</div>
-        <div class="m-value mono">26.7%</div>
-        <div class="m-delta bad">▲ 0.2pt <span class="mono">(26.5%&nbsp;→&nbsp;26.7%)</span></div>
+        <div class="m-value mono">26.4%</div>
+        <div class="m-delta good">▼ 0.3pt <span class="mono">(26.7%&nbsp;→&nbsp;26.4%)</span></div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium &middot; Escalation rate</div>
-        <div class="m-value mono">16.5%</div>
-        <div class="m-delta good">▼ 3.3pt <span class="mono">(19.8%&nbsp;→&nbsp;16.5%)</span></div>
+        <div class="m-value mono">12.3%</div>
+        <div class="m-delta good">▼ 4.2pt <span class="mono">(16.5%&nbsp;→&nbsp;12.3%)</span></div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label"><span class="seg-dot" style="background:var(--hvp)"></span>HVP &middot; Top manager share</div>
-        <div class="m-value mono">53.4%</div>
-        <div class="m-delta bad">▲ 0.7pt <span class="mono">(52.7%&nbsp;→&nbsp;53.4%)</span></div>
+        <div class="m-value mono">54.4%</div>
+        <div class="m-delta bad">▲ 1.0pt <span class="mono">(53.4%&nbsp;→&nbsp;54.4%)</span></div>
       </div>
 
       <div class="metric-tile">
         <div class="m-label"><span class="seg-dot" style="background:var(--premium)"></span>Premium &middot; Top manager share</div>
-        <div class="m-value mono">21.4%</div>
-        <div class="m-delta good">▼ 4.5pt <span class="mono">(25.9%&nbsp;→&nbsp;21.4%)</span></div>
+        <div class="m-value mono">23.7%</div>
+        <div class="m-delta bad">▲ 2.3pt <span class="mono">(21.4%&nbsp;→&nbsp;23.7%)</span></div>
       </div>
 
     </div>
-    <div class="callout">Premium's top manager <b>changed hands</b>: Charles (22 open, 21.4% of segment) overtook Tameko (now 15 open) now that Gin's queue is counted for the first time and fresh intake redistributed volume. Premium's escalation rate and concentration both eased — not because escalations fell in absolute terms (17 open Premium cases are still Escalated), but because the segment's backlog grew (81&nbsp;→&nbsp;103) faster than escalations did, diluting both ratios. HVP moved the other way: David's share ticked back up to 53.4% and its escalation rate inched higher, consistent with a segment where the backlog isn't shrinking.</div>
+    <div class="callout">Charles stays Premium's top manager, but his concentration <b>climbed</b> (21.4%&nbsp;→&nbsp;23.7%) as his queue grew fastest of any Premium manager (22&nbsp;→&nbsp;27 open). Premium's escalation rate eased sharply (16.5%&nbsp;→&nbsp;12.3%) — its 14 currently-escalated cases are flat-to-down, while the segment's backlog grew (103&nbsp;→&nbsp;114), diluting the ratio. HVP moved the opposite way on concentration: David's share climbed further to 54.4% even as his backlog's absolute past-SLA count fell, while HVP's escalation rate eased slightly (26.7%&nbsp;→&nbsp;26.4%) on the same dilution effect as Premium.</div>
   </section>
 
   <section>
-    <div class="section-head"><h2>Where the volume actually sits</h2><span class="sub">Current FY open backlog, by status &middot; refreshed Sep 9</span></div>
+    <div class="section-head"><h2>Where the volume actually sits</h2><span class="sub">Current FY open backlog, by status &middot; refreshed Sep 11</span></div>
     <div class="card">
         <h3>Open-case mix, normalized to 100%</h3>
-        <p class="note">Premium: 103 open cases total &middot; HVP: 697 open cases total — about 6.8× the volume now (Premium's backlog grew while HVP held roughly flat). Premium's Escalated share eased back down as fresh intake diluted the ratio; HVP's ticked up slightly.</p>
+        <p class="note">Premium: 114 open cases total &middot; HVP: 735 open cases total — about 6.4× the volume now. Premium's Escalated share pulled back sharply as fresh intake (all logged as plain "Open") diluted the ratio; HVP's eased only slightly since its intake was much lighter (12 new cases vs. Premium's 43).</p>
         <svg viewBox="0 0 640 150" role="img" aria-label="Stacked bar chart comparing Premium and HVP open case status mix">
           <!-- Premium row -->
           <text x="0" y="26" font-size="13" font-weight="600" fill="var(--premium)">Premium</text>
-          <text x="0" y="41" font-size="11" class="mono" fill="var(--ink-faint)">n = 103</text>
-          <rect x="150" y="14" width="323.8" height="28" fill="var(--ink-faint)" opacity="0.55"/>
-          <rect x="473.8" y="14" width="45.6" height="28" fill="var(--premium-soft)"/>
-          <rect x="519.4" y="14" width="23.0" height="28" fill="var(--warning)"/>
-          <rect x="542.4" y="14" width="77.6" height="28" fill="var(--critical)"/>
-          <text x="311.9" y="33" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">68.9%</text>
-          <text x="581.2" y="33" text-anchor="middle" font-size="11" class="mono" fill="#fff">16.5%</text>
+          <text x="0" y="41" font-size="11" class="mono" fill="var(--ink-faint)">n = 114</text>
+          <rect x="150" y="14" width="387.0" height="28" fill="var(--ink-faint)" opacity="0.55"/>
+          <rect x="537.0" y="14" width="20.6" height="28" fill="var(--premium-soft)"/>
+          <rect x="557.6" y="14" width="4.1" height="28" fill="var(--warning)"/>
+          <rect x="561.7" y="14" width="57.7" height="28" fill="var(--critical)"/>
+          <text x="343.5" y="33" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">82.5%</text>
+          <text x="590.6" y="33" text-anchor="middle" font-size="11" class="mono" fill="#fff">12.3%</text>
 
           <!-- HVP row -->
           <text x="0" y="96" font-size="13" font-weight="600" fill="var(--hvp)">HVP</text>
-          <text x="0" y="111" font-size="11" class="mono" fill="var(--ink-faint)">n = 697</text>
-          <rect x="150" y="84" width="257.6" height="28" fill="var(--ink-faint)" opacity="0.55"/>
-          <rect x="407.6" y="84" width="28.2" height="28" fill="var(--premium-soft)"/>
-          <rect x="435.8" y="84" width="58.7" height="28" fill="var(--warning)"/>
-          <rect x="494.5" y="84" width="125.5" height="28" fill="var(--critical)"/>
-          <text x="278.8" y="103" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">54.8%</text>
-          <text x="465.1" y="103" text-anchor="middle" font-size="10.5" class="mono" fill="#fff">12.5%</text>
-          <text x="557.3" y="103" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">26.7%</text>
+          <text x="0" y="111" font-size="11" class="mono" fill="var(--ink-faint)">n = 735</text>
+          <rect x="150" y="84" width="255.7" height="28" fill="var(--ink-faint)" opacity="0.55"/>
+          <rect x="405.7" y="84" width="30.6" height="28" fill="var(--premium-soft)"/>
+          <rect x="436.3" y="84" width="59.7" height="28" fill="var(--warning)"/>
+          <rect x="496.0" y="84" width="124.0" height="28" fill="var(--critical)"/>
+          <text x="277.8" y="103" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">54.4%</text>
+          <text x="466.1" y="103" text-anchor="middle" font-size="10.5" class="mono" fill="#fff">12.7%</text>
+          <text x="558.0" y="103" text-anchor="middle" font-size="11.5" class="mono" fill="#fff">26.4%</text>
 
           <line x1="150" y1="8" x2="150" y2="120" stroke="var(--border)"/>
           <line x1="620" y1="8" x2="620" y2="120" stroke="var(--border)"/>
@@ -602,7 +602,7 @@
           <span class="item"><span class="swatch" style="background:var(--warning)"></span>Research / Priority</span>
           <span class="item"><span class="swatch" style="background:var(--critical)"></span>Escalated</span>
         </div>
-        <div class="callout">HVP's research-queue share (12.5%) is still roughly <b>2.7× Premium's</b> (4.9%). Premium's Escalated share (16.5%) pulled back from last pull, mostly because the segment's denominator grew, not because escalations resolved.</div>
+        <div class="callout">HVP's research-queue share (12.7%) is still roughly <b>14× Premium's</b> (0.9%) — Premium's research bucket has nearly emptied out as fresh intake dominates the mix. Premium's Escalated share (12.3%) pulled back further from last pull's 16.5%, again a dilution effect: its 14 escalated cases are flat-to-down while the segment's backlog grew (103&nbsp;→&nbsp;114).</div>
     </div>
   </section>
 
@@ -610,21 +610,22 @@
     <div class="section-head"><h2>Age distribution</h2><span class="sub">Premium open cases, by days open</span></div>
     <div class="card">
       <h3>How old is the open backlog?</h3>
-      <p class="note">103 Premium cases (Age&nbsp;&gt;&nbsp;0, i.e. excluding cases opened today) bucketed by exact age — the 66 opened today are intentionally left out of this view since they haven't had a chance to age yet. Same 3-day SLA line as everywhere else on this page — bars are colored on-track (green), approaching (amber, 2&ndash;3 days), and past SLA (red, 4+ days).</p>
+      <p class="note">114 Premium cases (Age&nbsp;&gt;&nbsp;0, i.e. excluding cases opened today) bucketed by exact age — the 43 opened today are intentionally left out of this view since they haven't had a chance to age yet. Same 3-day SLA line as everywhere else on this page — bars are colored on-track (green), approaching (amber, 2&ndash;3 days), and past SLA (red, 4+ days). Axis rescaled this pull since the 1-day bucket (43) now exceeds every prior pull's max.</p>
       <svg viewBox="0 0 620 175" role="img" aria-label="Histogram of Premium open-case age in days">
-          <rect x="110" y="54.6" width="56" height="95.4" fill="var(--good)"/>
-          <rect x="180" y="147.4" width="56" height="2.6" fill="var(--warning)"/>
-          <rect x="320" y="54.6" width="56" height="95.4" fill="var(--critical)"/>
-          <rect x="390" y="112.9" width="56" height="37.1" fill="var(--critical)"/>
-          <rect x="460" y="123.5" width="56" height="26.5" fill="var(--critical)"/>
-          <rect x="530" y="134.1" width="56" height="15.9" fill="var(--critical)"/>
-          <text x="138.0" y="48.6" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">36</text>
-          <text x="208.0" y="141.4" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">1</text>
-          <text x="278.0" y="144" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">0</text>
-          <text x="348.0" y="48.6" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">36</text>
-          <text x="418.0" y="106.9" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">14</text>
-          <text x="488.0" y="117.5" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">10</text>
-          <text x="558.0" y="128.1" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">6</text>
+          <rect x="110" y="40.0" width="56" height="110.0" fill="var(--good)"/>
+          <rect x="180" y="104.0" width="56" height="46.0" fill="var(--warning)"/>
+          <rect x="250" y="111.6" width="56" height="38.4" fill="var(--warning)"/>
+          <rect x="320" y="139.8" width="56" height="10.2" fill="var(--critical)"/>
+          <rect x="390" y="98.8" width="56" height="51.2" fill="var(--critical)"/>
+          <rect x="460" y="134.7" width="56" height="15.3" fill="var(--critical)"/>
+          <rect x="530" y="129.5" width="56" height="20.5" fill="var(--critical)"/>
+          <text x="138.0" y="34.0" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">43</text>
+          <text x="208.0" y="98.0" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">18</text>
+          <text x="278.0" y="105.6" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">15</text>
+          <text x="348.0" y="133.8" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">4</text>
+          <text x="418.0" y="92.8" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">20</text>
+          <text x="488.0" y="128.7" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">6</text>
+          <text x="558.0" y="123.5" text-anchor="middle" font-size="12" class="mono" fill="var(--ink)">8</text>
           <text x="138.0" y="166" text-anchor="middle" font-size="10.5" fill="var(--ink-faint)">1d</text>
           <text x="208.0" y="166" text-anchor="middle" font-size="10.5" fill="var(--ink-faint)">2d</text>
           <text x="278.0" y="166" text-anchor="middle" font-size="10.5" fill="var(--ink-faint)">3d</text>
@@ -639,7 +640,7 @@
         <span class="item"><span class="swatch" style="background:var(--warning)"></span>Approaching SLA (2&ndash;3 days)</span>
         <span class="item"><span class="swatch" style="background:var(--critical)"></span>Past SLA (4+ days)</span>
       </div>
-      <div class="callout">The backlog is bimodal: 36 cases are 1 day old and 36 are already 4&ndash;7 days old, with almost nothing in between (1 case at 2&ndash;3 days). The tail stretches to 37 days. Chris and Gin now run the hottest tails at 100% past SLA, versus a segment average of 64.1%.</div>
+      <div class="callout">The backlog has shifted decisively toward fresh: 43 cases are 1 day old — more than a third of the entire backlog — versus 38 cases past SLA (4+ days), where before the split ran roughly even. The 2&ndash;3 day approaching-SLA window, previously almost empty, now holds 33 cases as the Sep&nbsp;8&ndash;10 intake wave ages into it. The tail still stretches to 39 days.</div>
     </div>
   </section>
 
@@ -649,223 +650,236 @@
 
       <div class="card">
         <h3>Premium open cases, by manager</h3>
-        <p class="note">Sorted by open-case volume, refreshed Sep&nbsp;9 &mdash; the first pull to include Gin's queue. SLA bar: on-track / approaching / past, same as Age Distribution above.</p>
+        <p class="note">Sorted by open-case volume, refreshed Sep&nbsp;11 via confirmed manager-ID SOQL pulls. SLA bar: on-track / approaching / past, same as Age Distribution above.</p>
         <div class="table-wrap" style="box-shadow:none; border:none;">
           <table>
             <thead><tr><th>Manager</th><th class="num">Open</th><th class="num">% of segment</th><th>SLA status</th></tr></thead>
             <tbody>
           <tr>
             <td>Charles</td>
-            <td class="num mono">22</td>
-            <td class="num mono">21.4%</td>
+            <td class="num mono">27</td>
+            <td class="num mono">23.7%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
-                <div style="width:27.3%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:72.7%; background:var(--critical)"></div>
+                <div style="width:44.4%; background:var(--good)"></div>
+                <div style="width:33.3%; background:var(--warning)"></div>
+                <div style="width:22.2%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">16 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">9 appr.</span><span class="past">6 past</span></div>
             </td>
           </tr>
           <tr>
             <td>Steph</td>
-            <td class="num mono">19</td>
+            <td class="num mono">21</td>
             <td class="num mono">18.4%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
-                <div style="width:36.8%; background:var(--good)"></div>
-                <div style="width:5.3%; background:var(--warning)"></div>
-                <div style="width:57.9%; background:var(--critical)"></div>
-              </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">1 appr.</span><span class="past">11 past</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Lacretia</td>
-            <td class="num mono">18</td>
-            <td class="num mono">17.5%</td>
-            <td>
-              <div class="bar-mini rag" style="width:100px;">
-                <div style="width:50.0%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:50.0%; background:var(--critical)"></div>
-              </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">9 past</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Tameko</td>
-            <td class="num mono">15</td>
-            <td class="num mono">14.6%</td>
-            <td>
-              <div class="bar-mini rag" style="width:100px;">
                 <div style="width:33.3%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:66.7%; background:var(--critical)"></div>
+                <div style="width:23.8%; background:var(--warning)"></div>
+                <div style="width:42.9%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">10 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">5 appr.</span><span class="past">9 past</span></div>
             </td>
           </tr>
           <tr>
             <td>Kadian</td>
-            <td class="num mono">15</td>
-            <td class="num mono">14.6%</td>
+            <td class="num mono">19</td>
+            <td class="num mono">16.7%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
-                <div style="width:40.0%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:60.0%; background:var(--critical)"></div>
+                <div style="width:42.1%; background:var(--good)"></div>
+                <div style="width:31.6%; background:var(--warning)"></div>
+                <div style="width:26.3%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">9 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">6 appr.</span><span class="past">5 past</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Lacretia</td>
+            <td class="num mono">17</td>
+            <td class="num mono">14.9%</td>
+            <td>
+              <div class="bar-mini rag" style="width:100px;">
+                <div style="width:23.5%; background:var(--good)"></div>
+                <div style="width:29.4%; background:var(--warning)"></div>
+                <div style="width:47.1%; background:var(--critical)"></div>
+              </div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">5 appr.</span><span class="past">8 past</span></div>
             </td>
           </tr>
           <tr>
             <td>Shella</td>
-            <td class="num mono">7</td>
-            <td class="num mono">6.8%</td>
+            <td class="num mono">12</td>
+            <td class="num mono">10.5%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
-                <div style="width:42.9%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:57.1%; background:var(--critical)"></div>
+                <div style="width:66.7%; background:var(--good)"></div>
+                <div style="width:25.0%; background:var(--warning)"></div>
+                <div style="width:8.3%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">4 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">3 appr.</span><span class="past">1 past</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Tameko</td>
+            <td class="num mono">12</td>
+            <td class="num mono">10.5%</td>
+            <td>
+              <div class="bar-mini rag" style="width:100px;">
+                <div style="width:33.3%; background:var(--good)"></div>
+                <div style="width:33.3%; background:var(--warning)"></div>
+                <div style="width:33.3%; background:var(--critical)"></div>
+              </div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">4 appr.</span><span class="past">4 past</span></div>
             </td>
           </tr>
           <tr>
             <td>Chris</td>
             <td class="num mono">6</td>
-            <td class="num mono">5.8%</td>
+            <td class="num mono">5.3%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
                 <div style="width:0%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:100%; background:var(--critical)"></div>
+                <div style="width:16.7%; background:var(--warning)"></div>
+                <div style="width:83.3%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">6 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">1 appr.</span><span class="past">5 past</span></div>
             </td>
           </tr>
           <tr>
-            <td>Gin <span style="color:var(--good); font-weight:400; font-size:11px;">(first real pull)</span></td>
-            <td class="num mono">1</td>
-            <td class="num mono">1.0%</td>
+            <td>Gin <span style="color:var(--ink-faint); font-weight:400; font-size:11px;">(all 6 cases opened today)</span></td>
+            <td class="num mono">0</td>
+            <td class="num mono">0.0%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
                 <div style="width:0%; background:var(--good)"></div>
                 <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:100%; background:var(--critical)"></div>
+                <div style="width:0%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">1 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;">n/a — no backlog</div>
             </td>
           </tr>
             </tbody>
           </table>
         </div>
-        <div class="callout"><b>Charles is now Premium's most-loaded manager (21.4%)</b>, overtaking Tameko now that fresh intake has redistributed volume and Gin's queue (1 open) is counted for the first time. Chris's backlog is the hottest tail at 100% past SLA.</div>
+        <div class="callout"><b>Charles remains Premium's most-loaded manager (23.7%)</b>, his queue growing fastest of anyone this pull (22&nbsp;→&nbsp;27). Gin now shows 0 open backlog — all 6 of Gin's currently-open cases were opened today, so none have aged into this count yet. Chris still runs the hottest tail at 83.3% past SLA, though every manager's split moved toward "approaching" this pull as the Sep&nbsp;8&ndash;10 intake wave ages in.</div>
       </div>
 
       <div class="card">
         <h3>HVP open cases, by manager</h3>
-        <p class="note">Sorted by open-case volume, refreshed Sep&nbsp;9 &mdash; SLA bars sourced from a live per-manager SOQL pull; a manager-ID typo (David's queue) caught and corrected this pull.</p>
+        <p class="note">Sorted by open-case volume, refreshed Sep&nbsp;11 &mdash; the full 8-manager HVP ID mapping (including Marissa) was confirmed directly against Salesforce this pull.</p>
         <div class="table-wrap" style="box-shadow:none; border:none;">
           <table>
             <thead><tr><th>Manager</th><th class="num">Open</th><th class="num">% of segment</th><th>SLA status</th></tr></thead>
             <tbody>
           <tr>
             <td>David</td>
-            <td class="num mono">372</td>
-            <td class="num mono">53.4%</td>
+            <td class="num mono">400</td>
+            <td class="num mono">54.4%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
                 <div style="width:4.0%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:96.0%; background:var(--critical)"></div>
+                <div style="width:8.8%; background:var(--warning)"></div>
+                <div style="width:87.2%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">357 past</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Kelly</td>
-            <td class="num mono">113</td>
-            <td class="num mono">16.2%</td>
-            <td>
-              <div class="bar-mini rag" style="width:100px;">
-                <div style="width:9.7%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:90.3%; background:var(--critical)"></div>
-              </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">102 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">35 appr.</span><span class="past">349 past</span></div>
             </td>
           </tr>
           <tr>
             <td>Morgan</td>
-            <td class="num mono">102</td>
-            <td class="num mono">14.6%</td>
+            <td class="num mono">117</td>
+            <td class="num mono">15.9%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
-                <div style="width:10.8%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:89.2%; background:var(--critical)"></div>
+                <div style="width:11.1%; background:var(--good)"></div>
+                <div style="width:13.7%; background:var(--warning)"></div>
+                <div style="width:75.2%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">91 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">16 appr.</span><span class="past">88 past</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Kelly</td>
+            <td class="num mono">109</td>
+            <td class="num mono">14.8%</td>
+            <td>
+              <div class="bar-mini rag" style="width:100px;">
+                <div style="width:9.2%; background:var(--good)"></div>
+                <div style="width:15.6%; background:var(--warning)"></div>
+                <div style="width:75.2%; background:var(--critical)"></div>
+              </div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">17 appr.</span><span class="past">82 past</span></div>
             </td>
           </tr>
           <tr>
             <td>Rachel</td>
-            <td class="num mono">61</td>
-            <td class="num mono">8.8%</td>
+            <td class="num mono">57</td>
+            <td class="num mono">7.8%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
-                <div style="width:13.1%; background:var(--good)"></div>
-                <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:86.9%; background:var(--critical)"></div>
+                <div style="width:12.3%; background:var(--good)"></div>
+                <div style="width:8.8%; background:var(--warning)"></div>
+                <div style="width:78.9%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">53 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">5 appr.</span><span class="past">45 past</span></div>
             </td>
           </tr>
           <tr>
             <td>Chemetra</td>
-            <td class="num mono">18</td>
+            <td class="num mono">19</td>
             <td class="num mono">2.6%</td>
+            <td>
+              <div class="bar-mini rag" style="width:100px;">
+                <div style="width:21.1%; background:var(--good)"></div>
+                <div style="width:0%; background:var(--warning)"></div>
+                <div style="width:78.9%; background:var(--critical)"></div>
+              </div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="past">15 past</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Dixie</td>
+            <td class="num mono">18</td>
+            <td class="num mono">2.4%</td>
+            <td>
+              <div class="bar-mini rag" style="width:100px;">
+                <div style="width:11.1%; background:var(--good)"></div>
+                <div style="width:11.1%; background:var(--warning)"></div>
+                <div style="width:77.8%; background:var(--critical)"></div>
+              </div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">2 appr.</span><span class="past">14 past</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Alicia</td>
+            <td class="num mono">15</td>
+            <td class="num mono">2.0%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
                 <div style="width:0%; background:var(--good)"></div>
                 <div style="width:0%; background:var(--warning)"></div>
                 <div style="width:100%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">18 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;"><span class="past">15 past</span></div>
             </td>
           </tr>
           <tr>
-            <td>Alicia</td>
-            <td class="num mono">16</td>
-            <td class="num mono">2.3%</td>
+            <td>Marissa <span style="color:var(--ink-faint); font-weight:400; font-size:11px;">(ID confirmed this pull)</span></td>
+            <td class="num mono">0</td>
+            <td class="num mono">0.0%</td>
             <td>
               <div class="bar-mini rag" style="width:100px;">
                 <div style="width:0%; background:var(--good)"></div>
-                <div style="width:6.2%; background:var(--warning)"></div>
-                <div style="width:93.8%; background:var(--critical)"></div>
-              </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="approaching">1 appr.</span><span class="past">15 past</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td>Dixie</td>
-            <td class="num mono">15</td>
-            <td class="num mono">2.2%</td>
-            <td>
-              <div class="bar-mini rag" style="width:100px;">
-                <div style="width:6.7%; background:var(--good)"></div>
                 <div style="width:0%; background:var(--warning)"></div>
-                <div style="width:93.3%; background:var(--critical)"></div>
+                <div style="width:0%; background:var(--critical)"></div>
               </div>
-              <div class="sla-counts" style="margin-top:4px;"><span class="past">14 past</span></div>
+              <div class="sla-counts" style="margin-top:4px;">n/a — no open cases</div>
             </td>
           </tr>
             </tbody>
           </table>
         </div>
-        <div class="callout"><b>David carries 53.4%</b> of all open HVP cases — more than double Premium's most-loaded manager, Charles (21.4%). Marissa Hapner (Michelle's team) currently has 0 open HVP cases and doesn't appear in this table.</div>
+        <div class="callout"><b>David carries 54.4%</b> of all open HVP cases — more than double Premium's most-loaded manager, Charles (23.7%). Marissa's ID was confirmed directly against Salesforce this pull and still shows 0 open HVP cases, consistent with every prior pull.</div>
       </div>
 
     </div>
@@ -904,11 +918,12 @@
   <div class="tabpanel" data-tab="action" hidden>
 
   <section>
-    <div class="section-head"><h2>Action queue &mdash; Premium out of SLA</h2><span class="sub">Full case-level pull &amp; SOP re-bucketing &middot; Sep&nbsp;9, 2026</span></div>
+    <div class="section-head"><h2>Action queue &mdash; Premium out of SLA</h2><span class="sub">Top-line total refreshed live Sep&nbsp;11 &middot; full case-level detail below still reflects the Sep&nbsp;9 re-bucket (lighter-touch refresh this round, by request)</span></div>
     <p style="font-size:13px; color:var(--ink-soft); line-height:1.6; max-width:80ch; margin:0 0 18px;">
-      A direct SOQL pull of the underlying case records (not the Report Builder screen) puts <b>66 Premium cases</b> past the 3-day SLA as of Sep&nbsp;9 &mdash; down from 73 on Sep&nbsp;8 &mdash; <b>all 66 re-bucketed below</b> from their actual case notes. This is the first pull where <b>Gin's cases are included</b>: a manager-ID typo (a stored capital "I" instead of a lowercase "l") had been silently excluding her from every prior pull; it's now corrected in this pull's query (the live Salesforce report still carries the typo and has not been changed &mdash; see the Overview tab note). <b>The bucket, confidence, action owner, and suggested next step on every row are AI-suggested from the case notes and pending manager confirmation</b> &mdash; none of this has been reviewed by a human yet. Reminder delivery (Slack, to the owning manager/expert) is the intended next step but is intentionally not built yet &mdash; still being worked through.
+      <b>The live Out-of-SLA total dropped sharply to 38 Premium cases as of Sep&nbsp;11</b>, down from 66 on Sep&nbsp;9 — consistent with the Overview tab's finding that Premium's past-SLA count fell in absolute terms even as its overall backlog grew, thanks to a wave of fresh intake and continued case movement. <b>This round's refresh was scoped as top-line-only</b>: the 38-case figure and the By&nbsp;Manager table's Total&nbsp;cases column below are from today's live per-manager SOQL pull, but the SOP bucket tiles, Who-needs-to-act split, and full case list further down were <b>not</b> re-pulled or re-classified this round — they still reflect the Sep&nbsp;9 pull's 66 cases and classifications. Treat everything below the By&nbsp;Manager table as the last full re-bucket, not a current picture.
     </p>
 
+    <div class="callout" style="margin:0 0 12px; font-size:12px;">Stale — carried from the Sep&nbsp;9 full re-bucket, not rerun this round. Below reflects the classification of that pull's 66 cases, not today's 38.</div>
     <div class="metric-grid">
       <div class="metric-tile">
         <div class="m-label">Follow-up missing</div>
@@ -957,12 +972,13 @@
   </section>
 
   <section>
-    <div class="section-head"><h2>By manager</h2><span class="sub">Volume and action ownership per manager, from the full case-level pull &middot; Sep&nbsp;9, 2026 &middot; who to route reassignment conversations to first</span></div>
+    <div class="section-head"><h2>By manager</h2><span class="sub">Total cases column refreshed live Sep&nbsp;11 &middot; the three classification columns still reflect the Sep&nbsp;9 full re-bucket, not rerun this round &middot; who to route reassignment conversations to first</span></div>
+    <div class="callout" style="margin:0 0 12px; font-size:12px;">Only <b>Total cases</b> below is current (today's live per-manager OOSLA pull). Missed&nbsp;Promise, On&nbsp;us, and On&nbsp;customer are carried from the Sep&nbsp;9 classification of a different, larger case set (66 cases) and will no longer sum to the new totals — they're shown for continuity, not as a current split.</div>
     <div class="table-wrap" style="max-width:640px;">
       <table>
-        <thead><tr><th>Manager</th><th class="num">Total cases</th><th class="num">Missed Promise</th><th class="num">On us</th><th class="num">On customer</th></tr></thead>
+        <thead><tr><th>Manager</th><th class="num">Total cases</th><th class="num">Missed Promise <span style="font-weight:400; color:var(--ink-faint);">(stale)</span></th><th class="num">On us <span style="font-weight:400; color:var(--ink-faint);">(stale)</span></th><th class="num">On customer <span style="font-weight:400; color:var(--ink-faint);">(stale)</span></th></tr></thead>
         <tbody>
-<tr><td>Charles</td><td class="num mono">16</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">1</span></td><td class="num mono">14</td><td class="num mono">2</td></tr><tr><td>Steph</td><td class="num mono">11</td><td class="num mono">0</td><td class="num mono">3</td><td class="num mono">8</td></tr><tr><td>Tameko</td><td class="num mono">10</td><td class="num mono">0</td><td class="num mono">7</td><td class="num mono">3</td></tr><tr><td>Lacretia</td><td class="num mono">9</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">2</span></td><td class="num mono">9</td><td class="num mono">0</td></tr><tr><td>Kadian</td><td class="num mono">9</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">1</span></td><td class="num mono">9</td><td class="num mono">0</td></tr><tr><td>Chris</td><td class="num mono">6</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">3</span></td><td class="num mono">4</td><td class="num mono">2</td></tr><tr><td>Shella</td><td class="num mono">4</td><td class="num mono">0</td><td class="num mono">4</td><td class="num mono">0</td></tr><tr><td>Gin</td><td class="num mono">1 <span style="color:var(--ink-faint); font-weight:400; font-size:11px;">(first pull included)</span></td><td class="num mono">0</td><td class="num mono">1</td><td class="num mono">0</td></tr>
+<tr><td>Charles</td><td class="num mono">6</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">1</span></td><td class="num mono">14</td><td class="num mono">2</td></tr><tr><td>Steph</td><td class="num mono">9</td><td class="num mono">0</td><td class="num mono">3</td><td class="num mono">8</td></tr><tr><td>Lacretia</td><td class="num mono">8</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">2</span></td><td class="num mono">9</td><td class="num mono">0</td></tr><tr><td>Kadian</td><td class="num mono">5</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">1</span></td><td class="num mono">9</td><td class="num mono">0</td></tr><tr><td>Chris</td><td class="num mono">5</td><td class="num mono"><span style="color:var(--warning); font-weight:700;">3</span></td><td class="num mono">4</td><td class="num mono">2</td></tr><tr><td>Tameko</td><td class="num mono">4</td><td class="num mono">0</td><td class="num mono">7</td><td class="num mono">3</td></tr><tr><td>Shella</td><td class="num mono">1</td><td class="num mono">0</td><td class="num mono">4</td><td class="num mono">0</td></tr><tr><td>Gin</td><td class="num mono">0 <span style="color:var(--ink-faint); font-weight:400; font-size:11px;">(no backlog this pull)</span></td><td class="num mono">0</td><td class="num mono">1</td><td class="num mono">0</td></tr>
         </tbody>
       </table>
     </div>
@@ -989,7 +1005,7 @@
   <section>
     <div class="section-head"><h2>Open cases by manager</h2><span class="sub">Click a row to drill into every case behind the number</span></div>
     <p style="font-size:12.5px; color:var(--ink-soft); line-height:1.6; max-width:72ch; margin:0 0 12px;">
-      <b>Every manager's open-case count, % of segment, and SLA bar above are refreshed Sep&nbsp;9</b> from the same live SOQL pulls behind the Overview tab (Premium 103 cases, HVP 697 cases) — this is the first pull where every manager on both sides, including Gin (Premium) and David (HVP), is sourced from a corrected, real per-case pull rather than an on-screen estimate; see the Overview tab for the two manager-ID typos found and fixed today. The per-expert case lists you reach by clicking into a manager below are <b>not</b> rerun this pull and still reflect the Sep&nbsp;4 export (Premium, full 170-case detail) or an earlier sample pull (HVP, 1&ndash;2 real cases per manager) — treat those drill-down rows as illustrative examples, not a current count.
+      <b>Every manager's open-case count, % of segment, and SLA bar above are refreshed Sep&nbsp;11</b> from the same live per-manager SOQL pulls behind the Overview tab (Premium 114 cases, HVP 735 cases), using a fully confirmed manager-ID mapping for both segments. Per the scope agreed for this refresh, the per-expert / per-case drill-down lists you reach by clicking into a manager below were <b>not</b> re-pulled this round — they still reflect whatever export or sample pull they showed on the last refresh (Premium's full case detail is from Sep&nbsp;4; HVP's sample rows are from an earlier partial pull). Treat those drill-down rows as illustrative examples, not a current count; the top-line numbers above them are current.
     </p>
     <div class="callout" style="margin:0 0 18px;"><span class="pill aging" style="font-size:10.5px; padding:1px 6px;">Out of SLA</span> = case has been open more than 3 days since it was opened.</div>
 
@@ -998,7 +1014,7 @@
         <summary>
           <span class="mgr-name">David</span>
           <span class="seg-chip hvp">HVP</span>
-          <span class="mgr-stats"><b>372</b> open &middot; 53.4% of segment
+          <span class="mgr-stats"><b>400</b> open &middot; 54.4% of segment
             <div class="bar-mini"><div style="width:100%; background:var(--hvp)"></div></div>
           </span>
         </summary>
@@ -1020,8 +1036,8 @@
         <summary>
           <span class="mgr-name">Kelly</span>
           <span class="seg-chip hvp">HVP</span>
-          <span class="mgr-stats"><b>113</b> open &middot; 16.2% of segment
-            <div class="bar-mini"><div style="width:30.4%; background:var(--hvp)"></div></div>
+          <span class="mgr-stats"><b>109</b> open &middot; 14.8% of segment
+            <div class="bar-mini"><div style="width:27.3%; background:var(--hvp)"></div></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1042,8 +1058,8 @@
         <summary>
           <span class="mgr-name">Morgan</span>
           <span class="seg-chip hvp">HVP</span>
-          <span class="mgr-stats"><b>102</b> open &middot; 14.6% of segment
-            <div class="bar-mini"><div style="width:27.4%; background:var(--hvp)"></div></div>
+          <span class="mgr-stats"><b>117</b> open &middot; 15.9% of segment
+            <div class="bar-mini"><div style="width:29.3%; background:var(--hvp)"></div></div>
           </span>
         </summary>
         <div class="mgr-drill"><div class="empty">No sample cases were captured for Morgan in this refresh's pull &mdash; full case list pending the manager-ID backfill export.</div></div>
@@ -1053,8 +1069,8 @@
         <summary>
           <span class="mgr-name">Rachel</span>
           <span class="seg-chip hvp">HVP</span>
-          <span class="mgr-stats"><b>61</b> open &middot; 8.8% of segment
-            <div class="bar-mini"><div style="width:16.4%; background:var(--hvp)"></div></div>
+          <span class="mgr-stats"><b>57</b> open &middot; 7.8% of segment
+            <div class="bar-mini"><div style="width:14.3%; background:var(--hvp)"></div></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1075,7 +1091,7 @@
         <summary>
           <span class="mgr-name">Chemetra</span>
           <span class="seg-chip hvp">HVP</span>
-          <span class="mgr-stats"><b>18</b> open &middot; 2.6% of segment
+          <span class="mgr-stats"><b>19</b> open &middot; 2.6% of segment
             <div class="bar-mini"><div style="width:4.8%; background:var(--hvp)"></div></div>
           </span>
         </summary>
@@ -1086,8 +1102,8 @@
         <summary>
           <span class="mgr-name">Alicia</span>
           <span class="seg-chip hvp">HVP</span>
-          <span class="mgr-stats"><b>16</b> open &middot; 2.3% of segment
-            <div class="bar-mini"><div style="width:4.3%; background:var(--hvp)"></div></div>
+          <span class="mgr-stats"><b>15</b> open &middot; 2.0% of segment
+            <div class="bar-mini"><div style="width:3.8%; background:var(--hvp)"></div></div>
           </span>
         </summary>
         <div class="mgr-drill"><div class="empty">No sample cases were captured for Alicia in this refresh's pull &mdash; full case list pending the manager-ID backfill export.</div></div>
@@ -1097,8 +1113,8 @@
         <summary>
           <span class="mgr-name">Dixie</span>
           <span class="seg-chip hvp">HVP</span>
-          <span class="mgr-stats"><b>15</b> open &middot; 2.2% of segment
-            <div class="bar-mini"><div style="width:4.0%; background:var(--hvp)"></div></div>
+          <span class="mgr-stats"><b>18</b> open &middot; 2.4% of segment
+            <div class="bar-mini"><div style="width:4.5%; background:var(--hvp)"></div></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1118,9 +1134,9 @@
         <summary>
           <span class="mgr-name">Kadian</span>
           <span class="seg-chip premium">Premium</span>
-          <span class="mgr-stats"><b>15</b> open &middot; 14.6% of segment
-            <div class="bar-mini rag"><div style="width:40.0%; background:var(--good)"></div><div style="width:0%; background:var(--warning)"></div><div style="width:60.0%; background:var(--critical)"></div></div>
-            <div class="sla-counts"><span class="past">9 past SLA</span></div>
+          <span class="mgr-stats"><b>19</b> open &middot; 16.7% of segment
+            <div class="bar-mini rag"><div style="width:42.1%; background:var(--good)"></div><div style="width:31.6%; background:var(--warning)"></div><div style="width:26.3%; background:var(--critical)"></div></div>
+            <div class="sla-counts"><span class="approaching">6 approaching</span><span class="past">5 past SLA</span></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1288,9 +1304,9 @@
         <summary>
           <span class="mgr-name">Tameko</span>
           <span class="seg-chip premium">Premium</span>
-          <span class="mgr-stats"><b>15</b> open &middot; 14.6% of segment
-            <div class="bar-mini rag"><div style="width:33.3%; background:var(--good)"></div><div style="width:0%; background:var(--warning)"></div><div style="width:66.7%; background:var(--critical)"></div></div>
-            <div class="sla-counts"><span class="past">20 past SLA</span></div>
+          <span class="mgr-stats"><b>12</b> open &middot; 10.5% of segment
+            <div class="bar-mini rag"><div style="width:33.3%; background:var(--good)"></div><div style="width:33.3%; background:var(--warning)"></div><div style="width:33.3%; background:var(--critical)"></div></div>
+            <div class="sla-counts"><span class="approaching">4 approaching</span><span class="past">4 past SLA</span></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1425,9 +1441,9 @@
         <summary>
           <span class="mgr-name">Charles</span>
           <span class="seg-chip premium">Premium</span>
-          <span class="mgr-stats"><b>22</b> open &middot; 21.4% of segment
-            <div class="bar-mini rag"><div style="width:27.3%; background:var(--good)"></div><div style="width:0%; background:var(--warning)"></div><div style="width:72.7%; background:var(--critical)"></div></div>
-            <div class="sla-counts"><span class="past">17 past SLA</span></div>
+          <span class="mgr-stats"><b>27</b> open &middot; 23.7% of segment
+            <div class="bar-mini rag"><div style="width:44.4%; background:var(--good)"></div><div style="width:33.3%; background:var(--warning)"></div><div style="width:22.2%; background:var(--critical)"></div></div>
+            <div class="sla-counts"><span class="approaching">9 approaching</span><span class="past">6 past SLA</span></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1529,9 +1545,9 @@
         <summary>
           <span class="mgr-name">Steph</span>
           <span class="seg-chip premium">Premium</span>
-          <span class="mgr-stats"><b>19</b> open &middot; 18.4% of segment
-            <div class="bar-mini rag"><div style="width:36.8%; background:var(--good)"></div><div style="width:5.3%; background:var(--warning)"></div><div style="width:57.9%; background:var(--critical)"></div></div>
-            <div class="sla-counts"><span class="approaching">1 approaching</span><span class="past">8 past SLA</span></div>
+          <span class="mgr-stats"><b>21</b> open &middot; 18.4% of segment
+            <div class="bar-mini rag"><div style="width:33.3%; background:var(--good)"></div><div style="width:23.8%; background:var(--warning)"></div><div style="width:42.9%; background:var(--critical)"></div></div>
+            <div class="sla-counts"><span class="approaching">5 approaching</span><span class="past">9 past SLA</span></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1633,9 +1649,9 @@
         <summary>
           <span class="mgr-name">Lacretia</span>
           <span class="seg-chip premium">Premium</span>
-          <span class="mgr-stats"><b>18</b> open &middot; 17.5% of segment
-            <div class="bar-mini rag"><div style="width:50.0%; background:var(--good)"></div><div style="width:0%; background:var(--warning)"></div><div style="width:50.0%; background:var(--critical)"></div></div>
-            <div class="sla-counts"><span class="past">9 past SLA</span></div>
+          <span class="mgr-stats"><b>17</b> open &middot; 14.9% of segment
+            <div class="bar-mini rag"><div style="width:23.5%; background:var(--good)"></div><div style="width:29.4%; background:var(--warning)"></div><div style="width:47.1%; background:var(--critical)"></div></div>
+            <div class="sla-counts"><span class="approaching">5 approaching</span><span class="past">8 past SLA</span></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1770,9 +1786,9 @@
         <summary>
           <span class="mgr-name">Gin</span>
           <span class="seg-chip premium">Premium</span>
-          <span class="mgr-stats"><b>1</b> open &middot; 1.0% of segment
-            <div class="bar-mini rag"><div style="width:0%; background:var(--good)"></div><div style="width:0%; background:var(--warning)"></div><div style="width:100%; background:var(--critical)"></div></div>
-            <div class="sla-counts"><span class="past">2 past SLA</span></div>
+          <span class="mgr-stats"><b>0</b> open &middot; 0.0% of segment
+            <div class="bar-mini rag"><div style="width:0%; background:var(--good)"></div><div style="width:0%; background:var(--warning)"></div><div style="width:0%; background:var(--critical)"></div></div>
+            <div class="sla-counts">n/a — all 6 currently-open cases opened today, no backlog</div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1852,9 +1868,9 @@
         <summary>
           <span class="mgr-name">Shella</span>
           <span class="seg-chip premium">Premium</span>
-          <span class="mgr-stats"><b>7</b> open &middot; 6.8% of segment
-            <div class="bar-mini rag"><div style="width:42.9%; background:var(--good)"></div><div style="width:0%; background:var(--warning)"></div><div style="width:57.1%; background:var(--critical)"></div></div>
-            <div class="sla-counts"><span class="past">5 past SLA</span></div>
+          <span class="mgr-stats"><b>12</b> open &middot; 10.5% of segment
+            <div class="bar-mini rag"><div style="width:66.7%; background:var(--good)"></div><div style="width:25.0%; background:var(--warning)"></div><div style="width:8.3%; background:var(--critical)"></div></div>
+            <div class="sla-counts"><span class="approaching">3 approaching</span><span class="past">1 past SLA</span></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -1956,9 +1972,9 @@
         <summary>
           <span class="mgr-name">Chris</span>
           <span class="seg-chip premium">Premium</span>
-          <span class="mgr-stats"><b>6</b> open &middot; 5.8% of segment
-            <div class="bar-mini rag"><div style="width:0%; background:var(--good)"></div><div style="width:0%; background:var(--warning)"></div><div style="width:100%; background:var(--critical)"></div></div>
-            <div class="sla-counts"><span class="past">7 past SLA</span></div>
+          <span class="mgr-stats"><b>6</b> open &middot; 5.3% of segment
+            <div class="bar-mini rag"><div style="width:0%; background:var(--good)"></div><div style="width:16.7%; background:var(--warning)"></div><div style="width:83.3%; background:var(--critical)"></div></div>
+            <div class="sla-counts"><span class="approaching">1 approaching</span><span class="past">5 past SLA</span></div>
           </span>
         </summary>
         <div class="mgr-drill">
@@ -2042,151 +2058,157 @@
   <div class="tabpanel" data-tab="trends" hidden>
 
   <section>
-    <div class="section-head"><h2>Overall backlog trend</h2><span class="sub">Five real pulls — Sep 1, 3, 4, 8 &amp; 9, 2026</span></div>
+    <div class="section-head"><h2>Overall backlog trend</h2><span class="sub">Six real pulls — Sep 1, 3, 4, 8, 9 &amp; 11, 2026</span></div>
     <div class="trend-grid">
 
       <div class="card">
         <h3><span class="seg-dot" style="background:var(--premium)"></span>Premium — open cases over time</h3>
-        <p class="note">Down 123 cases since the Sep&nbsp;1 baseline (226&rarr;103), but up 22 since Sep&nbsp;8 (81&rarr;103) — the first uptick in the series, as new intake outpaced closures.</p>
+        <p class="note">Down 112 cases since the Sep&nbsp;1 baseline (226&rarr;114), and up 11 since Sep&nbsp;9 (103&rarr;114) — a second straight uptick, as fresh intake keeps outpacing closures. Axis unchanged; 114 still falls well within the existing range.</p>
         <svg viewBox="0 0 520 165" role="img" aria-label="Line chart of Premium total open cases over time">
           <line x1="40" y1="20" x2="40" y2="140" stroke="var(--border)"/>
           <line x1="40" y1="140" x2="500" y2="140" stroke="var(--border)"/>
           <text x="34" y="27" font-size="9.5" text-anchor="end" class="mono">240</text>
           <text x="34" y="143" font-size="9.5" text-anchor="end" class="mono">60</text>
-          <polyline points="60,29.3 167,41.3 273,66.7 380,126.0 487,111.3" fill="none" stroke="var(--premium)" stroke-width="2.25"/>
+          <polyline points="60,29.3 144,41.3 228,66.6 312,126.0 396,111.3 480,104.0" fill="none" stroke="var(--premium)" stroke-width="2.25"/>
           <circle cx="60" cy="29.3" r="4" fill="var(--premium)"/>
-          <circle cx="167" cy="41.3" r="4" fill="var(--premium)"/>
-          <circle cx="273" cy="66.7" r="4" fill="var(--premium)"/>
-          <circle cx="380" cy="126.0" r="4" fill="var(--premium)"/>
-          <circle cx="487" cy="111.3" r="4.5" fill="var(--premium)"/>
+          <circle cx="144" cy="41.3" r="4" fill="var(--premium)"/>
+          <circle cx="228" cy="66.6" r="4" fill="var(--premium)"/>
+          <circle cx="312" cy="126.0" r="4" fill="var(--premium)"/>
+          <circle cx="396" cy="111.3" r="4" fill="var(--premium)"/>
+          <circle cx="480" cy="104.0" r="4.5" fill="var(--premium)"/>
           <text x="60" y="21" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">226</text>
-          <text x="167" y="33" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">208</text>
-          <text x="273" y="59" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">170</text>
-          <text x="380" y="118" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">81</text>
-          <text x="487" y="103.3" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">103</text>
+          <text x="144" y="33" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">208</text>
+          <text x="228" y="59" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">170</text>
+          <text x="312" y="118" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">81</text>
+          <text x="396" y="103.3" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">103</text>
+          <text x="480" y="96.0" font-size="11" text-anchor="middle" class="mono" fill="var(--premium)">114</text>
           <text x="60" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 1</text>
-          <text x="167" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 3</text>
-          <text x="273" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 4</text>
-          <text x="380" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 8</text>
-          <text x="487" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 9</text>
+          <text x="144" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 3</text>
+          <text x="228" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 4</text>
+          <text x="312" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 8</text>
+          <text x="396" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 9</text>
+          <text x="480" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 11</text>
         </svg>
       </div>
 
       <div class="card">
         <h3><span class="seg-dot" style="background:var(--hvp)"></span>HVP — open cases over time</h3>
-        <p class="note">Eased slightly since Sep&nbsp;8 (721&rarr;697, &minus;24) — still 41 below the Sep&nbsp;3 peak (738) and 29 above the Sep&nbsp;1 baseline (668).</p>
+        <p class="note">Jumped back up since Sep&nbsp;9 (697&rarr;735, +38) to a new series high, edging past the prior Sep&nbsp;3 peak (738) by nearly matching it — now 67 above the Sep&nbsp;1 baseline (668).</p>
         <svg viewBox="0 0 520 165" role="img" aria-label="Line chart of HVP total open cases over time">
           <line x1="40" y1="20" x2="40" y2="140" stroke="var(--border)"/>
           <line x1="40" y1="140" x2="500" y2="140" stroke="var(--border)"/>
           <text x="34" y="43" font-size="9.5" text-anchor="end" class="mono">750</text>
           <text x="34" y="143" font-size="9.5" text-anchor="end" class="mono">650</text>
-          <polyline points="60,118.4 167,34.4 273,69.2 380,54.8 487,83.6" fill="none" stroke="var(--hvp)" stroke-width="2.25"/>
+          <polyline points="60,118.4 144,34.4 228,69.2 312,54.8 396,83.6 480,38.0" fill="none" stroke="var(--hvp)" stroke-width="2.25"/>
           <circle cx="60" cy="118.4" r="4" fill="var(--hvp)"/>
-          <circle cx="167" cy="34.4" r="4" fill="var(--hvp)"/>
-          <circle cx="273" cy="69.2" r="4" fill="var(--hvp)"/>
-          <circle cx="380" cy="54.8" r="4" fill="var(--hvp)"/>
-          <circle cx="487" cy="83.6" r="4.5" fill="var(--hvp)"/>
+          <circle cx="144" cy="34.4" r="4" fill="var(--hvp)"/>
+          <circle cx="228" cy="69.2" r="4" fill="var(--hvp)"/>
+          <circle cx="312" cy="54.8" r="4" fill="var(--hvp)"/>
+          <circle cx="396" cy="83.6" r="4" fill="var(--hvp)"/>
+          <circle cx="480" cy="38.0" r="4.5" fill="var(--hvp)"/>
           <text x="60" y="133" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">668</text>
-          <text x="167" y="26" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">738</text>
-          <text x="273" y="61" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">709</text>
-          <text x="380" y="47" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">721</text>
-          <text x="487" y="76" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">697</text>
+          <text x="144" y="26" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">738</text>
+          <text x="228" y="61" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">709</text>
+          <text x="312" y="47" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">721</text>
+          <text x="396" y="76" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">697</text>
+          <text x="480" y="30.0" font-size="11" text-anchor="middle" class="mono" fill="var(--hvp)">735</text>
           <text x="60" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 1</text>
-          <text x="167" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 3</text>
-          <text x="273" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 4</text>
-          <text x="380" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 8</text>
-          <text x="487" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 9</text>
+          <text x="144" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 3</text>
+          <text x="228" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 4</text>
+          <text x="312" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 8</text>
+          <text x="396" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 9</text>
+          <text x="480" y="153" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 11</text>
         </svg>
       </div>
 
     </div>
-    <div class="callout notice">Five real data points now exist for each segment. Every future refresh adds one more point to these two lines — that's the running record of whether the backlog is actually shrinking, not just a single-day snapshot.</div>
+    <div class="callout notice">Six real data points now exist for each segment. Every future refresh adds one more point to these two lines — that's the running record of whether the backlog is actually shrinking, not just a single-day snapshot. Both segments just posted their second consecutive increase.</div>
   </section>
 
   <section>
-    <div class="section-head"><h2>Per-manager trend</h2><span class="sub">Sep 4 &rarr; Sep 8 &rarr; Sep 9, 2026 &middot; indexed to Sep 4 = 100% &middot; rolling 3-point window (Sep 3 dropped)</span></div>
-    <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; max-width:76ch; margin:0 0 4px;">Each line tracks one manager's open-case count from Sep&nbsp;4 through Sep&nbsp;9, indexed so every manager starts at the same point (100%) regardless of segment size — this makes a Premium manager's move directly comparable to David's, even though he carries several times the volume. Raw counts are in the legend below each chart.</p>
+    <div class="section-head"><h2>Per-manager trend</h2><span class="sub">Sep 8 &rarr; Sep 9 &rarr; Sep 11, 2026 &middot; indexed to Sep 8 = 100% &middot; rolling 3-point window (Sep 4 dropped)</span></div>
+    <p style="font-size:12px; color:var(--ink-soft); line-height:1.6; max-width:76ch; margin:0 0 4px;">Each line tracks one manager's open-case count from Sep&nbsp;8 through Sep&nbsp;11, indexed so every manager starts at the same point (100%) regardless of segment size — this makes a Premium manager's move directly comparable to David's, even though he carries several times the volume. Raw counts are in the legend below each chart.</p>
     <div class="trend-grid">
 
       <div class="card">
         <h3><span class="seg-dot" style="background:var(--premium)"></span>Premium managers</h3>
-        <p class="note">Most Premium managers' queues grew from Sep&nbsp;8 to Sep&nbsp;9 as fresh intake landed — Charles grew the most relative to his Sep&nbsp;4 base (+91.7%), while Gin and Tameko are the only two still shrinking.</p>
-        <svg viewBox="0 0 400 220" role="img" aria-label="Indexed trend lines for each Premium manager's open cases, Sep 4 to Sep 9">
-          <line x1="40" y1="20" x2="40" y2="200" stroke="var(--border)"/>
+        <p class="note">Shella's queue more than doubled relative to her Sep&nbsp;8 base (+140%, 5&rarr;12) and Kadian more than doubled too (+111%, 9&rarr;19), while Gin fell all the way to zero (&minus;100%, 2&rarr;0) and Tameko kept shrinking (&minus;42.9%, 21&rarr;12). Axis rescaled significantly this pull to fit that spread.</p>
+        <svg viewBox="0 -40 400 253" role="img" aria-label="Indexed trend lines for each Premium manager's open cases, Sep 8 to Sep 11">
+          <line x1="40" y1="-30" x2="40" y2="200" stroke="var(--border)"/>
           <line x1="40" y1="200" x2="380" y2="200" stroke="var(--border)"/>
-          <line x1="40" y1="55.3" x2="380" y2="55.3" stroke="var(--border)" stroke-dasharray="3 3"/>
-          <text x="34" y="58.3" font-size="9" text-anchor="end" fill="var(--ink-faint)">100%</text>
-          <polyline points="60,55.3 200,158.2 340,125.6" fill="none" stroke="var(--premium)" stroke-width="2.25"/>
-          <circle cx="60" cy="55.3" r="3.5" fill="var(--premium)"/><circle cx="200" cy="158.2" r="3.5" fill="var(--premium)"/><circle cx="340" cy="125.6" r="4.5" fill="var(--premium)"/>
-          <polyline points="60,55.3 200,93.2 340,125.6" fill="none" stroke="var(--violet)" stroke-width="2.25"/>
-          <circle cx="60" cy="55.3" r="3.5" fill="var(--violet)"/><circle cx="200" cy="93.2" r="3.5" fill="var(--violet)"/><circle cx="340" cy="125.6" r="4.5" fill="var(--violet)"/>
-          <polyline points="60,55.3 200,99.6 340,67.9" fill="none" stroke="var(--good)" stroke-width="2.25"/>
-          <circle cx="60" cy="55.3" r="3.5" fill="var(--good)"/><circle cx="200" cy="99.6" r="3.5" fill="var(--good)"/><circle cx="340" cy="67.9" r="4.5" fill="var(--good)"/>
-          <polyline points="60,55.3 200,137.5 340,86.8" fill="none" stroke="var(--warning)" stroke-width="2"/>
-          <circle cx="60" cy="55.3" r="3.5" fill="var(--warning)"/><circle cx="200" cy="137.5" r="3.5" fill="var(--warning)"/><circle cx="340" cy="86.8" r="4.5" fill="var(--warning)"/>
-          <polyline points="60,55.3 200,147.6 340,88.2" fill="none" stroke="var(--critical)" stroke-width="2.25"/>
-          <circle cx="60" cy="55.3" r="3.5" fill="var(--critical)"/><circle cx="200" cy="147.6" r="3.5" fill="var(--critical)"/><circle cx="340" cy="88.2" r="4.5" fill="var(--critical)"/>
-          <polyline points="60,55.3 200,190.1 340,198.4" fill="none" stroke="var(--ink-soft)" stroke-width="2.25"/>
-          <circle cx="60" cy="55.3" r="3.5" fill="var(--ink-soft)"/><circle cx="200" cy="190.1" r="3.5" fill="var(--ink-soft)"/><circle cx="340" cy="198.4" r="4.5" fill="var(--ink-soft)"/>
-          <polyline points="60,55.3 200,152.8 340,131.1" fill="none" stroke="var(--hvp)" stroke-width="2.25"/>
-          <circle cx="60" cy="55.3" r="3.5" fill="var(--hvp)"/><circle cx="200" cy="152.8" r="3.5" fill="var(--hvp)"/><circle cx="340" cy="131.1" r="4.5" fill="var(--hvp)"/>
-          <polyline points="60,55.3 200,110.5 340,124.3" fill="none" stroke="var(--ink)" stroke-width="2.25"/>
-          <circle cx="60" cy="55.3" r="3.5" fill="var(--ink)"/><circle cx="200" cy="110.5" r="3.5" fill="var(--ink)"/><circle cx="340" cy="124.3" r="4.5" fill="var(--ink)"/>
-          <text x="60" y="213" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 4</text>
-          <text x="200" y="213" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 8</text>
-          <text x="340" y="213" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 9</text>
+          <line x1="40" y1="108.3" x2="380" y2="108.3" stroke="var(--border)" stroke-dasharray="3 3"/>
+          <text x="34" y="111.3" font-size="9" text-anchor="end" fill="var(--ink-faint)">100%</text>
+          <polyline points="60,108.3 200,47.2 340,6.5" fill="none" stroke="var(--premium)" stroke-width="2.25"/>
+          <circle cx="60" cy="108.3" r="3.5" fill="var(--premium)"/><circle cx="200" cy="47.2" r="3.5" fill="var(--premium)"/><circle cx="340" cy="6.5" r="4.5" fill="var(--premium)"/>
+          <polyline points="60,108.3 200,134.5 340,147.6" fill="none" stroke="var(--violet)" stroke-width="2.25"/>
+          <circle cx="60" cy="108.3" r="3.5" fill="var(--violet)"/><circle cx="200" cy="134.5" r="3.5" fill="var(--violet)"/><circle cx="340" cy="147.6" r="4.5" fill="var(--violet)"/>
+          <polyline points="60,108.3 200,81.4 340,54.4" fill="none" stroke="var(--good)" stroke-width="2.25"/>
+          <circle cx="60" cy="108.3" r="3.5" fill="var(--good)"/><circle cx="200" cy="81.4" r="3.5" fill="var(--good)"/><circle cx="340" cy="54.4" r="4.5" fill="var(--good)"/>
+          <polyline points="60,108.3 200,41.7 340,25.0" fill="none" stroke="var(--warning)" stroke-width="2"/>
+          <circle cx="60" cy="108.3" r="3.5" fill="var(--warning)"/><circle cx="200" cy="41.7" r="3.5" fill="var(--warning)"/><circle cx="340" cy="25.0" r="4.5" fill="var(--warning)"/>
+          <polyline points="60,108.3 200,16.7 340,26.9" fill="none" stroke="var(--critical)" stroke-width="2.25"/>
+          <circle cx="60" cy="108.3" r="3.5" fill="var(--critical)"/><circle cx="200" cy="16.7" r="3.5" fill="var(--critical)"/><circle cx="340" cy="26.9" r="4.5" fill="var(--critical)"/>
+          <polyline points="60,108.3 200,154.2 340,200.0" fill="none" stroke="var(--ink-soft)" stroke-width="2.25"/>
+          <circle cx="60" cy="108.3" r="3.5" fill="var(--ink-soft)"/><circle cx="200" cy="154.2" r="3.5" fill="var(--ink-soft)"/><circle cx="340" cy="200.0" r="4.5" fill="var(--ink-soft)"/>
+          <polyline points="60,108.3 200,71.7 340,-20.0" fill="none" stroke="var(--hvp)" stroke-width="2.25"/>
+          <circle cx="60" cy="108.3" r="3.5" fill="var(--hvp)"/><circle cx="200" cy="71.7" r="3.5" fill="var(--hvp)"/><circle cx="340" cy="-20.0" r="4.5" fill="var(--hvp)"/>
+          <polyline points="60,108.3 200,121.4 340,121.4" fill="none" stroke="var(--ink)" stroke-width="2.25"/>
+          <circle cx="60" cy="108.3" r="3.5" fill="var(--ink)"/><circle cx="200" cy="121.4" r="3.5" fill="var(--ink)"/><circle cx="340" cy="121.4" r="4.5" fill="var(--ink)"/>
+          <text x="60" y="213" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 8</text>
+          <text x="200" y="213" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 9</text>
+          <text x="340" y="213" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 11</text>
         </svg>
         <div class="stack-legend" style="margin-top:8px;">
-          <span class="item"><span class="swatch" style="background:var(--premium)"></span>Kadian (28&rarr;9&rarr;15)</span>
-          <span class="item"><span class="swatch" style="background:var(--violet)"></span>Tameko (28&rarr;21&rarr;15)</span>
-          <span class="item"><span class="swatch" style="background:var(--good)"></span>Charles (24&rarr;17&rarr;22)</span>
-          <span class="item"><span class="swatch" style="background:var(--warning)"></span>Steph (24&rarr;11&rarr;19)</span>
-          <span class="item"><span class="swatch" style="background:var(--critical)"></span>Lacretia (23&rarr;9&rarr;18)</span>
-          <span class="item"><span class="swatch" style="background:var(--ink-soft)"></span>Gin (18&rarr;2&rarr;1)</span>
-          <span class="item"><span class="swatch" style="background:var(--hvp)"></span>Shella (14&rarr;5&rarr;7)</span>
-          <span class="item"><span class="swatch" style="background:var(--ink)"></span>Chris (11&rarr;7&rarr;6)</span>
+          <span class="item"><span class="swatch" style="background:var(--premium)"></span>Kadian (9&rarr;15&rarr;19)</span>
+          <span class="item"><span class="swatch" style="background:var(--violet)"></span>Tameko (21&rarr;15&rarr;12)</span>
+          <span class="item"><span class="swatch" style="background:var(--good)"></span>Charles (17&rarr;22&rarr;27)</span>
+          <span class="item"><span class="swatch" style="background:var(--warning)"></span>Steph (11&rarr;19&rarr;21)</span>
+          <span class="item"><span class="swatch" style="background:var(--critical)"></span>Lacretia (9&rarr;18&rarr;17)</span>
+          <span class="item"><span class="swatch" style="background:var(--ink-soft)"></span>Gin (2&rarr;1&rarr;0)</span>
+          <span class="item"><span class="swatch" style="background:var(--hvp)"></span>Shella (5&rarr;7&rarr;12)</span>
+          <span class="item"><span class="swatch" style="background:var(--ink)"></span>Chris (7&rarr;6&rarr;6)</span>
         </div>
       </div>
 
       <div class="card">
         <h3><span class="seg-dot" style="background:var(--hvp)"></span>HVP managers</h3>
-        <p class="note">Dixie grew the most relative to her Sep&nbsp;4 base (+25.0%); Chemetra kept falling (now &minus;40% vs. Sep&nbsp;4) and David, Rachel held roughly flat.</p>
-        <svg viewBox="0 -40 400 280" role="img" aria-label="Indexed trend lines for each HVP manager's open cases, Sep 4 to Sep 9">
+        <p class="note">Morgan grew the most relative to his Sep&nbsp;8 base (+18.2%, 99&rarr;117); Kelly kept easing (&minus;12.8% vs. Sep&nbsp;8) while David, Rachel, Chemetra and Alicia all held within a few points of flat.</p>
+        <svg viewBox="0 -40 400 280" role="img" aria-label="Indexed trend lines for each HVP manager's open cases, Sep 8 to Sep 11">
           <line x1="40" y1="20" x2="40" y2="220" stroke="var(--border)"/>
           <line x1="40" y1="220" x2="380" y2="220" stroke="var(--border)"/>
           <line x1="40" y1="75.7" x2="380" y2="75.7" stroke="var(--border)" stroke-dasharray="3 3"/>
           <text x="34" y="78.7" font-size="9" text-anchor="end" fill="var(--ink-faint)">100%</text>
-          <polyline points="60,75.7 200,74.0 340,81.1" fill="none" stroke="var(--hvp)" stroke-width="2.25"/>
-          <circle cx="60" cy="75.7" r="3.5" fill="var(--hvp)"/><circle cx="200" cy="74.0" r="3.5" fill="var(--hvp)"/><circle cx="340" cy="81.1" r="4.5" fill="var(--hvp)"/>
-          <polyline points="60,75.7 200,32.4 340,69.5" fill="none" stroke="var(--violet)" stroke-width="2.25"/>
-          <circle cx="60" cy="75.7" r="3.5" fill="var(--violet)"/><circle cx="200" cy="32.4" r="3.5" fill="var(--violet)"/><circle cx="340" cy="69.5" r="4.5" fill="var(--violet)"/>
-          <polyline points="60,75.7 200,72.3 340,61.6" fill="none" stroke="var(--good)" stroke-width="2.25"/>
-          <circle cx="60" cy="75.7" r="3.5" fill="var(--good)"/><circle cx="200" cy="72.3" r="3.5" fill="var(--good)"/><circle cx="340" cy="61.6" r="4.5" fill="var(--good)"/>
-          <polyline points="60,75.7 200,75.7 340,86.7" fill="none" stroke="var(--warning)" stroke-width="2.25"/>
-          <circle cx="60" cy="75.7" r="3.5" fill="var(--warning)"/><circle cx="200" cy="75.7" r="3.5" fill="var(--warning)"/><circle cx="340" cy="86.7" r="4.5" fill="var(--warning)"/>
-          <polyline points="60,75.7 200,189.9 340,213.0" fill="none" stroke="var(--critical)" stroke-width="2.25"/>
-          <circle cx="60" cy="75.7" r="3.5" fill="var(--critical)"/><circle cx="200" cy="189.9" r="3.5" fill="var(--critical)"/><circle cx="340" cy="213.0" r="4.5" fill="var(--critical)"/>
-          <polyline points="60,75.7 200,55.7 340,75.7" fill="none" stroke="var(--ink-soft)" stroke-width="2.25"/>
-          <circle cx="60" cy="75.7" r="3.5" fill="var(--ink-soft)"/><circle cx="200" cy="55.7" r="3.5" fill="var(--ink-soft)"/><circle cx="340" cy="75.7" r="4.5" fill="var(--ink-soft)"/>
-          <polyline points="60,75.7 200,-24.8 340,32.3" fill="none" stroke="var(--premium)" stroke-width="2.25"/>
-          <circle cx="60" cy="75.7" r="3.5" fill="var(--premium)"/><circle cx="200" cy="-24.8" r="3.5" fill="var(--premium)"/><circle cx="340" cy="32.3" r="4.5" fill="var(--premium)"/>
-          <text x="60" y="233" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 4</text>
-          <text x="200" y="233" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 8</text>
-          <text x="340" y="233" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 9</text>
+          <polyline points="60,75.7 200,80.8 340,63.0" fill="none" stroke="var(--hvp)" stroke-width="2.25"/>
+          <circle cx="60" cy="75.7" r="3.5" fill="var(--hvp)"/><circle cx="200" cy="80.8" r="3.5" fill="var(--hvp)"/><circle cx="340" cy="63.0" r="4.5" fill="var(--hvp)"/>
+          <polyline points="60,75.7 200,98.9 340,106.5" fill="none" stroke="var(--violet)" stroke-width="2.25"/>
+          <circle cx="60" cy="75.7" r="3.5" fill="var(--violet)"/><circle cx="200" cy="98.9" r="3.5" fill="var(--violet)"/><circle cx="340" cy="106.5" r="4.5" fill="var(--violet)"/>
+          <polyline points="60,75.7 200,68.4 340,31.9" fill="none" stroke="var(--good)" stroke-width="2.25"/>
+          <circle cx="60" cy="75.7" r="3.5" fill="var(--good)"/><circle cx="200" cy="68.4" r="3.5" fill="var(--good)"/><circle cx="340" cy="31.9" r="4.5" fill="var(--good)"/>
+          <polyline points="60,75.7 200,83.4 340,98.7" fill="none" stroke="var(--warning)" stroke-width="2.25"/>
+          <circle cx="60" cy="75.7" r="3.5" fill="var(--warning)"/><circle cx="200" cy="83.4" r="3.5" fill="var(--warning)"/><circle cx="340" cy="98.7" r="4.5" fill="var(--warning)"/>
+          <polyline points="60,75.7 200,99.8 340,87.8" fill="none" stroke="var(--critical)" stroke-width="2.25"/>
+          <circle cx="60" cy="75.7" r="3.5" fill="var(--critical)"/><circle cx="200" cy="99.8" r="3.5" fill="var(--critical)"/><circle cx="340" cy="87.8" r="4.5" fill="var(--critical)"/>
+          <polyline points="60,75.7 200,89.9 340,104.0" fill="none" stroke="var(--ink-soft)" stroke-width="2.25"/>
+          <circle cx="60" cy="75.7" r="3.5" fill="var(--ink-soft)"/><circle cx="200" cy="89.9" r="3.5" fill="var(--ink-soft)"/><circle cx="340" cy="104.0" r="4.5" fill="var(--ink-soft)"/>
+          <polyline points="60,75.7 200,104.0 340,61.5" fill="none" stroke="var(--premium)" stroke-width="2.25"/>
+          <circle cx="60" cy="75.7" r="3.5" fill="var(--premium)"/><circle cx="200" cy="104.0" r="3.5" fill="var(--premium)"/><circle cx="340" cy="61.5" r="4.5" fill="var(--premium)"/>
+          <text x="60" y="233" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 8</text>
+          <text x="200" y="233" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 9</text>
+          <text x="340" y="233" font-size="9.5" text-anchor="middle" fill="var(--ink-faint)">Sep 11</text>
         </svg>
         <div class="stack-legend" style="margin-top:8px;">
-          <span class="item"><span class="swatch" style="background:var(--hvp)"></span>David (378&rarr;380&rarr;372)</span>
-          <span class="item"><span class="swatch" style="background:var(--violet)"></span>Kelly (111&rarr;125&rarr;113)</span>
-          <span class="item"><span class="swatch" style="background:var(--good)"></span>Morgan (98&rarr;99&rarr;102)</span>
-          <span class="item"><span class="swatch" style="background:var(--warning)"></span>Rachel (63&rarr;63&rarr;61)</span>
-          <span class="item"><span class="swatch" style="background:var(--critical)"></span>Chemetra (30&rarr;20&rarr;18)</span>
-          <span class="item"><span class="swatch" style="background:var(--ink-soft)"></span>Alicia (16&rarr;17&rarr;16)</span>
-          <span class="item"><span class="swatch" style="background:var(--premium)"></span>Dixie (12&rarr;17&rarr;15)</span>
+          <span class="item"><span class="swatch" style="background:var(--hvp)"></span>David (380&rarr;372&rarr;400)</span>
+          <span class="item"><span class="swatch" style="background:var(--violet)"></span>Kelly (125&rarr;113&rarr;109)</span>
+          <span class="item"><span class="swatch" style="background:var(--good)"></span>Morgan (99&rarr;102&rarr;117)</span>
+          <span class="item"><span class="swatch" style="background:var(--warning)"></span>Rachel (63&rarr;61&rarr;57)</span>
+          <span class="item"><span class="swatch" style="background:var(--critical)"></span>Chemetra (20&rarr;18&rarr;19)</span>
+          <span class="item"><span class="swatch" style="background:var(--ink-soft)"></span>Alicia (17&rarr;16&rarr;15)</span>
+          <span class="item"><span class="swatch" style="background:var(--premium)"></span>Dixie (17&rarr;15&rarr;18)</span>
         </div>
       </div>
 
     </div>
-    <div class="callout notice">Rolling 3-point window: Sep 3 was dropped and Sep 9 added, now indexed to Sep 4 = 100%. The HVP chart's axis was extended in both directions (above and below the original frame) to fit two outliers without rescaling every other point: Chemetra's continued decline (now &minus;40% vs. Sep&nbsp;4) and Dixie's Sep&nbsp;8 spike (+41.7% vs. Sep&nbsp;4, since settled back to +25.0%).</div>
+    <div class="callout notice">Rolling 3-point window: Sep 4 was dropped and Sep 11 added, now indexed to Sep 8 = 100% for both charts. HVP's spread stayed tight this pull (87%&ndash;118%) and reused the existing axis unchanged. Premium's spread blew out (0%&ndash;240%) as Gin's queue emptied and Shella's more than doubled — its axis was extended well beyond the prior frame to fit both extremes without losing readability on the managers in between.</div>
   </section>
 
   </div>
@@ -2202,19 +2224,19 @@
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Metric</th><th class="num">Baseline (Sep 1)</th><th class="num">Sep 3</th><th class="num">Sep 4</th><th class="num">Sep 8</th><th class="num">Sep 9</th><th class="num">Δ (Sep 8&rarr;9)</th></tr>
+          <tr><th>Metric</th><th class="num">Baseline (Sep 1)</th><th class="num">Sep 3</th><th class="num">Sep 4</th><th class="num">Sep 8</th><th class="num">Sep 9</th><th class="num">Sep 11</th><th class="num">Δ (Sep 9&rarr;11)</th></tr>
         </thead>
         <tbody>
-          <tr><td>Premium open cases (total)</td><td class="num mono">226</td><td class="num mono">208</td><td class="num mono">170</td><td class="num mono">81</td><td class="num mono">103</td><td class="num mono">+22</td></tr>
-          <tr><td>HVP open cases (total)</td><td class="num mono">668</td><td class="num mono">738</td><td class="num mono">709</td><td class="num mono">721</td><td class="num mono">697</td><td class="num mono">−24</td></tr>
-          <tr><td>Premium escalation rate</td><td class="num mono">8.8%</td><td class="num mono">11.1%</td><td class="num mono">11.2%</td><td class="num mono">19.8%</td><td class="num mono">16.5%</td><td class="num mono">−3.3pt</td></tr>
-          <tr><td>HVP escalation rate</td><td class="num mono">26.2%</td><td class="num mono">25.7%</td><td class="num mono">26.2%</td><td class="num mono">26.5%</td><td class="num mono">26.7%</td><td class="num mono">+0.2pt</td></tr>
-          <tr><td>Premium top manager share</td><td class="num mono">25.7%</td><td class="num mono">25.0%</td><td class="num mono">16.5%</td><td class="num mono">25.9%</td><td class="num mono">21.4%</td><td class="num mono">−4.5pt</td></tr>
-          <tr><td>HVP top manager share</td><td class="num mono">52.1%</td><td class="num mono">52.7%</td><td class="num mono">53.4%</td><td class="num mono">52.7%</td><td class="num mono">53.4%</td><td class="num mono">+0.7pt</td></tr>
+          <tr><td>Premium open cases (total)</td><td class="num mono">226</td><td class="num mono">208</td><td class="num mono">170</td><td class="num mono">81</td><td class="num mono">103</td><td class="num mono">114</td><td class="num mono">+11</td></tr>
+          <tr><td>HVP open cases (total)</td><td class="num mono">668</td><td class="num mono">738</td><td class="num mono">709</td><td class="num mono">721</td><td class="num mono">697</td><td class="num mono">735</td><td class="num mono">+38</td></tr>
+          <tr><td>Premium escalation rate</td><td class="num mono">8.8%</td><td class="num mono">11.1%</td><td class="num mono">11.2%</td><td class="num mono">19.8%</td><td class="num mono">16.5%</td><td class="num mono">12.3%</td><td class="num mono">−4.2pt</td></tr>
+          <tr><td>HVP escalation rate</td><td class="num mono">26.2%</td><td class="num mono">25.7%</td><td class="num mono">26.2%</td><td class="num mono">26.5%</td><td class="num mono">26.7%</td><td class="num mono">26.4%</td><td class="num mono">−0.3pt</td></tr>
+          <tr><td>Premium top manager share</td><td class="num mono">25.7%</td><td class="num mono">25.0%</td><td class="num mono">16.5%</td><td class="num mono">25.9%</td><td class="num mono">21.4%</td><td class="num mono">23.7%</td><td class="num mono">+2.3pt</td></tr>
+          <tr><td>HVP top manager share</td><td class="num mono">52.1%</td><td class="num mono">52.7%</td><td class="num mono">53.4%</td><td class="num mono">52.7%</td><td class="num mono">53.4%</td><td class="num mono">54.4%</td><td class="num mono">+1.0pt</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="callout notice">Methodology note: Sep&nbsp;1 totals were read off the cached dashboard charts. Sep&nbsp;3 Premium was a full case-level export (208 cases); Sep&nbsp;3 HVP (738) was a same-day live dashboard re-check, not a full export. Sep&nbsp;4 was the first refresh where both Premium (170 cases) and HVP (709 cases) came from full detail exports. Sep&nbsp;8 was the first refresh where every row came from a live Report Builder rerun for both segments. <b>Sep&nbsp;9 is the first refresh sourced from direct SOQL pulls rather than the Report Builder screen, and the first to include manager Gin's Premium queue and a fully reconciled HVP by-manager split</b> (Premium 103 cases, HVP 697 cases). Premium's open count rose and its escalation rate/top-manager share both eased back — not because the queue got healthier in absolute terms, but because a wave of fresh Sep&nbsp;9 intake grew the denominator faster than escalations or any one manager's share. Premium's top manager also changed hands: Charles (21.4%) overtook Tameko. HVP moved the other way, with David's share and the segment's escalation rate both ticking up slightly.</div>
+    <div class="callout notice">Methodology note: Sep&nbsp;1 totals were read off the cached dashboard charts. Sep&nbsp;3 Premium was a full case-level export (208 cases); Sep&nbsp;3 HVP (738) was a same-day live dashboard re-check, not a full export. Sep&nbsp;4 was the first refresh where both Premium (170 cases) and HVP (709 cases) came from full detail exports. Sep&nbsp;8 was the first refresh where every row came from a live Report Builder rerun for both segments. Sep&nbsp;9 was the first refresh sourced from direct SOQL pulls rather than the Report Builder screen, and the first to include manager Gin's Premium queue and a fully reconciled HVP by-manager split. <b>Sep&nbsp;11 is the first refresh where every one of the 16 Premium and HVP manager IDs was directly confirmed by the user against Salesforce</b> (Premium 114 cases, HVP 735 cases) — both segments' backlogs grew again on heavy fresh intake (43 new Premium cases, 12 new HVP cases, both excluded from the open-case counts above). Premium's escalation rate and top-manager share moved in opposite directions this pull: the escalation rate eased sharply (dilution from intake, not resolution) while Charles's concentration climbed as his queue grew fastest of any manager. HVP's escalation rate eased slightly for the first time in the series, while David's share climbed further still.</div>
   </section>
 
   </div>
